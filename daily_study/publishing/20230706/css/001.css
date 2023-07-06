@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'TTTtangsbudaejjigaeB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/TTTtangsbudaejjigaeB.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'PyeongChangPeace-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'pretndard Bold';
+    src: url(../font/Pretendard-Bold.woff) format('woff2')
+}
+@font-face {
+    font-family: 'pretndard Regular';
+    src: url(../font/Pretendard-Regular.woff) format('woff2')
+}
+
+body {
+    color: #333;
+}
+h1{
+    color: inherit;
+    font-family: 'TTTtangsbudaejjigaeB';
+    font-size: 40px;
+}
+h2{
+    font-family: 'Bagel Fat One', cursive;
+    color: royalblue;
+}
+h2.font-pc {
+    font-family: 'PyeongChangPeace-Bold';
+    color: #333;
+}
+/* currentColor: 부모의 색상을 상속 받는다*/
+strong {
+    border-bottom: 3px solid currentColor;
+    /* inherit 안돼는 이유: border는 상속을 하지 않기 때문엔 */
+}
+
+.local-font {
+    font-family: 'pretndard Regular';
+}
