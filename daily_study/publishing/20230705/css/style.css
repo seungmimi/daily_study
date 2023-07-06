@@ -1,0 +1,8 @@
+#hello {font-weight: bold}
+.class1{color: royalblue;}
+section {margin: 10px; padding: 10px; border: 1px solid #333;}
+
+.link_section {height: 100vh;background-color: skyblue;}
+
+.a_wrap {height: 100vh;}
+.a_wrap a {padding: 10px 0; display: block;}
