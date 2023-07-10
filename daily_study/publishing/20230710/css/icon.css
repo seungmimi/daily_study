@@ -1,0 +1,20 @@
+.icon {
+    vertical-align:middle;
+    display:inline-flex;
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+.icon::before {
+    display:inline-block;
+    content:'';
+    vertical-align:middle;
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position:center center;
+}
+
+.icon_arrow_right{
+    width:9px;
+    height:9px;
+    background-image:url('../image/icon/arrow.svg');
+}

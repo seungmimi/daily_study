@@ -1,0 +1,171 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard-bold';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Pretendard-Regular';
+}
+a{
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+img {
+    vertical-align: top;
+}
+
+.card_list_wrap{
+    background-color: #F5F5F5;
+    padding: 20px;
+}
+.card_list {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.card_odj {
+    display: inline-block;
+    box-sizing: border-box;
+    max-width: 288px;
+    border-radius: 8px;
+    background: #FFF;
+    box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.10);
+    overflow: hidden;
+}
+.card_odj .img_area {
+    width: 100%;
+    height: 196px;
+    overflow: hidden;
+}
+.card_odj .img_area>img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 288 / 196;
+    object-fit: cover;
+    transition: all 0.3s;
+}
+
+.card_odj .img_area>img:hover {
+    transform: scale(1.1);
+}
+
+.card_odj .content_area {
+    padding: 25px 16px 16px 16px;
+}
+.card_odj .content_area .text_area .title {
+    color: #29363D;
+    font-family: 'Pretendard-bold';
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    overflow:hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+.card_odj .content_area .text_area p {
+    height: calc(12px * 1.6 * 2);
+    margin-bottom: 16px;
+    color: #5A6A72;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.6;
+    overflow:hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.card_odj .content_area .ect_area .go_btn{
+    color: #29363D;
+    font-family: 'Pretendard-bold';;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: underline;
+}
+.card_odj.add_ver .title_area{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 16px;
+    gap: 12px;
+}
+.card_odj.add_ver .title_area .profile_img {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    overflow: hidden;
+}
+.card_odj.add_ver .title_area .profile_img img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+.card_odj.add_ver .title_area .text_area {
+    display: flex;
+    flex-direction: column;
+}
+.card_odj.add_ver .title_area .text_area .title{
+    color: #29363D;
+    font-family: 'Pretendard-bold';
+    font-size: 16px;
+    font-weight: 700;
+    overflow:hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+.card_odj.add_ver .title_area .text_area p{
+    color: #5A6A72;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.6;
+    overflow:hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+.card_odj.add_ver .content_area .ect_area{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.card_odj.add_ver .content_area .ect_area .go_btn{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.card_odj.add_ver .content_area .ect_area .btn_wrap {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.card_odj.add_ver .content_area .ect_area .btn_wrap button{
+    background-color: transparent;
+    border: none;
+    width: 32px;
+    height: 32px;
+}
+.card_odj.add_ver .content_area .ect_area .btn_wrap button.like {
+    background-image: url(../image/icon/icon_1.svg);
+}
+.card_odj.add_ver .content_area .ect_area .btn_wrap button.share {
+    background-image: url(../image/icon/icon_2.svg);
+}
+.card_odj.add_ver .content_area .ect_area .btn_wrap button.menu {
+    background-image: url(../image/icon/icon_3.svg);
+}

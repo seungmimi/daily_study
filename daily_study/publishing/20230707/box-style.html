@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7월 7일 과제: 박스꾸미기📦</title>
+    <style>
+        .deco_box_wrap{
+            display: flex;
+            gap: 15px;
+        }
+        .deco_box {
+            box-sizing: border-box;
+            width: 120px;
+            height: 50px;
+            font-weight: bold;
+            font-size: 18px;
+            text-align: center;
+        }
+        span {
+            transition: all 0.3s;
+        }
+        .deco_box:hover span {
+            display: inline-block;
+            transform: rotate(20deg)
+        }
+
+        .deco_box.style_1 {
+            background-color: #343f50;
+            border: 2px solid #000;
+            box-shadow: inset 2px 2px #4a5568;
+            color: #fff;
+            line-height: 46px;
+        }
+        .deco_box.deco_box.style_2 {
+            background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(133,85,198,1) 100%) padding-box;
+            border: 3px dashed rgba(63,94,251,0.3);
+            border-radius: 120px;
+            color: #fff;
+            line-height: 44px;
+        }
+        .deco_box.deco_box.style_3 {
+            border: 2px solid #ddd;
+            border-radius: 0 60px 60px 60px;
+            box-shadow: 5px 6px 10px 2px rgba(0, 0, 0, 0.2);
+            line-height: 46px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="deco_box_wrap">
+        <div class="deco_box style_1">Hello<span>✋</span></div>
+        <div class="deco_box style_2">Hello<span>✋</span></div>
+        <div class="deco_box style_3">Hello<span>✋</span></div>
+    </div>
+</body>
+</html>
