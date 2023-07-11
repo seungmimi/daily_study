@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+}
+.containner {
+    margin-bottom: 24px;
+}
+header {
+    background-color: rgb(249 109 108);
+    height: 100px;
+    line-height: 100px;
+    padding-left: 12px;
+}
+section {
+    background-color: rgb(254 208 130);
+    height: 300px;
+    width: 80%;
+}
+aside {
+    background-color: rgb(126 192 178);
+    height: 300px;
+    width: 20%;
+}
+footer {
+    height: 100px;
+    background-color: rgb(168 213 243);
+}
+
+/* float를 이용한 레이아웃 */
+.float section{
+    float: left;
+}
+.float aside {
+    float: right;
+}
+.float footer {
+    clear: both;
+}
+
+/* flex를 이용한 레이아웃 */
+.containner.flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+.flex header, .flex footer{
+    width: 100%;
+    flex-shrink: 0;
+}
