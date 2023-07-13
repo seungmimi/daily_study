@@ -1,3 +1,63 @@
+/*css 단축해보기(변수 사용)*/
+:root {
+    --bg-color: #343f50;
+    --main-color: #343f50;
+    --text-color: #cbd5df;
+}
+
+.agree_btn {
+    --bg-color: #343f50;
+    --main-color: #439aff;
+    --text-color: #439aff;
+}
+.disagree_btn {
+    --bg-color: #343f50;
+    --main-color: #eb5757;
+    --text-color: #eb5757;
+}
+.content_wrap {
+    display: flex;
+    gap: 16px;
+}
+.btn_wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.btn {
+    width: 88px;
+    height: 32px;
+    font-size: 12px;
+    font-family: Pretendard;
+    font-weight: 700;
+}
+.btn:enabled {
+    border: 1px solid var(--bg-color);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    box-shadow: inset 1px 1px 0 0 rgba(255, 255, 255, 0.1);
+    text-decoration: underline transparent;
+}
+.btn:disabled {
+    border: 1px solid #343e4e;
+    background-color: #3a4556;
+    color: #4a5568;
+}
+.btn:enabled:hover {
+    border: 1px solid var(--main-color);
+    background-color: var(--main-color);
+    box-shadow: inset 1px 1px 0 0 rgba(255, 255, 255, 0.2);
+    color: white;
+    text-decoration: underline white;
+}
+.btn:enabled:active {
+    border: 1px solid var(--main-color);
+    background-color: var(--main-color);
+    box-shadow: inset 1px 1px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+
+/*원본 css
 .content_wrap {
     display: flex;
     gap: 16px;
@@ -34,17 +94,17 @@
     box-shadow: none
 }
 
-.btn.btn2 {
+.btn.agree_btn {
     color: #439AFF;
 }
-.btn.btn2:hover {
+.btn.agree_btn:hover {
     color: #fff;
     text-decoration: underline;
     background-color: #439AFF;
     border: 1px solid #439AFF;
     box-shadow: inset 1px 1px 0 #73B4FF;
 }
-.btn.btn2:active {
+.btn.agree_btn:active {
     color: #fff;
     text-decoration: underline;
     background-color: #439AFF;
@@ -52,20 +112,20 @@
     box-shadow: inset 1px 1px 0 #3B78BE;
 }
 
-.btn.btn3 {
+.btn.disagree_btn {
     color: #EB5757;
 }
-.btn.btn3:hover {
+.btn.disagree_btn:hover {
     color: #fff;
     text-decoration: underline;
     background-color: #EB5757;
     border: 1px solid #EB5757;
     box-shadow: inset 1px 1px 0 #FD6F6F;
 }
-.btn.btn3:active {
+.btn.disagree_btn:active {
     color: #fff;
     text-decoration: underline;
     background-color: #EB5757;
     border: 1px solid #EB5757;
     box-shadow: inset 1px 1px 0 #D94242;
-}
+}*/
