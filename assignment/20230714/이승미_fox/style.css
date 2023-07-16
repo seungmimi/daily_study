@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img {
+    vertical-align: top;
+}
+h1, h2, h3 {
+    color: inherit;
+    font-weight: inherit;
+}
+
+.content_wrap {
+    height: 100vh;
+    background-image: url(./images/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: border-box;
+    position: relative;
+}
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+}
+
+.text_area {
+    width: 300px;
+    padding: 20px 20px 40px 20px;
+    color: #fff;
+    background-color: #9C6035;
+    box-shadow: 0px 15px 0 #46260E;
+    border-radius: 0 0 30px 30px;
+}
+
+.text_area .title {
+    font-size: 36px;
+    font-weight: 700;
+}
+.text_area .text {
+    padding-top: 10px;
+    color: #E8BC9C;
+    font-size: 16px;
+    font-weight: 400;
+}
