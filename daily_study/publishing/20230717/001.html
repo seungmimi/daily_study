@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gride_1</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            text-align: center;
+            font-weight: bold;
+        }
+        .container {
+            width: 100%;
+            padding: 10px;
+            background-color: #466fa6;
+            line-height: 100px;
+            color: #fff;
+            display: grid;
+            grid-template-columns: 1fr 200px;
+            grid-template-rows: repeat(5,100px);
+            gap: 10px;
+        }
+        header {
+            background-color: #96c9f2;
+            grid-area: 1/span 2;
+        }
+        section {
+            background-color: #485373;
+            grid-area: 2/1/span 3;
+            line-height: 300px;
+        }
+        aside {
+            background-color: #c7f544;
+            line-height: 300px;
+            color: #000;
+            grid-area: 2/2/span 3;
+
+        }
+        footer {
+            background-color:#fe7769;
+            grid-area: 5/span 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>header</header>
+        <section class="item">section > article</section>
+        <aside class="item">aside</aside>
+        <footer>footer</footer>
+    </div>
+</body>
+</html>
