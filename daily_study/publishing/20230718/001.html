@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <style>
+        .container {
+            display: flex;
+            gap: 20px;
+            flex-direction: column;
+        }
+        .licat {
+            width: 168px;
+            height: 200px;
+            background: url(./img/licat.png) no-repeat 0 0 / auto 100%;
+            border: 4px solid #000;
+            animation: move-licat 0.5s infinite steps(6);
+        }
+        @keyframes move-licat {
+            to {
+                background-position: right 0;
+            }
+        }
+
+        @keyframes slide {
+            from {
+                margin-left: 0;
+            }
+            to {
+                margin-left: 80%;
+            }
+        }
+        .wrap {
+            width: 500px;
+            background-color: #eee;
+        }
+        .wrap div {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            box-sizing: border-box;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .wrap div~div {
+            margin-top: 20px;
+        }
+        .animation {
+            animation: slide 3s infinite;
+        }
+        div.alternate {
+            background-color: royalblue;
+            animation-direction: alternate;
+        }
+        div.reverse {
+            animation-direction: reverse;
+        }
+        div.alternate-reverse {
+            background-color: royalblue;
+            animation-direction: alternate-reverse;
+        }
+
+        @keyframes slide_2 {
+            0% {
+                margin-left: 40%;
+                background-color: royalblue;
+            }
+            50% {
+                margin-left: 0%;
+                background-color: royalblue;
+            }
+            100% {
+                margin-left: 80%;
+                background-color: royalblue;
+            }
+        }
+        .animation2 {
+            animation: slide_2 3s 2s;
+        }
+        .forwards {
+            animation-fill-mode: forwards;
+        }
+        .backwards {
+            animation-fill-mode: backwards;
+        }
+        .both {
+            animation-fill-mode: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="licat"></div>
+        <div class="wrap">
+            <div class="animation">normal</div>
+            <div class="animation alternate">alternate</div>
+            <div class="animation reverse">reverse</div>
+            <div class="animation alternate-reverse">alternate-reverse</div>
+        </div>
+        <div class="wrap">
+            <div class="animation2">normal</div>
+            <div class="animation2 forwards">forwards</div>
+            <div class="animation2 backwards">backwards</div>
+            <div class="animation2 both">both</div>
+        </div>
+    </div>
+
+</body>
+</html>
