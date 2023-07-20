@@ -3,16 +3,29 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    background-color: #f59799;
+}
 .background {
     width: 100%;
     height: 100vh;
-    background-color: #f59799;
-    overflow: hidden;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-
+.background .title h1{
+    color: #006c13;
+    font-size: 4rem;
+    font-weight: bold;
+    text-shadow: -3px 5px 0px #fff, -6px 10px 0px #f65874;
+}
+.background .title strong {
+    color: #1d1d1d;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.05rem;
+}
 .background .character{
     position: relative;
     width: 500px;
@@ -49,6 +62,7 @@
     top: -70%;
     left: 25%;
     rotate: 280deg;
+    animation: band-left 1s infinite ease alternate;
 }
 .band .center {
     z-index: 2;
@@ -63,6 +77,7 @@
     top: -60%;
     left: 40%;
     rotate: 200deg;
+    animation: band-right 1s infinite ease alternate;
 }
 /*----------------얼굴----------------*/
 .position_center {
@@ -83,6 +98,8 @@
     border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
     border: 6px solid #fcd6cd;
     overflow: hidden;
+
+    animation: face-bg 1s infinite alternate;
 }
 .face .hair{
     position: absolute;
@@ -153,6 +170,43 @@
     border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;;
     background-color: #f37186; 
 }
+.face_bg_wrap {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+.face_bg_wrap .face_bg {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: 6px solid #fff;
+    background-color: #fffecc72;
+}
+.face_bg_wrap .face_bg:nth-child(1){
+    animation: face-bg_obj1 2s infinite cubic-bezier(0.15, 1.61, 1, 1);
+}
+.face_bg_wrap .face_bg:nth-child(2){
+    width: 20px;
+    height: 20px;
+    animation: face-bg_obj2 2s infinite cubic-bezier(0.82, 1.12, 0.94, 1.22);
+}
+.face_bg_wrap .face_bg:nth-child(3){
+    width: 20px;
+    height: 20px;
+    animation: face-bg_obj3 2s infinite cubic-bezier(0.82, 1.12, 0.94, 1.22);
+}
+.face_bg_wrap .face_bg:nth-child(4){
+    animation: face-bg_obj4 2s infinite cubic-bezier(0.15, 1.61, 1, 1);
+}
+.face_bg_wrap .face_bg:nth-child(5){
+    width: 20px;
+    height: 20px;
+    animation: face-bg_obj5 2s infinite cubic-bezier(0.82, 1.12, 0.94, 1.22);
+}
+
+
 .back_hair {
     z-index: 500;
     position: relative;
@@ -359,6 +413,103 @@
     }
 }
 
+/*얼굴 빛나기*/
+@keyframes face-bg{
+    50% {
+        box-shadow: inset 20px -5px 10px 0 #f3dbd7, 0px 4px 15px 0 #ffc4baf5, 0px -40px 120px 10px #ffffff;
+    }
+    100% {
+        box-shadow: inset 20px -5px 10px 0 #f3dbd7, 0px 4px 15px 0 #ffc4baf5, 0px -40px 120px 10px #ffffff;
+    }
+}
+@keyframes face-bg_obj1 {
+    50% {
+        transform: translate(-170px, -60px);
+    }
+    65% {
+        transform: translate(-170px, -60px);
+        opacity: 50;
+    }
+    85% {
+        transform: translate(-170px, -60px);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-170px, -60px);
+        opacity: 0;
+    }
+}
+@keyframes face-bg_obj2 {
+    50% {
+        transform: translate(-150px, -20px);
+    }
+    65% {
+        transform: translate(-150px, -20px);
+        opacity: 50;
+    }
+    85% {
+        transform: translate(-150px, -20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-150px, -20px);
+        opacity: 0;
+    }
+}
+@keyframes face-bg_obj3 {
+    50% {
+        transform: translate(120px, -85px);
+    }
+    65% {
+        transform: translate(120px, -85px);
+        opacity: 50;
+    }
+    85% {
+        transform: translate(120px, -85px);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(120px, -85px);
+        opacity: 0;
+    }
+}
+@keyframes face-bg_obj4 {
+    50% {
+        transform: translate(160px, -120px);
+    }
+    65% {
+        transform: translate(160px, -120px);
+        opacity: 50;
+    }
+    85% {
+        transform: translate(160px, -120px);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(160px, -120px);
+        opacity: 0;
+    }
+}
+@keyframes face-bg_obj5 {
+    50% {
+        transform: translate(180px, -90px);
+    }
+    65% {
+        transform: translate(180px, -90px);
+        opacity: 50;
+    }
+    85% {
+        transform: translate(180px, -90px);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(180px, -90px);
+        opacity: 0;
+    }
+}
+
+
+
 /*수박 먹기_얼굴 요소 움직이기*/
 @keyframes eat-face{
     50% {
@@ -378,7 +529,8 @@
         background-color: #fff;
     }
 }
-/*수박 먹기_머리카락 움직이기*/
+
+/*수박 먹기_헤어밴드 움직이기*/
 @keyframes band{
     50% {
         transform: translate(0, 100px);
@@ -387,9 +539,34 @@
         transform: translate(0, 100px);
     }
 }
+@keyframes band-left{
+    50% {
+        rotate: 300deg;
+        transform: translate(-55px, 10px) rotate(-20deg);
+    }
+    100% {
+        rotate: 300deg;
+        transform: translate(-55px, 10px) rotate(-20deg);
+    }
+}
+@keyframes band-right{
+    50% {
+        rotate: 154deg;
+        transform: translate(10px,0);
+    }
+    100% {
+        rotate: 154deg;
+        transform: translate(10px,0);
+    }
+}
+
+/*수박 먹기_머리카락 움직이기*/
 @keyframes eat-hair-front{
     50% {
         transform: translate(0, 10px);
+    }
+    75% {
+        transform: translate(0, 8px);
     }
     100% {
         transform: translate(0, 10px);
@@ -429,7 +606,6 @@
         height: 5px;
     }
 }
-
 
 /*손 왔다갔다*/
 @keyframes move-hand-right {
