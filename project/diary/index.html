@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>두근두근 비밀일기</title>
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/icon.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="main">
+    <header class="common_header">
+        <div class="max_width">
+            <h1 class="logo">
+                <a hred="./" class="img_wrap">
+                    <img src="img/logo.png" alt="두근두근 비밀일기">
+                </a>
+            </h1>
+            <div class="login_text">
+                <p>환영합니다 <strong>홍길동</strong>님</p>
+                <button type="button">
+                    <i class="icon logout_icon"></i>
+                    로그아웃
+                </button>
+            </div>
+        </div>
+    </header>
+    <main class="main_layout max_width">
+        <section class="main_form">
+            <h2 class="heart_title"><i class="icon heart_icon"></i>2023.07.20의 비밀일기</h2>
+            <form class="input_form">
+                <div>
+                    <label for="diary_title" class="a11y-hidden">제목</label>
+                    <input id="diary_title" type="text" placeholder="제목">
+                </div>
+
+                <div>
+                    <label for="diary-_content" class="a11y-hidden">내용</label>
+                    <textarea for="diary-_content" placeholder="오늘의 비밀은 무엇인가요?"></textarea>
+                </div>
+
+
+                <button type="submit" class="enabled_btn">작성하기</button>
+            </form>
+        </section>
+        <section class="main_diary">
+            <h2 class="a11y-hidden">일기 목록</h2>
+            <ol class="list">
+                <li>
+                    <article class="diary_article">
+                        <header>
+                            <h3 class="article_title">이는 청춘의 것은 그들의 운다.</h3>
+                            <time datetime="2023-02-24" class="article_time">2023.02.24.THU</time>
+                        </header>
+                        <p class="article_content">이는 청춘의 것은 그들의 운다. 동산에는 수 것이 있는 뼈 이상의 쓸쓸하랴? 없으면, 날카로우나 뛰노는 풀이 아니다. 황금시대를 무한한 따뜻한 청춘이 같으며, 속잎나고, 운다. 위하여서 커다란 영락과 따뜻한 피고 안고, 뼈 봄바람이다. 가는 곧 아니한 눈에 얼마나 있음으로써 지혜는 대한 얼마나 봄바람이다. 때까지 위하여 가지에 열락의 것이다. 그림자는 꽃이 천하를 우리 찬미를 원대하고, 인생을 때에, 황금시대다. 목숨을 할지니, 청춘은 용기가 말이다.</p>
+                        <div class="btn_group">
+                            <button type="button">
+                                <img src="./img/icon/icon-edit.svg" alt="수정">
+                            </button>
+                            <span></span>
+                            <button type="button">
+                                <img src="./img/icon/icon-delete.svg" alt="삭제">
+                            </button>
+                        </div>
+
+                    </article>
+                </li>
+            </ol>
+        </section>
+    </main>
+</body>
+</html>

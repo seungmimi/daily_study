@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vending machine</title>
+    <link rel="stylesheet" href="./css/common.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="logo img_wrap">
+            <img src="./img/cola-logo.png" alt="자판기 로고">
+        </h1>
+    </header>
+    <main class="container max_width">
+        <!--왼쪽 박스-->
+        <section class="area order_form_area">
+            <h2 class="a11y_hidden">자판기 메뉴</h2>
+            <div class="wrap menu_wrap">
+                <ul class="menu_list button_type">
+                    <li>
+                        <button type="button" class="obj">
+                            <div class="img_wrap obj_img">
+                                <img src="./img/cola-original.png" alt="오리지널 콜라">
+                            </div>
+                            <h3 class="obj_name">Original_Cola</h3>
+                            <strong class="obj_price">1000원</strong>
+                        </button>
+                    </li>
+                    <li>
+                        <!--====active: 선택 상품 UI===-->
+                        <button type="button" class="obj active">
+                            <div class="img_wrap obj_img">
+                                <img src="./img/cola-violet.png" alt="보라색 콜라">
+                            </div>
+                            <h3 class="obj_name">violet_Cola</h3>
+                            <strong class="obj_price">1000원</strong>
+                        </button>
+                    </li>
+                    <li>
+                        <!--====active: 품절 상품 UI===-->
+                        <button type="button" class="obj soldout" disabled>
+                            <div class="img_wrap obj_img">
+                                <img src="./img/cola-yellow.png" alt="노란색 콜라">
+                            </div>
+                            <h3 class="obj_name">yellow_Cola</h3>
+                            <strong class="obj_price">1000원</strong>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="obj">
+                            <div class="img_wrap obj_img">
+                                <img src="./img/cola-cool.png" alt="하늘색 콜라">
+                            </div>
+                            <h3 class="obj_name">cool_Cola</h3>
+                            <strong class="obj_price">1000원</strong>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="obj">
+                            <div class="img_wrap obj_img">
+                                <img src="./img/cola-green.png" alt="하늘색 콜라">
+                            </div>
+                            <h3 class="obj_name">green_Cola</h3>
+                            <strong class="obj_price">1000원</strong>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="obj">
+                            <div class="img_wrap obj_img">
+                                <img src="./img/cola-orange.png" alt="하늘색 콜라">
+                            </div>
+                            <h3 class="obj_name">orange_Cola</h3>
+                            <strong class="obj_price">1000원</strong>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="wrap input_wrap_1">
+                <lable for="change" class="a11y_hidden">잔액</lable>
+                <input type="text" id="change" class="input bg_sub" readonly>
+                <button type="button" class="button">거스름돈 반환</button>
+            </div>
+            <div class="wrap input_wrap_1">
+                <lable for="input_m" class="a11y_hidden">입금금액 입력</lable>
+                <input type="text" id="input_m" placeholder="입금액 입력" class="input line_gray">
+                <button type="button" class="button">입금</button>
+            </div>
+            <div class="wrap input_wrap_1 order_wrap">
+                <div class="scroll_box">
+                    <ol class="menu_list">
+                        <li>
+                            <div class="obj">
+                                <div class="img_wrap obj_img">
+                                    <img src="./img/cola-original.png" alt="오리지널 콜라">
+                                </div>
+                                <h3 class="obj_name">Original_Cola</h3>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+                <button type="button" class="button bg_main">흭득</button>
+            </div>
+        </section>
+
+        <!--오른쪽 박스-->
+        <section class="area bill_area">
+            <div class="wallet_wrap">
+                <h2>소지금</h2>
+            </div>
+    
+            <div class="bill_wrap">
+                <h2>흭득한 음료</h2>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

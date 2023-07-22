@@ -1,0 +1,34 @@
+.icon {
+    vertical-align:middle;
+    display:inline-flex;
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+.icon::before {
+    display:inline-block;
+    content:'';
+    vertical-align:middle;
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position:center center;
+}
+.icon.join_icon {
+    width:32px;
+    height:32px;
+    background-image:url('../img/icon/icon-join.svg');
+}
+.icon.login_icon {
+    width:32px;
+    height:32px;
+    background-image:url('../img/icon/icon-login.svg');
+}
+.icon.logout_icon {
+    width:32px;
+    height:32px;
+    background-image:url('../img/icon/icon-logout.svg');
+}
+.icon.heart_icon {
+    width:32px;
+    height:32px;
+    background-image:url('../img/icon/heart.svg');
+}
