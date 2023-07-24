@@ -1,0 +1,25 @@
+.icon {
+    vertical-align: text-top;
+    display:inline-flex;
+    background-size:contain;
+    background-repeat:no-repeat;
+    margin-right: 2px;
+}
+.icon::before {
+    display:inline-block;
+    content:'';
+    vertical-align:middle;
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position:center center;
+}
+.icon_star{
+    width:14px;
+    height:14px;
+    background-image:url('../img/icon/icon-start.svg');
+}
+.icon_play{
+    width:16px;
+    height:16px;
+    background-image:url('../img/icon/icon-play.svg');
+}

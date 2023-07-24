@@ -96,6 +96,13 @@ img {
     color: #fff;
     background-color: var(--point-color);
 }
+/*font*/
+.fw_400 {
+    font-weight: 400;
+}
+.fw_700 {
+    font-weight: 700;
+}
 
 /*===============style===============*/
 body {
@@ -112,6 +119,7 @@ body {
     margin: 0 auto;
 }
 main.container {
+    padding-bottom: 40px;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -149,7 +157,7 @@ main.container .order_form_area {
     content: '';
     position: absolute;
     border-radius: 10px;
-    width: 94px;
+    width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.80);
     background-image: url('../img/soldout.png');
@@ -159,7 +167,6 @@ main.container .order_form_area {
     top: 0;
     left: 0;
 }
-
 .menu_list.button_type .obj .obj_img {
     width: calc(100% - 36px);
 }
@@ -175,26 +182,145 @@ main.container .order_form_area {
     border-radius: 50px;
     background: var(--point-color);
 }
-.menu_list {
+.order_wrap {
+    overflow-y: hidden;
+}
+.scroll_box {
+    padding: 12px 8px 12px 12px;
+    overflow-y: scroll;
+    width: 100%;
+    background-color: var(--sub-color);
+    border: 1px solid var(--gray2);
+
+    border-radius: 5px;
+}
+/*스크롤바 커스텀*/
+.scroll_box::-webkit-scrollbar {
+    width: 12px;  /* 스크롤바의 너비 */
+}
+.scroll_box::-webkit-scrollbar-thumb {
+    height: 30%; /* 스크롤바의 길이 */
+    background: #ffffff; /* 스크롤바의 색상 */
+    border-radius: 10px;
+    border: 4px solid var(--sub-color);
+}
+.scroll_box::-webkit-scrollbar-track {
+    background: none;  /*스크롤바 뒷 배경 색상*/
+}
+.scroll_box.h_106 {
+    height: 106px;
+}
+.scroll_box.h_364 {
+    height: 364px;
+}
+.menu_list.list_type {
+    width: 100%;
     display: flex;
     flex-direction: column;
-
+    gap: 6px;
 }
-
-
+.menu_list.list_type .obj {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 6px 10px;
+}
+.menu_list.list_type .obj .img_wrap {
+    width: 18px;
+}
+.menu_list.list_type .obj .obj_count {
+    width: 30px;
+    height: 30px;
+    margin-left: auto;
+    text-align: center;
+    line-height: 30px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid var(--gray2);
+}
 .input_wrap_1 {
     display: flex;
     gap: 12px;
 }
-
+.input_wrap_1 .point_box {
+    width: 100%;
+    height: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    background-color: var(--sub-color);
+    border-radius: 5px;
+}
+.input_wrap_1 .point_box .title,
+.input_wrap_1 .point_box .value,
+.input_wrap_1 .point_box .unit {
+    font-size: 14px;
+}
 .input_wrap_1 .button {
     width: 94px;
     flex-shrink: 0;
 }
-
-
-
+.bill_area {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 .bill_area .wallet_wrap, .bill_area .bill_wrap{
+    width: 360px;
     background-color: #fff;
-    padding: 0 27px;
+    padding: 9px 27px;
+}
+.bill_area .bill_wrap {
+    height: 100%;
+}
+.bill_area .bill_wrap h2 {
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 25px;
+    margin-bottom: 13px;
+}
+.bill_area .bill_wrap .scroll_box {
+    margin-bottom: 6px;
+}
+.bill_area .bill_wrap .price_sum {
+    font-size: 12px;
+    text-align: right;
+}
+
+/*===============media===============*/
+@media(max-width: 385px){
+    body {
+        background-color: #fff;
+    }
+    .header h1.logo {
+        max-width: 50%;
+    }
+    main.container {
+        gap: 0;
+    }
+    main.container .order_form_area {
+        width: 100%;
+        padding: 31px 0 20px 0;
+    }
+    .menu_list.button_type {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 12px;
+        margin-bottom: 9px;
+    }
+    .bill_area {
+        width: 100%;
+    }
+    .bill_area .wallet_wrap, .bill_area .bill_wrap {
+        width: 100%;
+        padding: 0;
+    }
+    .bill_area .bill_wrap h2 {
+        padding-top: 21px;
+    }
 }
