@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login modal</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/icon.css">
+</head>
+<body>
+    <div class="mobal_bg">
+        <div class="modal_popup">
+            <div class="mobal_header">
+                <h2 class="modal_title">로그인 또는 회원가입</h2>
+                <button type="button" class="close_btn">
+                    <i class="icon icon_close"></i>
+                    <span class="a11y_hidden">로그인팝업 닫기</span>
+                </button>
+            </div>
+            <div class="modal_main">
+                <section class="login_area">
+                    <h3 class="title">위니브에서 여러분의 궁금증을 해결하세요! :&#41;</h3>
+                    <form class="form_box">
+                        <label for="login_id" class="a11y_hidden">아이디 입력</label>
+                        <input type="text" id="login_id" class="input basic_line 
+                        unfulfilled" placeholder="아이디">
+                        <label for="login_password" class="a11y_hidden">비밀번호 입력</label>
+                        <input type="password" id="login_password" class="input basic_line" placeholder="비밀번호">
+                        <div class="checkbox circle">
+                            <input type="checkbox" id="login_hold" class="check_hide">
+                            <label for="login_hold" class="check_lable">로그인 상태 유지</label> 
+                        </div>
+                    </form>
+                    <div class="btn_box">
+                        <button type="button" class="button basic_color">로그인</button>
+                        <div class="join_find">
+                            <a href="#">회원가입</a>
+                            <a href="#">아이디/비밀번호 찾기</a>
+                        </div>
+                    </div>
+                    <span class="section_division_text">또는</span>
+                </section>
+                <section class="sns_login_area">
+                    <h3 class="a11y_hidden">소셜서비스로 로그인</h3>
+                    <ul class="acc_list">
+                        <li>
+                            <a href="#" class="acc_link google">
+                                <i class="icon icon_google"></i>구글 계정으로 로그인
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="acc_link facebook">
+                                <i class="icon icon_facebook"></i>페이스북 계정으로 로그인
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="acc_link naver">
+                                <i class="icon icon_naver"></i>네이버 계정으로 로그인
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="acc_link kakao">
+                                <i class="icon icon_kakao"></i>카카오톡 계정으로 로그인
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

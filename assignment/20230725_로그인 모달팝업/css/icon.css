@@ -1,0 +1,40 @@
+.icon {
+    vertical-align: middle;
+    display:inline-flex;
+    background-size:contain;
+    background-repeat:no-repeat;
+    margin-right: 2px;
+}
+.icon::before {
+    display:inline-block;
+    content:'';
+    vertical-align:middle;
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position:center center;
+}
+.icon_google{
+    width:28px;
+    height:28px;
+    background-image:url('../img/icon/google.svg');
+}
+.icon_facebook{
+    width:28px;
+    height:28px;
+    background-image:url('../img/icon/facebook.svg');
+}
+.icon_naver{
+    width:28px;
+    height:28px;
+    background-image:url('../img/icon/naver-logo.svg');
+}
+.icon_kakao{
+    width:28px;
+    height:28px;
+    background-image:url('../img/icon/message-circle.svg');
+}
+.icon_close{
+    width:16px;
+    height:16px;
+    background-image:url('../img/icon/close.svg');
+}
