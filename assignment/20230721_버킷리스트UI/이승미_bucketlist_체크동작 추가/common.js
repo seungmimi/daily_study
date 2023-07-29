@@ -6,5 +6,4 @@ for(let i = 0; i < buketObjLenth; i++){
     buketObj[i].addEventListener('click',function(){
         buketObj[i].classList.toggle('active');
     });
-
 }

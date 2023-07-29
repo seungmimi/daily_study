@@ -69,11 +69,32 @@ img {
     font-weight: 400;
 }
 .form_box input.input.basic_line {
-    border: 1px solid  #C4C4C4;
+    border: 1px solid #C4C4C4;
     background: #FFF;
     color: #000;
     font-size: 16px;
 }
+.form_box input.input.basic_line.unfulfilled {
+    border: 2px solid #F4492E;
+}
+.form_box input.input.basic_line.unfulfilled:focus-visible  {
+    outline: 2px solid #F4492E;
+}
+.form_box .unfulfilled_lable{
+    display: none;
+    color: #F4492E;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 6px 0px 0px 4px;
+}
+.form_box .unfulfilled#login_password {
+    border: 1px solid #C4C4C4;
+}
+.form_box input.input.unfulfilled+.unfulfilled_lable {
+    display: block;
+}
+
+
 
 /*check box*/
 .check_hide {
@@ -132,6 +153,8 @@ body {
 }
 .modal_popup {
     width: 520px;
+    height: 712px;
+    max-height: calc(100% - 60px);
     max-width: calc(100% - 60px);
     position: absolute;
     background-color: #fff;
@@ -140,6 +163,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    overflow: hidden;
 }
 /*header*/
 .mobal_header {
@@ -163,6 +187,14 @@ body {
 /*main*/
 .modal_main {
     padding: 24px;
+    height: 654px;
+    overflow-y: scroll;
+    max-height: calc(100% - 57px);
+    -ms-overflow-style: none; /* 인터넷 익스플로러 */
+    scrollbar-width: none; /* 파이어폭스 */
+}
+.modal_main::-webkit-scrollbar {
+    display: none;
 }
 .login_area {
     position: relative;
