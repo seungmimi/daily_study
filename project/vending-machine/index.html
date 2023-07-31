@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/common.css">
 </head>
 <body>
+    <div class="tost_message" id="tost_message">입금이 완료 되었습니다!</div>
     <header class="header">
         <h1 class="logo img_wrap">
             <img src="./img/cola-logo.png" alt="자판기 로고">
@@ -81,14 +82,14 @@
             <div class="wrap input_wrap_1">
                 <div class="point_box">
                     <h2 class="title">잔액</h2>
-                    <p class="value">1,000<span class="unit">원</span></p>
+                    <p class="value" id="change">0<span class="unit">원</span></p>
                 </div>
-                <button type="button" class="button">거스름돈 반환</button>
+                <button type="button" class="button" id="change_btn">거스름돈 반환</button>
             </div>
             <div class="wrap input_wrap_1">
                 <lable for="input_m" class="a11y_hidden">입금금액 입력</lable>
-                <input type="text" id="input_m" placeholder="입금액 입력" class="input line_gray" required>
-                <button type="button" class="button">입금</button>
+                <input type="number" id="input_m" placeholder="입금액 입력" class="input line_gray">
+                <button type="button" class="button" id="insert_coin_btn">입금</button>
             </div>
             <div class="wrap input_wrap_1 order_wrap">
                 <div class="scroll_box h_106">
@@ -266,5 +267,6 @@
             </div>
         </section>
     </main>
+    <script src="./js/common.js"></script>
 </body>
 </html>
