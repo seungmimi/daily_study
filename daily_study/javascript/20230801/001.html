@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript 연습</title>
+</head>
+<body>
+    <button type="button" onclick="window.alert('안녕하세요!')">click me_1</button>
+    <button type="button" id="clickBtn_2">click me_2</button>
+    <button type="button" id="clickBtn_3">click me_3</button>
+<script>
+    document.getElementById('clickBtn_2').onclick = function(){
+        window.alert('안녕하세요!!')
+    };
+
+    let x = 10;
+    let y = 20;
+    console.log(x);
+    x = x + y;
+    console.log(x);
+    
+    console.group('one')
+    for (let i = 0; i < 3; i++) {
+        console.log(i)
+        console.group('two')
+        for (let j = 0; j < 10; j++) {
+            console.log(j)
+        }
+        console.groupEnd()
+    }
+    console.groupEnd()
+
+    console.log("%chello world","color: #175ff8;font-size: 32px;font-weight: bold");
+    
+
+</script>
+<script src="./js/common.js"></script>
+</body>
+</html>

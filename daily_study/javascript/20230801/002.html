@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string</title>
+</head>
+<body>
+    <script>
+        let s ='abcdefghijklmn'
+        console.log(s.length);
+        console.log(s.toUpperCase());
+        console.log(s.toLowerCase());
+
+        console.log(s.indexOf('c'));
+
+        console.log(s.indexOf('z'));
+        console.log(s.search('z'));
+
+        console.log(s.indexOf(/cd/));
+        console.log(s.search(/cd/));
+
+        console.log(s.slice(0,8));
+        console.log(s.substring(0,8));
+
+        let str2 = "paullab CEO 이호준 CTO 홍길동"
+        let CEO_p =  str2.indexOf('CEO');
+        let CTO_p =  str2.indexOf('CTO');
+
+        let CEO =  str2.slice(CEO_p+4,CTO_p-1)
+        let CTO =  str2.slice(CTO_p+4)
+        console.log(CEO);
+        console.log(CTO);
+
+        console.log(`1. CEO ${CTO}`)
+        console.log(`1. CTO ${CEO}`)
+
+    // substr(시작위치, 길이) : 시작인덱스부터 길이만큼 반환합니다.
+    // https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/substr
+    // 명세에서 사라질 수도 있음
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring#the_difference_between_substring_and_substr
+    //substr 대신 substring 이나 slice를 사용 권장
+    console.log(txt2.substr(8, 3));
+    console.log(txt2.substr(txt2.indexOf("C"), 3));
+
+    </script>
+</body>
+</html>
