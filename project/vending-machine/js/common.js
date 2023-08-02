@@ -1,7 +1,4 @@
-/*
-1. 입금을 하면 tost에 클레스 active 추가 -> 3초뒤에 클레스 삭제
-2. 반환을 하면 tost에 클레스 active 추가 -> 3초뒤에 클레스 삭제
-*/
+//토스트메시지 함수
 let tostMessage = document.getElementById('tost_message');
 function tostOn(){
     tostMessage.classList.add('active');
@@ -10,32 +7,53 @@ function tostOn(){
     },1000);
 }
 
-/*
-1. 입금을 하면 잔액에 + 
-2. 거스름돈 반환을 하면 잔액 -> 0
-*/
-
+let insertCoinForm = document.getElementById('input_m');
 let insertCoinBtn = document.getElementById('insert_coin_btn');
 let changeBtn = document.getElementById('change_btn');
 let changeForm = document.getElementById('change');
 let insertCoin = 0
 let change = 0;
+let wallet = document.getElementById('wallet');
+let walletCoin = 25000;
 
+//입금 버튼
 insertCoinBtn.addEventListener('click',function(){
-    if(document.getElementById('input_m').value == 0){
+    if(insertCoinForm.value == 0){
         alert('입금하실 금액을 입력해 주세요!');
     }else{
-        let insertCoin = document.getElementById('input_m').value;
+        //1. 입금을 하면 잔액에 + 
+        let insertCoin = insertCoinForm.value;
         change = Number(insertCoin) + Number(change);
         changeForm.innerHTML = change.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '<span class="unit">원</span>';
         tostMessage.innerHTML = insertCoin + '원이 입금 되었습니다!'
-        document.getElementById('input_m').value = null;
+        insertCoinForm.value = null;
         tostOn();
+        //소지금 - 처리
+        walletCoin = walletCoin - insertCoin;
+        wallet.innerHTML = walletCoin.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '<span class="unit">원</span>'
     }
-
 });
+
+//반환 버튼
 changeBtn.addEventListener('click',function(){
-    change = 0;
-    changeForm.innerHTML = change + '<span class="unit">원</span>';
+    if(changeForm.innerText == '0원'){
+        alert('반환 가능한 금액이 없습니다!');
+    }else{
+        walletCoin = walletCoin + change;
+        wallet.innerHTML = walletCoin.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '<span class="unit">원</span>'
+        tostMessage.innerHTML = change.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '원이 반환 되었습니다!'
+        tostOn();
+        //소지금 + 처리
+        change = 0;
+        changeForm.innerHTML = change.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '<span class="unit">원</span>';
+    }
 });
 
+let productObj = [
+    {'type': 'Original_Cola' ,'amount' : 10, 'price':1000},
+    {'type': 'violet_Cola' ,'amount' : 10, 'price':1000},
+    {'type': 'yellow_Cola' ,'amount' : 10, 'price':1000},
+    {'type': 'cool_Cola' ,'amount' : 10, 'price':1000},
+    {'type': 'green_Cola' ,'amount' : 10, 'price':1000},
+    {'type': 'orange_Cola' ,'amount' : 10, 'price':1000}
+]
