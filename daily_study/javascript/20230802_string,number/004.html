@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>할당연산자</title>
+</head>
+<body>
+    <script> 
+        let answer = 0;
+        let inputValue = 1234;
+
+        inputValue = inputValue.toString();
+        for(let i = 0; i < inputValue.length; i++){
+            answer += parseInt(inputValue[i]);
+        }
+        console.log(answer);
+
+        let 휴대폰연식 = 2023
+        let 바꿀까 = 휴대폰연식 > 2022 ? '욕심이에요' : (휴대폰연식 > 2019 ? '좀 더 쓰셔도 됩니다!':' 바꿀 때가 되었습니다!');
+        console.log(바꿀까);
+
+        // 제가 지금 주석으로 다는 내용은 지금 여기서는 모르셔도 괜찮습니다.
+        // || : 0, null, undefined, false, NaN, '', etc...
+        // ?? : null, undefined
+
+        // falsy하다 : 0, null, undefined, false, NaN, '', etc...
+        // nullish하다 : null, undefined
+
+
+        // nullish 문제
+        // 1번
+        let username;
+        let nickname;
+        console.log(username || nickname || 'guest')
+
+        // 2번
+        let username1 = '';
+        let nickname1 = '';
+        console.log(username1 || nickname1 || 'guest')
+
+        // 3번
+        let username2 = '';
+        let nickname2 = '';
+        console.log(username2 ?? nickname2 ?? 'guest')
+
+        // 4번
+        let username3;
+        let nickname3;
+        console.log(username3 ?? nickname3 ?? 'guest')
+    </script>
+</body>
+</html>

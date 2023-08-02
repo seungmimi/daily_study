@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string 메서드</title>
+</head>
+<body>
+
+<script>
+    let s = 'paullab CEO 이호준';
+    let ss = 'CTO 김창영';
+    let sss = 'paullab CEO 이호준 CTO 홍길동';
+
+    console.log(s.replace('CEO','CTO'));
+    console.log(sss.replace(/C[ET]O/g,'잡부'));
+
+    // replace 고급 문법 //
+    const string = `hojun, lee
+    gildong, hong
+    hojung, choi
+    junho, lee`
+
+    let result1 = string.replace(/(\w+), (\w+)/gm, "$1 $2");
+    console.log(result1)
+
+    let result2 = string.replace(/(\w+), (\w+)/gm, "$2 $1");
+    console.log(result2)
+
+    let result3 = string.replace(/(\w+), (\w+)/gm, "제 이름은 $2 제 성은 $1 입니다.");
+    console.log(result3)
+
+    //replaceAll
+    console.log(sss.replaceAll('CTO','잡부'));
+
+    //includes: 포함 여부(true, false)
+    ss.includes('CTO');
+    ss.includes('CEO');
+
+    //메서드 체이닝
+    //가독성을 위해서 개행을 하면 좋다
+    sss.replace('CEO','CFO').includes('CEO').toString().toUpperCase();
+
+    //split
+    //특정 기준으로 텍스트를 나누는
+    let text1 = 'aa bb cc dd'
+    let text2 = 'aa-bb-cc-dd'
+    let text3 = 'aa,bb,cc,dd'
+    let text4 = 'aa,bb-cc-dd'
+
+// ['aa', 'bb', 'cc', 'dd']
+// 해답코드
+text1.split(' ');
+text2.split('-');
+text3.split(',');
+text4.split(/[,-]/);
+
+//trim
+//앞뒤 공백 제거
+let text6 = '      abcd      '
+text6.trim();
+text6.replaceAll(' ','');
+
+//padStart
+//자리수 지정 - 남는 자리수 채워넣는 문자 지정
+let text7 = '123';
+text7.padStart(5,'0');
+let text8 = '101';
+text8.padStart(5,'0').replaceAll('0',' ').replaceAll('1','#');
+
+//concat
+//문자열 이어붙이기
+text1.concat(text2);
+
+</script>
+</body>
+</html>

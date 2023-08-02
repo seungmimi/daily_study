@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        //parseInt, parseFloat
+        parseInt('123');
+        parseInt('123.123');
+        parseInt('123px');
+        parseInt('px123');
+        parseInt('     10');
+        parseFloat('123.123');
+        parseFloat('123.123px');
+        parseFloat('px123.123');
+        //(변환할 숫자, 변환할 진법)
+        parseInt('11',2);
+
+        //toString
+        let num = 3;
+        num.toString();
+
+        // isNaN
+        isNaN(NaN);
+        isNaN(10);
+        isNaN("10");
+        isNaN("10px");
+        isNaN([]);
+        isNaN({});
+
+        // Number.isNaN사용을 권고해드립니다.
+        Number.isNaN(NaN);
+        Number.isNaN(10);
+        Number.isNaN("10");
+        Number.isNaN("10px");
+        Number.isNaN([]);
+        Number.isNaN({});
+
+        // math
+        Math.PI; // 3.141592653589793
+        Math.round(10.49); // 10
+        Math.round(10.77); // 11
+        Math.abs(-10); // 10
+        Math.pow(2, 3); // 8
+        Math.pow(4, 0.5); // 2
+        Math.sqrt(16); // 4
+        Math.random(); // 0 ~ 1 사이의 랜덤한 숫자
+        Math.ceil(10.1); // 11
+        Math.floor(10.9); // 10
+        Math.max(1, 2, 3, 4, 5); // 5
+        Math.min(1, 2, 3, 4, 5); // 1
+
+        let test = [1, 2, 3]
+        Math.max(...test); // 3, 전개구문은 뒤에 있습니다.
+        Math.min(...test); // 1
+
+        //boolean
+        // 비교연산자(값은 boolean으로 반환됩니다.)
+        console.log("비교연산 : ", 2 > 3);
+        console.log("비교연산 : ", 2 >= 3);
+        console.log("비교연산 : ", 2 < 3);
+        console.log("비교연산 : ", 2 <= 3);
+        console.log("비교연산 : ", 2 == 3); 
+        console.log("비교연산 : ", 2 != 3); 
+        console.log("비교연산 : ", 2 === 3);
+        console.log("비교연산 : ", 2 !== 3);
+        // 등호 2개를 권하지 않습니다. 실무에서는 등호 3개를 사용하시길 권해드립니다.
+        console.log("비교연산 : ", 2 == '2'); // 다른 언어에서는 false, js에서는 true
+        console.log("비교연산 : ", 2 === '2'); // 다른 언어에서 이런 문법이 없고, js에서는 false
+
+        // 전에는 css, js 애러가 안나고 SW가 실행되는데 중점을 두었다면
+        // 현재는 SW 실행이 안되어도 애러를 정확하게 파악할 수 있도록 애러를 출력해주는 것에 중점을 많이 둡니다.
+
+            // 1번 연습문제
+        console.log(true && false) //false
+        console.log(false && true) //false
+        console.log(false || true) //true
+        console.log(true || true) // true
+
+        // 2번 연습문제
+        console.log(!!'가') //true
+        console.log(!'') //false
+
+        // 3번 연습문제
+        console.log('가' && '나') //나
+        console.log(0 && -1) //0
+        console.log(0 && 1) //0
+        console.log(1 && 1) //1
+        console.log(1 && true) //true
+        console.log(0 || true) //true
+    </script>
+</body>
+</html>
