@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>isNan</title>
+</head>
+<body>
+<script>
+/* https://en.wikipedia.org/wiki/IEEE_754 Because 'Not a Number' is not a number, and is not equal to anything, including Not a Number. */
+
+    //isNan은 number로 변환이 가능한 false로 준다
+    isNaN(NaN); //true
+    isNaN(10); //false
+    isNaN('10'); //false
+    isNan('a') //true
+    isNaN('10px'); //true
+    isNaN([]); //true
+    isNaN({}); //true
+
+    //Number.isNaN 사용을 권고해드립니다.
+    Number.isNaN(NaN); //true
+    Number.isNaN(10); //false
+    Number.isNaN('10'); //false
+    Number.isNan('a'); //false
+    Number.isNaN('10px'); //false
+    Number.isNaN([]); //false
+    Number.isNaN({}); //false
+</script>
+</body>
+</html>

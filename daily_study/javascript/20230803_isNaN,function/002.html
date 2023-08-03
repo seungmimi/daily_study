@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        function add(x, y){
+            return x + y;
+        }
+        function min(x,y){
+            return x - y;
+        }       
+        function mult(x,y){
+            return x * y;
+        }
+        function mult(x,y){
+            return x / y;
+        }
+
+        add(3,4);
+        min(3,4);
+        mult(3,4);
+        add(3,4);
+
+        function stringTOint(str){
+            let answer = parseInt(str.replaceAll(',',''));
+            return answer;
+        }
+        stringTOint('10,000,000,000');
+
+        function sumMultiply(x, y){
+            let answer = (x+y)*(x+y);
+            return answer;
+        }
+        sumMultiply(1, 2);
+
+        function math_1(x){
+            let answer = x**2 + 4*x -12;
+            return answer;
+        }
+
+        //함수의 이름은 변수
+        //1. 아래와 같이 아규먼트로 전달된 함수를 콜백 함수라고 부릅니다.
+        let x = 10;
+        let y = 20;
+        console.log(add(x,y));
+
+        function add(a,b){
+            return a + b;
+        }
+        function addAndMultiply(x,y,z){
+            let sum = z(x,y) * z(x,y)
+            return sum;
+        }
+
+        //2. 함수를 리턴값으로 전달
+        function one(x){
+            function two(y){
+                return x + y;
+            }
+            return two;
+        }
+        let result = one(10);
+
+
+
+        function test(a,b,c){
+            console.log(a,b,c);
+            return a + b + c;
+        }
+        test(10, 20)    //매개변수가 모자르면 undifinde로 채워짐
+        test(10, 20, 30, 40) // 매개변수가 넘기면 재대로 작동
+        
+
+        function test_1(a = 10, b = 20, c = 30){ // 디폴트 값 지정 (매개변수가 지정 안됐을 때)
+            console.log(a,b,c);
+            return a + b + c
+        }
+        test_1(100,200);  //330 출력
+        test_1(a=100, b=200); //330출력
+        test_1(b=100, c=200); //330출력
+        //js는 값을 순서대로 넣기 때문에 a위치에 100 / b위치에 200이 들어가서 330이 출력됨
+        
+        //이것을 해결하기 위해 RORO 기법이 등장
+        //RORO: 객체로 받고 객체로 반환한다
+        function mob({scene, x, y, texture, animKey, initHp, dropRate}){
+            // scene: 스토리신, 플레이신, 엔딩신
+            // x, y: 몹의 위치
+            // texture: 몹의 이름
+            // animKey: 몹의 애니메이션
+            // initHp: 몹의 체력
+            // dropRate: 몹이 아이템을 떨어뜨리는 확률
+        }
+        mob({
+            scene: '스토리신',
+            x: 100,
+            y: 200,
+            texture: '슬라임',
+            animKey: '슬라임_애니메이션',
+            initHp: 150,
+            dropRate: 0.1,
+        });
+
+        //함수의 종류
+        // 읽어볼만한 문헌 : https://ko.javascript.info/arrow-functions-basics
+        //1. 함수 선언문
+        function sumXY(x, y){
+            return x + y;
+        }
+        //2. 함수 표현식(함수 이름을 앞에서 선언)
+        //let의 스코프를 따름
+        let sumXY_1 = function (x, y){
+            return x + y;
+        }
+
+        //3. 화살표 함수
+        //3-1. return문만 있는 경우
+        let sumXY_2 = (x,y) => x + y;
+        //sumXY_2에 x, y값이 들어왔을 때 x + y 리턴
+
+        //3-2. 함수의 기능 + return이 있는 경우
+        function sum(x,y){
+            let z = x + y;
+            console.log(z);
+            return z;
+        }
+        let sumXY_3 = (x,y) => {
+            let z = x + y;
+            console.log(z);
+            return z;
+        };
+
+        //3-3. 인자가 하나인 경우
+        function pow(x){
+            return x * x;
+        }
+        let pow = x => x * x;
+
+        //4. 즉시 실행 함수
+
+        (function(){
+            console.log('즉시 실행');
+        })();
+
+        //즉시실행 함수는 대부분 main함수로 만들어서 사용하는 경우가 다수
+        //이점
+        // - 전역 변수를 사용하지 않아서 메모리를 절약할 수 있습니다
+        function main(){
+            ///내용내용
+        }
+        main();
+
+        //5. 재귀함수
+        function factorial(n){
+            if(n == 1){
+                return 1;
+            }
+            return n * factorial(n-1);
+        }
+        //6. 지역변수, 전역변수
+
+        if(!(n == 1)){
+            for(let i = 1; i< parseInt(n / 2); i++){
+            answer += i*2;
+            return answer;
+            }
+        }else{
+            return answer;
+        }
+
+
+    </script>
+</body>
+</html>
