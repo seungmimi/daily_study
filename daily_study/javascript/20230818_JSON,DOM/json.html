@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        let jsonObj = {};
+
+        function jsonRequest(){
+            //1. 통신채널을 위한 객체 생성
+            const requestObj = new XMLHttpRequest();
+            //2. open(통신 방법(get, post), api주소)통신을 시작 하겠다
+            requestObj.open('GET','json.json');
+            //3. send
+            requestObj.send();
+            //4. 서버 통신상태 체크(서버 응답이 오게되면 상태가 변화되고, 설정한 함수가 실행)
+            requestObj.onreadystatechange = () => {
+                //서버와 클리아이언트 상태 체크(데이터가 잘 들어 왔는지) -> jsonObj에 데이터 넣은 후 JS로 변환
+                if(requestObj.readyState == 4 && requestObj.status == "200"){
+                    jsonObj = JSON.parse(requestObj.responseText);
+                }
+            }
+            // JSON.parse(jsonObj);
+            // console.log(jsonObj);
+        }
+    </script>
+</body>
+</html>
