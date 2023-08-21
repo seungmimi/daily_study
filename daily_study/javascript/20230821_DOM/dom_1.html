@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+</head>
+<body>
+    <div class="parent"></div>
+
+    <ul></ul>
+    <script>
+        const text = document.createElement('p');
+        const text2 = document.createElement('p');
+        const text_content = document.createTextNode('🔥월요일🔥'); //node를 만드는 용도
+        const parent = document.querySelector('.parent');
+        text.appendChild(text_content);
+        parent.appendChild(text);
+        parent.appendChild(text2);
+
+        parent.removeChild(text2);
+
+        const myBtn = document.querySelector('button');
+        const myUl = document.querySelector('ul')
+
+    </script>
+</body>
+</html>
