@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <article class="parent">
+        <ol>
+            <li><button class="btn-first" type="button">버튼1</button></li>
+            <li><button type="button">버튼2</button></li>
+            <li><button type="button">버튼3</button></li>
+        </ol>
+    </article>
+    
+    <script>
+        const parent = document.querySelector('.parent');
+        parent.addEventListener('click', function (event) {
+            //.target : 이벤트가 발생한 요소/진원지(값이 바뀜)
+            console.log(event.target);
+
+            //.currentTarget : 이벤트가 붙어있는 요소가 참조(값이 바뀌지 않음)
+            console.log(event.currentTarget);
+            
+            //이벤트 위임
+            if(event.target.nodeName === "BUTTON"){
+                //버튼에 직접 이벤트를 주지 않고, target을 이용해 버튼에 이벤트를 줄 수 있음
+                event.target.textContent = "눌린 버튼!";
+            }
+        })
+    </script>
+</body>
+</html>

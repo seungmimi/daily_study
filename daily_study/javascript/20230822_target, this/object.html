@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        const me = {
+            name : '한재현',
+            address : '제주도 제주시 인다 1길',
+            phoneNum : '010-8000-0000',
+            canWalk : function(){
+                console.log('재현이가 걷는다.');
+            },
+            teaching : function(student){
+                student.levelUp();
+            }
+        }
+        const student = {
+            level: 1,
+            levelUp : function(){
+                this.level++;
+            }
+        }
+        me.teaching(student);
+
+        function Factory(name){
+            this.myName = name;
+            this.sayYourName = function(){
+                console.log(`제 이름은 ${this.myName}입니다.`)
+            }
+        }
+        const robot1 = new Factory('뿅뿅');
+
+
+        //음식 이름의 배열을 전달하면 배열안에서 랜덤하게 메뉴를 뽑아내는 로봇객체의 생성자를 만들어보세요.
+        function MyFactory(foodName){
+            this.menu = foodName;
+            this.sayfoodName = function(){
+                let num = parseInt(Math.random() * foodName.length);
+                console.log(`${foodName[num]}`);
+            }
+        }
+        const robot2 = new MyFactory(['라면','간장계란밥','우동','삼겹살','칼국수']);
+
+
+    </script>
+</body>
+</html>
