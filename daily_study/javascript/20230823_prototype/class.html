@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        class Robot {
+            constructor(name){
+                this.name = name;
+            }
+            sayYourName(){
+                console.log(`제 이름은 ${this.name} 입니다.`);
+            }
+        }
+
+        class MyFactory {
+            constructor(name, age, addres){
+                this.name = name,
+                this.age = age,
+                this.addres = addres
+            }
+            introduce(){
+                document.write(`안녕하세요 ${this.addres}에 살고있는 ${this.age}살 ${this.name}입니다`)
+            }
+        }
+        const mimi = new MyFactory('이승미',27,'경기도');
+    </script>
+</body>
+</html>

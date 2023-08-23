@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+    // - 실습 : 소시지를 만드는 클래스를 정의해봅시다.
+    // 1. 생성자 함수는 두 가지 매개변수를 전달 받을 수 있으며 전달되는 매개변수에 따라 소시지의 맛이 결정됩니다.
+    // 2. 소시지 객체는 taste 라는 메서드가 존재합니다. 생성자함수에서 전달받은 재료에 따라 맛을 나타내는 콘솔로그를 출력하는 역할을 합니다.
+    //(예시 : ‘소고기’ 와 ‘파’ 를 매개변수로 전달하였을 경우, ‘소고기와 파 맛이 난다!’ 는 콘솔 메세지를 출력합니다.)
+    // 3. 소시지 클래스를 상속받는 FiresSausage 파생클래스를 생성해봅니다. 파생클래스의 taste 메서드를 실행하면 콘솔 메세지에 불맛이 나기 시작합니다.
+    class Sausage {
+        constructor(taste1, taste2){
+            this.sausageTaste1 = taste1
+            this.sausageTaste2 = taste2
+        }
+        taste(){
+            console.log(`${this.sausageTaste1}와 ${this.sausageTaste2}맛이 난다!😋`);
+        }
+    }
+
+    class FiresSausage extends Sausage {
+        //생략 가능
+        constructor(taste1, taste2){
+            super(taste1, taste2);
+        }
+        //
+        //같은 이름의 메서드를 한번 더 선언 할 경우 오버라이딩(덮어 쓰기) 됨
+        taste(msg){
+            console.log(`불맛과 ${this.sausageTaste1}와 ${this.sausageTaste2}맛이 난다!😋 ${msg}때문인것 같다!`);
+        }
+
+        //비슷한말_오버로드: 매게변수에 따라 어떤 메서드를 실행 시킬 지 결정하는 방식(JS에서는 아래 주석코드와 같이 별도 처리를 해줘야 적용 됨) 
+        /*
+        taste(msg){
+            if(msg){
+                console.log(`불맛과 ${this.sausageTaste1}와 ${this.sausageTaste2}맛이 난다!😋 ${msg}때문인것 같다!`);
+            }else{
+                console.log(`${this.sausageTaste1}와 ${this.sausageTaste2}맛이 난다!😋`);
+            }
+
+        }*/
+    }
+    const aaa = new FiresSausage('불고기','치즈');
+
+    </script>
+</body>
+</html>

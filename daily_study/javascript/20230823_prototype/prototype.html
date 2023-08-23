@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        //음식 이름의 배열을 전달하면 배열안에서 랜덤하게 메뉴를 뽑아내는 로봇객체의 생성자를 만들어보세요.
+        function MyFactory(foodName){
+            this.menu = foodName;
+        }
+        //프로토타입으로 분리
+        MyFactory.prototype.sayfoodName = function(){
+                let num = parseInt(Math.random() * foodName.length);
+                console.log(`${foodName[num]}`);
+        }
+        const robot2 = new MyFactory(['라면','간장계란밥','우동','삼겹살','칼국수']);
+
+
+        
+        function MeFactory(name, age){
+            this.myName = name,
+            this.age = age;
+        }
+        MeFactory.prototype.buy = function(wallet){
+            wallet.min();
+        }
+
+        function MyWallet(money){
+            this.myMoney = money;
+        }
+        MyWallet.prototype.min = function(){
+            this.myMoney--;
+        }
+
+        let seung = new MeFactory('sml', 27);
+        let wallet = new MyWallet(1000);
+
+
+    </script>
+</body>
+</html>

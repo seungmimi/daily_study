@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        function Parent() {
+            this.name = '재현';
+        }
+        Parent.prototype.rename = function (name) {
+            this.name = name;
+        }
+        Parent.prototype.sayName = function () {
+            console.log(this.name);
+        }
+
+        function Child() {
+            //call() : 함수를 실행 시킴 = Parent()와 동작은 비슷하나, call은 함수내 this의 대상을 바꿀 수 있다
+            //Parent.call(this) ->this의 대상을 Parent의 인스턴스에서 Child의 인스턴스로 변경
+            Parent.call(this);
+        }
+        // 지정된 프로토타입 객체를 갖는 새 객체를 만듬
+        child.prototype = Object.create(Parent.prototype);
+    </script>
+</body>
+</html>
