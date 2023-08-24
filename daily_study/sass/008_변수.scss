@@ -1,0 +1,51 @@
+// 'assets/img/icon1.png'
+// 'assets/img/icon2.png'
+// 'assets/img/icon3.png'
+$img-path: './assets/img/';
+$img-name: 'background.png';
+
+.test {
+    background: url($img-path + $img-name);
+}
+
+//색상
+$red: #ee4444;
+$black: #222;
+$bg-color: #3e5e9e;
+$link-color: red;
+$p-color: #282A36;
+
+//폰트사이즈
+$font-p: 13px;
+$font-h1: 28px;
+
+//폰트
+$base-font: 'Noto Sans KR', sans-serif;
+
+// lists
+$sizes: 40px, 50px, 80px;
+$valid-sides: top, bottom, left, right;
+
+//maps
+$font-sizes: (
+    "h1": 45px,
+    "h2": 19px,
+    "p": 16px
+);
+
+$font-sizes-test: (
+    "one": #fff,
+    "two": #ff0,
+    "three": #f00
+);
+
+// 1. lists
+// nth: 1부터 시작
+.title {
+    font-size: nth($sizes, 1);
+}
+
+// 2. maps
+.title2{
+    font-size: map-get($font-sizes,"h1" );
+}

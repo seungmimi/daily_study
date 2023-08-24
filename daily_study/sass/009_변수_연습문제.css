@@ -1,0 +1,11 @@
+.test {
+  background: url("./assets/img/background.png");
+}
+
+nav {
+  background-image: url("./assets/img/background.png");
+}
+
+.home {
+  background: url("./assets/img/icon_font_awesome");
+}/*# sourceMappingURL=009_변수_연습문제.css.map */

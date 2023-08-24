@@ -1,0 +1,41 @@
+//@content 원하는 부분에 스타일을 추가하여 전달
+@mixin sample {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    @content;
+}
+
+.one {
+    //@content 사용 시
+    @include sample {
+        background-color: green;
+    }
+}
+.two {
+    @include sample;
+    background-color: blue;
+}
+
+//활용
+@mixin sample_2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    &:hover {
+        @content;
+    }
+}
+
+.one {
+    //@content 사용 시
+    @include sample {
+        background-color: green;
+    }
+}
+.two {
+    @include sample;
+    background-color: blue;
+}

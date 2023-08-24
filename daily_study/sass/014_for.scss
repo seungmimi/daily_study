@@ -1,0 +1,22 @@
+$url: './assets/img/';
+
+// for ($변수) from (시작) through(끝){
+// 	// 반복할 내용
+// }
+@mixin thumb($total, $img, $type) {
+    @for $i from 1 through $total {
+        li:nth-child(#{$i}) .thumb {
+            background-image:url(#{$url} + #{$img} + #{$i} + '.' + #{$type});
+        }
+    }
+}
+.test {
+    @include thumb(10, 'home_menu_icon', 'jpg')
+}
+
+$test-array: 'top' 'right' 'bottom' 'left';
+@for $i from 1 through 4 {
+    .border-#{nth($test-array, $i)} {
+        border: 1px solid red;
+    }
+}

@@ -1,0 +1,23 @@
+.box-1 {
+  background-color: red;
+}
+.box-2 {
+  background-color: green;
+}
+.box-3 {
+  background-color: blue;
+}
+
+div:hover {
+  background-color: red;
+}
+
+.one {
+  color: red;
+}
+.one .two {
+  color: green;
+}
+.one .two .three {
+  color: blue;
+}/*# sourceMappingURL=007_부모선택자_앰퍼센드_연습.css.map */

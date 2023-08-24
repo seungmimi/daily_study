@@ -1,0 +1,10 @@
+//one > twp > three
+.one {
+    color: red;
+    .tow {
+        color: green;
+        .three {
+            color: blue;
+        }
+    }
+}

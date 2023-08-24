@@ -1,0 +1,31 @@
+.one {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background-color: green;
+}
+
+.two {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background-color: blue;
+}
+
+.one {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background-color: green;
+}
+
+.two {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background-color: blue;
+}/*# sourceMappingURL=013_mixin.css.map */

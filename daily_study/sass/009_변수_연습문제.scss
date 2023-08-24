@@ -1,0 +1,64 @@
+$img-path: './assets/img/';
+$img-name: 'background.png';
+$icon-name: 'icon_font_awesome';
+
+.test {
+    background: url($img-path + $img-name);
+}
+
+//색상
+$red: #ee4444;
+$black: #222;
+$bg-color: #3e5e9e;
+$link-color: red;
+$p-color: #282A36;
+
+//폰트사이즈
+$font-p: 13px;
+$font-h1: 28px;
+
+//폰트
+$base-font: 'Noto Sans KR', sans-serif;
+
+// lists
+$sizes: 40px, 50px, 80px;
+$valid-sides: top, bottom, left, right;
+
+//maps
+$font-sizes: (
+    "h1": 45px,
+    "h2": 19px,
+    "p": 16px
+);
+
+$font-sizes-test: (
+    "one": #fff,
+    "two": #ff0,
+    "three": #f00
+);
+
+// 연습문제 1번 maps을 사용하여 아래와 같이 출력되도록 하세요.
+// maps에 저장되어 있는 key는 'back', 'icon'이 있습니다.
+// path라는 변수도 사용하셔야 합니다.
+
+//.maps
+$img-path: './assets/img/';
+$background-path: (
+    "back": 'background.png',
+    "icon": 'icon_font_awesome'
+);
+nav {
+    background-image: url($img-path + map-get($background-path, "back"));
+}
+
+.home {
+    background: url($img-path + map-get($background-path, "icon"));
+}
+
+// 연습문제 2번 lists를 사용해서 아래와 같이 출력되도록 하세요.
+// lists에 저장되어 있는 값은 'left', 'right', 'bottom'...
+.title {
+    .border-#{nth($direction, 1)} {
+        border-bottom: 1px solid black;
+    }
+}

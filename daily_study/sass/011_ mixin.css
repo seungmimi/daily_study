@@ -1,0 +1,42 @@
+.one {
+  height: 200px;
+  background-color: royalblue;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: "center";
+  align-items: align;
+}
+
+.two {
+  height: 200px;
+  background-color: royalblue;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: "center";
+  align-items: align;
+}
+
+.three {
+  height: 200px;
+  background-color: royalblue;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.box_1 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+
+.box_2 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}/*# sourceMappingURL=011_ mixin.css.map */

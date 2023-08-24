@@ -1,0 +1,46 @@
+.test li:nth-child(1) .thumb {
+  background-image: url(./assets/img/home_menu_icon1.jpg);
+}
+.test li:nth-child(2) .thumb {
+  background-image: url(./assets/img/home_menu_icon2.jpg);
+}
+.test li:nth-child(3) .thumb {
+  background-image: url(./assets/img/home_menu_icon3.jpg);
+}
+.test li:nth-child(4) .thumb {
+  background-image: url(./assets/img/home_menu_icon4.jpg);
+}
+.test li:nth-child(5) .thumb {
+  background-image: url(./assets/img/home_menu_icon5.jpg);
+}
+.test li:nth-child(6) .thumb {
+  background-image: url(./assets/img/home_menu_icon6.jpg);
+}
+.test li:nth-child(7) .thumb {
+  background-image: url(./assets/img/home_menu_icon7.jpg);
+}
+.test li:nth-child(8) .thumb {
+  background-image: url(./assets/img/home_menu_icon8.jpg);
+}
+.test li:nth-child(9) .thumb {
+  background-image: url(./assets/img/home_menu_icon9.jpg);
+}
+.test li:nth-child(10) .thumb {
+  background-image: url(./assets/img/home_menu_icon10.jpg);
+}
+
+.border-top {
+  border: 1px solid red;
+}
+
+.border-right {
+  border: 1px solid red;
+}
+
+.border-bottom {
+  border: 1px solid red;
+}
+
+.border-left {
+  border: 1px solid red;
+}/*# sourceMappingURL=014_for.css.map */
