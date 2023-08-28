@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+.a11y-hidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+body {
+    min-height: 100vh;
+    background: linear-gradient(50deg, rgb(0, 0, 0), rgb(10, 52, 94));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    display: flex;
+    gap: 80px;
+    align-items: center;
+}
+.title {
+    font-family: 'Lobster', cursive;
+    color: #fff;
+    font-weight: 300;
+    font-size: 80px;
+    text-shadow: 6px 5px 0px rgb(0 0 0 / 50%), 0px 0px 13px rgb(0, 0, 0, 0.5), 0px 0px 80px rgba(255,255,255,1), 20px 15px 20px rgb(255, 242, 0, 0.5),0px 20px 20px rgba(0, 229, 255, 0.5), -7px -5px 20px rgb(255, 0, 79, 50%);
+    text-align: center;
+    line-height: 45px;
+}
+.title>span {
+    vertical-align: bottom;
+    font-size: 90px;
+    color: #c5fe00;
+}
+section {
+    background-color: #fff;
+    width: 400px;
+}
+.drag_target {
+    padding: 20px;
+    box-shadow:  5px 5px 30px rgba(0,0,0,0.2);
+}
+.drag_item {
+    border: 1px solid #ddd;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.drag_item p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.drag_item img {
+    width: 48px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.drag_item ~ li{
+    margin-top:10px;
+}
