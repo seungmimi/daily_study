@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            height: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 100%;
+            height: 100vh;
+            padding: 20px;
+        }
+        .move_box {
+            transform: translate(0,0);
+            width: 100px;
+            height: 100px;
+            background-color: royalblue;
+            transition: all 0.2s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="move_box"></div>
+    </div>
+</body>
+<script>
+    const moveBox = document.querySelector('.move_box');
+    let moveLengthX = 0; //x좌표
+    let moveLengthY = 0; //y좌표
+    let pushKey = 0;
+
+    // //키 에따라 움직이는 함수
+    // function move(){
+    //     if(pushKey ===  'ArrowRight'){
+    //         moveLengthX += 10;
+    //         moveBox.style.transform = `translate(${moveLengthX}px ,${moveLengthY}px)`;
+    //     }
+    //     else if(pushKey ===  'ArrowLeft'){
+    //         moveLengthX -= 10;
+    //         moveBox.style.transform = `translate(${moveLengthX}px ,${moveLengthY}px)`;
+    //     }
+    //     else if(pushKey ===  'ArrowUp'){
+    //         moveLengthY -= 10;
+    //         moveBox.style.transform = `translate(${moveLengthX}px ,${moveLengthY}px)`;
+
+    //     }else if(pushKey ===  'ArrowDown'){
+    //         moveLengthY += 10;
+    //         moveBox.style.transform = `translate(${moveLengthX}px ,${moveLengthY}px)`;
+    //     }else{
+    //         console.log('방향키를 눌러주세요!')
+    //     }
+    // }
+    // //키 눌림 이벤트 있을 때
+    // window.addEventListener('keydown', (e) => {
+    //     pushKey = e.key;
+    //     requestAnimationFrame(move);
+    //     console.log(`누른키: ${pushKey}, 위치(x,y): ${moveLengthX}, ${moveLengthY}`);
+    // })
+
+    function move(event){
+    pushKey = event.key;
+    }
+    function stop(){
+        pushKey = "";
+    }
+
+    document.addEventListener('keydown',move);
+    document.addEventListener('keyup',stop)
+
+    function play(){
+        console.log(pushKey);
+        switch(pushKey){
+            case 'ArrowRight' :
+                moveLengthX += 10;
+                moveBox.style.transform = `translate(${moveLengthX}px ,${moveLengthY}px)`;
+                break;
+            case 'ArrowLeft' :
+                moveLengthX -= 10;
+                moveBox.style.transform = `translate(${moveLengthX}px ,${moveLengthY}px)`;
+                break;
+            case 'ArrowUp' :
+                moveLengthY -= 10;
+                moveBox.style.transform = `translate(${moveLengthX}px ,${moveLengthY}px)`;
+                break;
+            case 'ArrowDown' :
+                moveLengthY += 10;
+                moveBox.style.transform = `translate(${moveLengthX}px ,${moveLengthY}px)`;
+                break;
+        }
+        requestAnimationFrame(play);
+    }
+    requestAnimationFrame(play);
+
+    document.addEventListener('keydown',move);
+    document.addEventListener('keyup',stop);
+</script>
+</html>
