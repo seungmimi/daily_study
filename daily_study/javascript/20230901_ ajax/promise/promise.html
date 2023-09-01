@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        //resolve : 약속이 이행 됐을 때 실행
+        //reject : 약속이 거절 됐을 때 실행
+        const orderCoffee = new Promise((resolve, reject) => {
+            //비동기 코드
+            const requestObj = new XMLHttpRequest();
+            requestObj.open('GET','ordercoffee.txt');
+            requestObj.onreadystatechange = () => {
+                if(requestObj.readyState === 4){
+                    if(requestObj.status === 200) {
+                        const result = requestObj.responseText;
+                        //결과 값을 받아 실행할 함수
+                        resolve(result);
+                    }else{
+                        //보통 에러메시지를 전달
+                        reject(new Error(`오늘의 커피원두가 다 딸어졌습니다. ${requestObj.status}`));
+                    }
+                }
+            };
+            requestObj.send();
+        });
+
+        //then(): resolve가 실행되면 실행
+        //resolve가 실행됐을 때 인자를 그대로 받아옴
+        orderCoffee.then((asyncResult) => {
+            console.log(asyncResult);
+        });
+
+        //catch(): resolve가 실행되면 실행
+        //reject가 실행됐을 때 인자를 그대로 받아옴
+        orderCoffee.catch((asyncResult) => {
+            console.log(asyncResult);
+        });
+
+    </script>
+</body>
+</html>

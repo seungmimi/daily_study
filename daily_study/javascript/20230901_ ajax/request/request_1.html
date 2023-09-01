@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xmlHttpRequest</title>
+    <style>
+        h1 {
+            background: #bcd9ff;
+        }
+    </style>
+</head>
+<body>
+    <button type="button" class="action">데이터 가져오기</button>
+    <h1>데이터가 들어 옵니다</h1>
+
+
+    <script>
+        const dataBtn = document.querySelector('.action');
+        const txt = document.querySelector('h1');
+        let result ;
+
+        function requestFn(){
+            const requestObj = new XMLHttpRequest();
+            requestObj.open('GET', 'message.txt');
+            requestObj.onreadystatechange = () => {
+                if(requestObj.readyState == 4 && requestObj.status == '200'){
+                    result = requestObj.responseText;
+                    console.log(result);
+                }
+            }
+            requestObj.send();
+        }
+        requestFn();
+        console.log(result); //undefined
+
+    </script>
+</body>
+</html>
