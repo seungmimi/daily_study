@@ -48,12 +48,3 @@ changeBtn.addEventListener('click',function(){
         changeForm.innerHTML = change.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '<span class="unit">원</span>';
     }
 });
-
-let productObj = [
-    {'type': 'Original_Cola' ,'amount' : 10, 'price':1000},
-    {'type': 'violet_Cola' ,'amount' : 10, 'price':1000},
-    {'type': 'yellow_Cola' ,'amount' : 10, 'price':1000},
-    {'type': 'cool_Cola' ,'amount' : 10, 'price':1000},
-    {'type': 'green_Cola' ,'amount' : 10, 'price':1000},
-    {'type': 'orange_Cola' ,'amount' : 10, 'price':1000}
-]
