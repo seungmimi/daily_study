@@ -24,10 +24,10 @@ class ColaGenerator {
         const docFrag = new DocumentFragment();
         data.forEach((el) => {
             const item = document.createElement('li');
-            const itemtemplate = `<button type="button" class="btn-cola on">
-            <img src="./img/cola-original.png" alt="" />
-            <span class="cola-name">Original_Cola</span>
-            <strong class="cola-price">1000원</strong>
+            const itemtemplate = `<button type="button" class="btn-cola" data-item="${el.name}" data-count="${el.count}" data-price="${el.cost}" data-img="${el.img}">
+            <img src="./img/${el.img}" alt="" />
+            <span class="cola-name">${el.name}</span>
+            <strong class="cola-price">${el.cost}</strong>
             </button>`
             item.innerHTML = itemtemplate;
             docFrag.append(item);
