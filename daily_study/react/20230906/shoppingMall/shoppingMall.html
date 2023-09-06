@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shopping mall</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const data = fetch('http://test.api.weniv.co.kr/mall').then((response) => {
+            if(!response.ok){
+                throw new Error(`http error! status: ${response.status}`);
+            }
+            return response.json();
+            }).then((data) => {
+                return data;
+            }).catch((error) => {
+                console.error(error);
+            });
+        console.log(data);
+        const Card = (props) => {
+            const rootUrl = 'http://test.api.weniv.co.kr/' + props.goods.thumbnailImg
+            return(
+                <li className="product-item">
+                    <div className="product-img">
+                        <img src= {rootUrl} alt=""/>
+                    </div>
+                    
+                    <strong className="product-name sl-ellipsis">
+                        {props.goods.productName}
+                    </strong>
+                    <button className="like-btn"></button>
+                    <div className="product-price">
+                        <strong className="price m-price">
+                            {props.goods.price}
+                            <span>원</span>
+                        </strong>
+                    </div>
+                </li>
+            )
+        }
+        const Product = (props) => {
+            return(
+                <main className="product">
+                    <ul className="product-list">
+                        <Card goods = {props.items[0]}/>
+                        <Card goods = {props.items[1]}/>
+                        <Card goods = {props.items[2]}/>
+                        <Card goods = {props.items[3]}/>
+                        <Card goods = {props.items[4]}/>
+                        <Card goods = {props.items[5]}/>
+                        <Card goods = {props.items[6]}/>
+                    </ul>
+                </main>
+            )
+        }
+
+        const body = (
+            <Product items={data}/>
+        )
+        const root = ReactDOM.createRoot(document.querySelector('#root'));
+        root.render(body)
+    </script>
+</body>
+</html>
