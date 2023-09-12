@@ -15,7 +15,10 @@ function App() {
   const [userId, userIdSet] = useState('');
 
   return (
-        login ? <HomePage setLogin = {setLogin} userId = {userId}/> : <LoginForm infouser = {user} setLogin = {setLogin} userIdSet={userIdSet}/>
+    <>
+        {login ? <HomePage setLogin = {setLogin} userId = {userId}/> : <LoginForm infouser = {user} setLogin = {setLogin} userIdSet={userIdSet}/>}
+    </>
+
   );
 }
 export default App;

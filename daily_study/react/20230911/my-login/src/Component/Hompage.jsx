@@ -1,9 +1,19 @@
+import { useState } from "react"
+import Modal from "./Modal";
+
 function HomePage(prop){
+    //모달 노출 여부 체크
+    const [show, showFn] = useState(true);
+    function modalshow(){
+        showFn(false);
+    }
+
     const handleLogout = (event) => {
         prop.setLogin(false);
     }
     return(
         <div className="hompage-main">
+            {show ? <Modal modalshow = {modalshow}/> : null}
             <header>
                 <h1>✨Hello World!✨</h1>
                 <div className="user-info">
