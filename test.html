@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            padding: 20px;
+            height: 100vh;
+        }
+        header, footer{
+            text-align: center;
+            line-height: 100px;
+            background: #ddd;
+            height: 100px;
+        }
+        main {
+            height: calc(100% - 200px);
+            border: 2px solid #ddd;
+            padding: 20px;
+        }
+        main .box {
+            width: 150px;
+            background: #91b0bb;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 32px;
+            color: blue;
+            line-height: 150px;
+        }
+        main .left-box{
+            float: left;
+            height: 100%;
+            margin-right: 10px;
+        }
+        main .right-box{
+            float: right;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <header>header</header>
+    <main>
+        <aside class="box left-box">box1</aside>
+        <section class="box right-box">box2</section>
+        <div>
+            <h1>title</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis voluptatum repudiandae dicta quis nemo facilis corrupti natus accusamus, veniam sequi necessitatibus officia, porro harum aspernatur pariatur. Cumque architecto maxime quidem.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis voluptatum repudiandae dicta qu</p>
+        </div>
+
+    </main>
+    <footer>footer</footer>
+</body>
+</html>

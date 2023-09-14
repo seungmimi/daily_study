@@ -1,0 +1,38 @@
+header {
+    height: 100%;
+    padding: 140px 0;
+    text-align: center;
+    width: 100%;
+    max-width: 580px;
+    margin: 0 auto;
+}
+.logoBox {
+    height: 265px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../img/clock.png) no-repeat center center; 
+    background-size: contain;
+    margin-bottom: 46px;
+}
+.logoBox>img {
+    width: 100%;
+}
+.title {
+    font-family: 'OTEnjoystoriesBA';
+    font-size: 2.25rem;
+    color: #F5DF4D;
+    margin-bottom: 80px;
+}
+.textBox {
+    font-size: 1.125rem;
+    color: #fff;
+    font-family: 'GmarketSansMedium';
+    background: url(../img/quotes.png) no-repeat center center;
+    background-size: contain;
+    line-height: 1.5;
+}
+.textBox strong {
+    font-size: 1.5rem;
+    font-family: 'GmarketSansBold';
+}
