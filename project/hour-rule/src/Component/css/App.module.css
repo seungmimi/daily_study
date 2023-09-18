@@ -9,3 +9,16 @@
     max-width: calc(100% - 40px);
     margin: 0 auto;
 }
+.basicBtn {
+    padding: 21px 49px;
+    border-radius: 200px;
+    background: #FCEE21;
+    color:#5B2386;
+    font-family: 'GmarketSansBold';
+    font-size: 24px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.50);
+}
+.basicBtn.white {
+    background: #ffffff;
+    margin-left: 18px;
+}

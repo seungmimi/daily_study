@@ -22,8 +22,7 @@
 .basicInput::placeholder {
     color: #BABCBE;
 }
-
-.basicBtn_y {
+.basicBtn {
     padding: 21px 49px;
     border-radius: 200px;
     background: #FCEE21;
@@ -32,12 +31,14 @@
     font-size: 24px;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.50);
 }
-.basicBtn_w {
-    padding: 21px 49px;
-    border-radius: 200px;
+.basicBtn.white {
     background: #ffffff;
-    color:#5B2386;
+    margin-left: 18px;
+}
+
+.resultData strong {
+    margin: 0 17px;
     font-family: 'GmarketSansBold';
-    font-size: 24px;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.50);
+    font-size: 72px;
+    font-weight: 700;
 }
