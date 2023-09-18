@@ -3,8 +3,6 @@ import styles from './css/Title.module.css'
 
 //img
 import logo from './img/title.png'
-import quotes from './img/quotes.png'
-
 
 function Title() {
     

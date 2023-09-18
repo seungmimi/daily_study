@@ -1,0 +1,43 @@
+.insertDataWrap, .resultDataWrap {
+    font-family: 'GmarketSansMedium';
+    text-align: center;
+    margin-bottom: 147px;
+}
+.insertData, .resultData{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 27px;
+    color: #FFF;
+    font-size: 24px;
+    margin-bottom: 115px;
+}
+.basicInput {
+    width: 228px;
+    padding: 16px 40px;
+    font-size: 24px;
+    border-radius: 7px;
+    margin: 0 17px;
+}
+.basicInput::placeholder {
+    color: #BABCBE;
+}
+
+.basicBtn_y {
+    padding: 21px 49px;
+    border-radius: 200px;
+    background: #FCEE21;
+    color:#5B2386;
+    font-family: 'GmarketSansBold';
+    font-size: 24px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.50);
+}
+.basicBtn_w {
+    padding: 21px 49px;
+    border-radius: 200px;
+    background: #ffffff;
+    color:#5B2386;
+    font-family: 'GmarketSansBold';
+    font-size: 24px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.50);
+}
