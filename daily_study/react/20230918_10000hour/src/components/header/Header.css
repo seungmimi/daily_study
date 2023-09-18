@@ -1,0 +1,58 @@
+/*header*/
+header{
+    margin-bottom: 95px;
+}
+.tit-law .img-tit {
+    max-width: 486px;
+    position: relative;
+    z-index: 10;
+}
+.tit-law {
+    position: relative;
+}
+.tit-law::after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 225px;
+    background: url(../../img/title_bg.png) no-repeat;
+    background-position: center;
+    background-size: contain;
+    aspect-ratio: 1/1;
+}
+.img-txt {
+    max-width: 486px;
+    margin: 125px auto 85px;
+}
+.txt-desc {
+    position: relative;
+    max-width: 475px;
+    margin: 0 auto;
+    line-height: 24px;
+    font-size: 18px;
+}
+.txt-desc .tit-desc {
+    font-size: 24px;
+    font-weight: bold;
+}
+.txt-desc::before,
+.txt-desc::after{
+    position: absolute;
+    content: '';
+    top: 50%;
+    width: 40px;
+    height: 32px;
+    margin-top: -14px;
+}
+
+.txt-desc::before {
+    left: 0;
+    background: url(../../img/txt-left.png) no-repeat;
+}
+.txt-desc::after {
+    right: 0;
+    background: url(../../img/txt-right.png) no-repeat;
+}

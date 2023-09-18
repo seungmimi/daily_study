@@ -1,0 +1,38 @@
+/*modal*/
+#modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 20;
+}
+#modal h2 {
+    font-size: 96px;
+    font-family: 'OTEnjoystoriesBA';
+}
+#modal h3 {
+    font-size: 30px;
+    font-family: 'OTEnjoystoriesBA';
+}
+#modal img {
+    max-width: 344px;
+}
+#modal .btn-close{
+    margin-top: 74px;
+}
+#modal .modal-wrap {
+    box-sizing: border-box;
+    padding: 76px 126px 68px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    background-color: #fff;
+    color: #5B2386;
+}
