@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <div id="root"></div>
+    <script>
+        let sum = 0;
+        console.log('abcde1abc12abb'.split(''))
+
+        console.log(isNaN(""));
+
+        const contRoot = document.querySelector('#root');
+        const contWrap = document.createElement('div');
+        const contSection = document.createElement('section');
+        const title = document.createElement('h1');
+        const section = document.createElement('section');
+
+        contWrap.setAttribute('class','container');
+
+        //h1 내용 작성
+        title.setAttribute('class','ir');
+        title.textContent = '테스트 페이지'
+        
+        //section 내용 작성
+        section.innerHTML = 
+        '<h1 class="section-title">섹션 제목</h1>'+
+        '<img class="section-img" src="img.jpg" alt="섹션이미지">'+
+        '<p class="section-contents">내용</p>'
+
+        contWrap.append(title, section);
+        contRoot.appendChild(contWrap);
+
+    </script>
+</body>
+</html>

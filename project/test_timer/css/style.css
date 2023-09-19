@@ -1,0 +1,117 @@
+#root {
+    font-family: 'Pretendard-regular';
+    color: #fff;
+    width: 100%;
+    height: 100vh;
+    background: var(--gradient-bg);
+}
+
+.container {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - 50px);
+    max-width: 400px;
+    text-align: center;
+}
+
+
+/*====header====*/
+.container .cont_header {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 244px;
+    padding-bottom: 60px;
+}
+.container .cont_header img {
+    width: 100%;
+}
+
+/*====main====*/
+.container .cont_main {
+    height: calc(100% - 20px);
+    max-height: 360px;
+    padding: 40px;
+    box-shadow: 20px 20px 60px 10px rgba(55, 75, 124, 0.40);
+    background: var(--gradient-main);
+    margin-bottom: 60px;
+    border-radius: 16px;
+}
+.container .cont_main h2.title {
+    position: relative;
+    font-family: 'Pretendard-bold';
+    padding-bottom: 23px;
+    border-bottom: 1px solid #5B75B4;
+}
+.container .cont_main h2.title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: #3D538A;
+}
+.container .cont_main .time_wrap {
+    width: 100%;
+    padding: 33px 0;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+.container .cont_main .time .title {
+    font-family: 'Pretendard-bold';
+    color: #A5B6EE;
+    font-size: 12px;
+}
+.container .cont_main .time .bg{
+    width: 80px;
+    height: 80px;
+    background: url(../img/box.svg) no-repeat center center;
+    background-size: contain;
+}
+.container .cont_main .time .bg>input {
+    text-align: center;
+    width: 100%;
+    font-family: 'Pretendard-bold';
+    font-size: 40px;
+    line-height: 80px;
+}
+
+.container .cont_main .btn_wrap {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+.container .cont_main .btn_wrap button {
+    font-family: 'Pretendard-bold';
+    border-radius: 50px;
+    padding: 16px 23px;
+    display: flex;
+    gap: 5px;
+}
+.container .cont_main .btn_wrap button:disabled {
+    background-color: var(--btn-color-dis);
+    color: var(--font-dis);
+}
+
+.container .cont_main .btn_wrap .start {
+    background: #5180FF;
+}
+.container .cont_main .btn_wrap .reset {
+    background: #FB7099;
+}
+.container .cont_main .btn_wrap .stop {
+    display: none;
+    background: #15C2B8;
+}
+
+
+
+/*====footer====*/
+.container .cont_footer .footer_content{
+    font-size: 14px;
+    color:#8596BF;
+    
+}

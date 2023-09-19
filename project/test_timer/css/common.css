@@ -1,0 +1,84 @@
+@charset "utf-8";
+:root {
+    /*color*/
+    --btn-color1: #5180FF;
+    --btn-color2: #15C2B8;
+    --btn-color3: #FB7099;
+    --btn-color-dis: #324577; 
+    --font-dis: #617199;
+
+    --gradient-main: linear-gradient(144deg, #5572BB 2.13%, #374B7C 102.97%);
+    --gradient-bg: radial-gradient(293.21% 130.49% at 3.59% 5.28%, #F0F4FF 0%, #A5B6EE 100%);
+    
+}
+/*icon*/
+.icon {
+    vertical-align:middle;
+    display:inline-flex;
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+.icon::before {
+    display:inline-block;
+    content:'';
+    vertical-align:middle;
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position:center center;
+}
+.icon_start{
+    width:16px;
+    height:16px;
+    background-image:url('../img/icon/icon-start.svg');
+}
+.icon_reset{
+    width:16px;
+    height:16px;
+    background-image:url('../img/icon/icon-reset.svg');
+}
+.icon_stop{
+    width:16px;
+    height:16px;
+    background-image:url('../img/icon/icon-stop.svg');
+}
+.icon_start.disabled{
+    width:16px;
+    height:16px;
+    background-image:url('../img/icon/icon-start-disabled.svg');
+}
+.icon_reset.disabled{
+    width:16px;
+    height:16px;
+    background-image:url('../img/icon/icon-reset-disabled.svg');
+}
+
+/*reset*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+button{
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: inherit;
+    font-family: inherit;
+}
+input {
+    background: none;
+    border: none;
+    color: inherit;
+    font-family: inherit;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type='number'] {
+	-moz-appearance: textfield;
+}
+img {
+    vertical-align: top;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div id="root">
+        <div class="container">
+            <header class="cont_header">
+                <h1>
+                    <img src="./img/logo.svg">
+                </h1>
+            </header>
+            <main class="cont_main">
+                <article>
+                    <h2 class="title">TIMER</h2>
+                    <div class="time_wrap">
+                        <div class="time hrs">
+                            <p class="title">HRS</p>
+                            <div class="bg">
+                                <input type="number" value="00">
+                            </div>
+                        </div>
+                        <img src="./img/dot.svg" alt=":">
+                        <div class="time min">
+                            <p class="title">HRS</p>
+                            <div class="bg">
+                                <input type="number" value="00">
+                            </div>
+                        </div>
+                        <img src="./img/dot.svg" alt=":">
+                        <div class="time sec">
+                            <p class="title">HRS</p>
+                            <div class="bg">
+                                <input type="number" value="00">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn_wrap">
+                        <!--button활성화: disabled 해재 and icon disabled 클래스 삭제-->
+                        <button type="button" class="start" disabled><i class="icon icon_start disabled"></i>START</button>
+                        <button type="button" class="stop" disabled><i class="icon icon_reset"></i>RESET</button>
+                        <button type="button" class="reset" disabled><i class="icon icon_reset disabled"></i>RESET</button>
+                    </div>
+                </article>
+            </main>
+            <footer class="cont_footer">
+                <p class="footer_content">ⓒ WENIV Corp.</p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
