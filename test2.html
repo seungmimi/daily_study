@@ -9,10 +9,9 @@
 <body>
     <div id="root"></div>
     <script>
-        let sum = 0;
-        console.log('abcde1abc12abb'.split(''))
-
-        console.log(isNaN(""));
+        'abcde1abc12abb'.split('').map(e => {
+            console.log(typeof e, e);
+        });
 
         const contRoot = document.querySelector('#root');
         const contWrap = document.createElement('div');
