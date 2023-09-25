@@ -1,0 +1,13 @@
+body {
+    touch-action: pan-y;
+}
+#pinchContainer {
+    width: 100%;
+    text-align: center;
+    scale: 1;
+}
+
+#pinchContainer img {
+    max-width: 100%;
+    height: auto;
+}
