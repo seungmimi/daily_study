@@ -1,0 +1,98 @@
+/*===============font===================*/
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;500;700&display=swap');
+
+
+/*===============style===================*/
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+body.deco_bg {
+    height: 100vh;
+    background: linear-gradient(141deg, #C5E3FF -1.99%, #F0CAD8 105.08%) no-repeat;
+}
+.container {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* width: calc(100% - 340px); */
+    width: calc(100% - 140px);
+    max-width: 100%;
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 50px 63px;
+    text-align: center;
+}
+/*====header====*/
+.header {
+    margin-bottom: 49px;
+}
+.header .container_title {
+    font-size: 50px;
+    font-weight: 700;
+}
+
+/*====main====*/
+.main .list_title {
+    width: 100%;
+    padding-bottom: 22px;
+    display: flex;
+    gap: 24px;
+    color: #DC9DB7;
+    font-size: 28px;
+    font-weight: 700;
+    border-bottom: 4px solid #476A8A;
+}
+.main .list_title h3:nth-child(2) {
+    width: 100%;
+}
+
+.main .list_obj {
+    position: relative;
+    height: 80px;
+    display: flex;
+    gap: 42px;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+.main .list_obj .content {
+    width: 100%;
+    margin-right: 85px;
+    font-size: 21px;
+    color: #45525F;
+    text-align: left;
+}
+.main .list_obj.checked .content {
+    color: #7B8C9D;
+    text-decoration: line-through;
+}
+
+.main .list_obj .del_btn {
+    display: none;
+    position: absolute;
+    right: 0;
+    height: 80px;
+    width: 80px;
+    background-image: url();
+    background-color: rgba(240, 202, 216, 0.50);
+}
+.main .list_obj .checkbox_wrap{
+    width: 80px;
+    height: 100%;
+}
+.main .list_obj .checkbox_wrap .checkbox {
+    display: none;
+}
+.main .list_obj .checkbox_wrap .checkbox_icon{
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    border: 3px solid #476A8A;
+    background-color: #fff;
+    vertical-align: top;
+}
+
+.main .list_obj .checkbox_wrap .checkbox:checked + label span {
+    background-position: -75px -438px;
+}
