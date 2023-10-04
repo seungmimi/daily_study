@@ -4,6 +4,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+html {
+    font-size: 16px;
+}
 a {
     text-decoration: none;
     color: inherit;
@@ -22,6 +25,10 @@ button {
     color: inherit;
     cursor: pointer;
 }
+input {
+    border: none;
+    font-family: inherit;
+}
 img {
     vertical-align: top;
 }
@@ -37,6 +44,16 @@ img {
     padding: 0;
     position: absolute;
 }
+/*스크롤바 제거*/
+/* ( 크롬, 사파리, 오페라, 엣지 ) 동작 */
+.list_scroll::-webkit-scrollbar {
+    display: none;
+}
+.list_scroll {
+    -ms-overflow-style: none; /* 인터넷 익스플로러 */
+    scrollbar-width: none; /* 파이어폭스 */
+}
+
 .icon {
     vertical-align:middle;
     display:inline-flex;
@@ -51,9 +68,14 @@ img {
     background-size:contain;
     background-position:center center;
 }
-
 .icon_del{
     width: 50px;
     height: 50px;
     background-image:url('../img/icon_del.svg');
+}
+.icon_check{
+    margin-top: 6px;
+    width: 25px;
+    height: 25px;
+    background-image:url('../img/icon_check.svg');
 }

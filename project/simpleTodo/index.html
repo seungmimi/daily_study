@@ -7,6 +7,7 @@
     <title>simpleTodo</title>
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/media.css">
 </head>
 <body class="deco_bg">
     <article class="container">
@@ -21,31 +22,95 @@
                     <h3>check</h3>
                     <h3>description</h3>
                 </div>
-                <ul class="list_wrap">
-                    <li class="list_obj checked">
-                        <label class="checkbox_wrap">
-                            <input type="checkbox">
-                            <span class="checkbox_icon"></span>
-                        </label>
-                        <p class="content">js class 문법 복습하기</p>
-                        <button type="button" class="del_btn"><i class="icon icon_del"></i></button>
-                    </li>
-                    <li class="list_obj">
-                        <label class="checkbox_wrap">
-                            <input type="checkbox">
-                            <span class="checkbox_icon"></span>
-                        </label>
-                        <p class="content">js class 문법 복습하기</p>
-                        <button type="button" class="del_btn"><i class="icon icon_del"></i></button>
-                    </li>
-                </ul>
+                <div class="list_scroll">
+                    <ul class="list_wrap">
+                        <li class="list_obj checked">
+                            <label class="checkbox_wrap">
+                                <input type="checkbox" class="checkbox" checked>
+                                <span class="checkbox_icon">
+                                    <i class="icon icon_check"></i>
+                                </span>
+                            </label>
+                            <p class="content">js class 문법 복습하기</p>
+                            <button type="button" class="del_btn"><i class="icon icon_del"></i></button>
+                        </li>
+                        <li class="list_obj">
+                            <label class="checkbox_wrap">
+                                <input type="checkbox" class="checkbox">
+                                <span class="checkbox_icon">
+                                    <i class="icon icon_check"></i>
+                                </span>
+                            </label>
+                            <p class="content">js class 문법 복습하기</p>
+                            <button type="button" class="del_btn"><i class="icon icon_del"></i></button>
+                        </li>
+                        <li class="list_obj">
+                            <label class="checkbox_wrap">
+                                <input type="checkbox" class="checkbox">
+                                <span class="checkbox_icon">
+                                    <i class="icon icon_check"></i>
+                                </span>
+                            </label>
+                            <p class="content">js class 문법 복습하기</p>
+                            <button type="button" class="del_btn"><i class="icon icon_del"></i></button>
+                        </li>
+                        <li class="list_obj">
+                            <label class="checkbox_wrap">
+                                <input type="checkbox" class="checkbox">
+                                <span class="checkbox_icon">
+                                    <i class="icon icon_check"></i>
+                                </span>
+                            </label>
+                            <p class="content">js class 문법 복습하기</p>
+                            <button type="button" class="del_btn"><i class="icon icon_del"></i></button>
+                        </li>
+                        <li class="list_obj">
+                            <label class="checkbox_wrap">
+                                <input type="checkbox" class="checkbox">
+                                <span class="checkbox_icon">
+                                    <i class="icon icon_check"></i>
+                                </span>
+                            </label>
+                            <p class="content">js class 문법 복습하기</p>
+                            <button type="button" class="del_btn"><i class="icon icon_del"></i></button>
+                        </li>
+                        <li class="list_obj">
+                            <label class="checkbox_wrap">
+                                <input type="checkbox" class="checkbox">
+                                <span class="checkbox_icon">
+                                    <i class="icon icon_check"></i>
+                                </span>
+                            </label>
+                            <p class="content">js class 문법 복습하기</p>
+                            <button type="button" class="del_btn"><i class="icon icon_del"></i></button>
+                        </li>
+                        <li class="list_obj">
+                            <label class="checkbox_wrap">
+                                <input type="checkbox" class="checkbox">
+                                <span class="checkbox_icon">
+                                    <i class="icon icon_check"></i>
+                                </span>
+                            </label>
+                            <p class="content">js class 문법 복습하기</p>
+                            <button type="button" class="del_btn"><i class="icon icon_del"></i></button>
+                        </li>
+                    </ul>
+                </div>
+
             </section>
             <!--인풋 영역-->
-            <section>
-                <input type="text" placeholder="할 일을 입력해 주세요">
-                <button type="button">ADD TODO</button>
+            <section class="input_area">
+                <div>
+                    <div class="input_wrap">
+                        <input type="text" placeholder="할 일을 입력해 주세요" class="add_input">
+                        <button type="button" class="add_btn">ADD TODO</button>
+                    </div>
+                    <p class="add_alert">내용을 작성 후 추가버튼을 눌러주세요!</p>
+                </div>
+
             </section>
         </main>
     </article>
+    <script src="./js/common.js"></script>
 </body>
 </html> 

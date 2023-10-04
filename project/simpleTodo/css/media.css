@@ -1,0 +1,44 @@
+@media (max-width: 980px) {
+    html{
+        font-size: 14px;
+    }
+    .main .input_wrap .add_input {
+        font-size: 1.5rem;
+    }
+    .main .input_wrap .add_btn {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 890px){
+    .container {
+        width: calc(100% - 140px);
+    }
+}
+@media (max-width: 650px){
+    .main .list_obj .checkbox_wrap {
+        width: 40px;
+    }
+    .main .list_obj .checkbox_wrap .checkbox_icon {
+        width: 35px;
+        height: 35px;
+    }
+    .main .input_wrap .add_btn {
+        font-size: 1.2rem;
+    }
+}
+@media (max-width: 550px) {
+    .container {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        padding: 50px 40px;
+    }
+    .main .list_scroll {
+        height: calc(100vh - 360px);
+    }
+    .main .input_wrap .add_btn {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+}
