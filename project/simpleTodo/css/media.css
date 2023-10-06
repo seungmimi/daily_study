@@ -26,6 +26,10 @@
     .main .input_wrap .add_btn {
         font-size: 1.2rem;
     }
+    .toggle_wrap {
+        width: 100%;
+        max-width: calc(100% - 50px);
+    }
 }
 @media (max-width: 550px) {
     .container {
