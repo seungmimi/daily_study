@@ -7,8 +7,14 @@
     <title>userAgent</title>
 </head>
 <body>
-    <script>
-        alert(navigator.userAgent);
-    </script>
+<script>
+    const userAgent = navigator.userAgent;
+    //match함수로 userAgent가 반환하는 문자열에서 모바일 기기를 의미하는 단어를 찾는다.
+    if(userAgent.match(/iPhone|Android/i) !== null){
+        alert('모바일 기기에서 접속했습니다!');
+    }else{
+        alert('PC에서 접속했습니다!')
+    }
+</script>
 </body>
 </html>

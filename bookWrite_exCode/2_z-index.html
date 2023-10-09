@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+.box {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    display: inline-block;
+}
+.box1 {
+    background-color: rgba(255, 255, 0, 0.8);
+    position: relative;
+    z-index: 10;
+}
+.box2 {
+    background-color: greenyellow;
+    position: relative;
+    right: 100px;
+    z-index: 9;
+}
+.box2 .children_box {
+    width: 80px;
+    height: 80px;
+    background-color: rgb(255, 0, 0);
+    color: #fff;
+    position: absolute;
+    z-index: 100;
+}
+    </style>
+</head>
+<body>
+    <div class="box box1">
+        box1_z-index: 10
+    </div>
+    <div class="box box2">
+        box2_z-index: 9
+        <div class="children_box">z-index: 100</div>
+    </div>
+</body>
+</html>
