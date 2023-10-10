@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        function reverse(str){
+            if(!str || typeof str !== 'string' || str.length < 1){
+                return '문자열을 전달해주세요 입력해 주세요'
+            }
+
+            const length = str.length-1;
+            let reverseString = '';
+
+            for(let i = length; i >= 0; i--){
+                reverseString += str[i];
+            }
+            return reverseString;
+        }
+
+        function reverse2(str){
+            return str.split('').reverse().join('');
+        }
+        
+        const reverse3 = str => [...str].reverse().join('');
+    </script>
+</body>
+</html>
