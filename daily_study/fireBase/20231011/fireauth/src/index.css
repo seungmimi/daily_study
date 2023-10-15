@@ -61,7 +61,11 @@ body {
   margin: 0;
   background: #fffaf0;
 }
-
+.container{
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 120px);
+}
 button {
   border: 0;
 }
@@ -126,14 +130,14 @@ button:not(:disabled) {
 }
 
 /* form */
-.label-style,
-.input-style {
+.label_style,
+.input_style {
   display: block;
   width: 100%;
   box-sizing: border-box;
 }
 
-.input-style {
+.input_style {
   border: none;
   box-shadow: 0 1px 0 0 #677880;
   height: 48px;
@@ -144,20 +148,30 @@ button:not(:disabled) {
   background-color: #fff;
 }
 
-.input-style:hover {
+.input_style:hover {
   box-shadow: 0 2px 0 0 #2e6ff2;
 }
 
-.input-style:focus {
+.input_style:focus {
   outline: none;
   box-shadow: 0 0 0 2px #2e6ff2;
   border-radius: 4px;
 }
 
-.label-style {
+.label_style {
   font-size: 14px;
   color: #29363d;
   margin-bottom: 8px;
+}
+
+.enabled_btn {
+  width: 100%;
+  padding: 14px 0;
+  color: #F4F5F5;
+  font-size: 16px;
+  font-weight: 700;
+  background-color: #29363D;
+  border-radius: 4px;
 }
 
 /* layout ------------------------------- */
@@ -207,4 +221,24 @@ button:not(:disabled) {
       stroke-width: 2px;
       transform: scale(3);
   }
+}
+
+.icon {
+  vertical-align:middle;
+  display:inline-flex;
+  background-size:contain;
+  background-repeat:no-repeat;
+}
+.icon::before {
+  display:inline-block;
+  content:'';
+  vertical-align:middle;
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:center center;
+}
+.icon.heart_icon {
+  width:32px;
+  height:32px;
+  background-image:url('./images/icon/heart.svg');
 }

@@ -1,6 +1,6 @@
 import { useReducer } from "react"
 import { appFirestore, timestamp } from "../firebase/config"
-import { collection, addDoc, doc, deleteDoc } from "firebase/firestore"
+import { collection, addDoc, doc, deleteDoc, updateDoc } from "firebase/firestore"
 
 const initState = {
     // document : 파이어스토어에 document의 생성을 요청하면 우리가 생성한 document를 반환합니다. 
@@ -39,8 +39,15 @@ const storeReducer = (state, action) => {
             return{
                 isPending: false,
                 document: null,
-                success: true,
+                success: false,
                 error: null,
+            }
+        case 'editDocument':
+            return{
+                isPending: false,
+                document: action.payload,
+                success: false,
+                error: null
             }
         default: return state
     }
@@ -80,5 +87,19 @@ export const useFirestore = (transaction) => {
 
     }
 
-    return { addDocument, deleteDocument, response }
+    // 컬렉션에서 문서를 수정합니다.
+    const editDocument = async(id, doc) => {
+        dispatch({type: 'editDocument'});
+        try{
+            const docRef = await updateDoc(doc(colRef, id), {
+                title: doc.title,
+                text: doc.text
+            });
+        }catch(error){
+            dispatch({type: 'error', payload: error.message});
+            console.error(error);
+        }
+    }
+
+    return { addDocument, deleteDocument, editDocument,response }
 }

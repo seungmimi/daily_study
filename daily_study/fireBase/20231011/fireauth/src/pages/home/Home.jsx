@@ -15,17 +15,23 @@ export default function Home() {
 
     return (
         <div className="container">
-            <main className={styles["diary-main"]}>
-                <h2 className="heart">{todayDate}의 비밀일기</h2>
-                <DiaryForm uid = {user.uid}></DiaryForm>
-            </main>
-            <section>
+            <main className={`${styles["main_layout"]} ${styles["max_width"]}`}>
+                <section className={styles["main_form"]}>
+                    <h2 className={styles["heart_title"]}>
+                        <i className={`${"icon"} ${"heart_icon"}`}></i>{todayDate}의 비밀일기
+                    </h2>
+                    <DiaryForm uid = {user.uid}></DiaryForm>
+                </section>
+                <section className={styles["main_diary"]}>
                 <h2 className="a11y-hidden">일기 목록</h2>
-                <ul>
+                <ul className={styles["list"]}>
                     {err && <strong>{err}</strong>}
                     {documents && <DiaryList diaries = {documents}></DiaryList>}
                 </ul>
             </section>
+
+            </main>
+
         </div>
     )
 }
