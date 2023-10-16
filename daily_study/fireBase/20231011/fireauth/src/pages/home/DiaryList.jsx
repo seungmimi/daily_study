@@ -6,20 +6,17 @@ import { useFirestore } from '../../hooks/useFirestore'
 
 
 export default function DiaryList({ diaries }) {
-    const { deleteDocument } = useFirestore('diary');
+    const { deleteDocument, editDocument} = useFirestore('diary');
 
     //수정 여부 처리
     const [isEdit, setEdit] = useState(false);
-
-
     const [editTitle, setEditTitle] = useState('');
     const [editText, setEditText] = useState('');
-
 
     return (
         <>
             {
-                diaries.map((item) => {
+                diaries.map((item, i) => {
                     const toggleEdit = () => {
                         //이전 상태값사용
                         setEdit((prevTheme)=>{
@@ -27,7 +24,9 @@ export default function DiaryList({ diaries }) {
                         });
                         setEditTitle(item.title);
                         setEditText(item.text);
+
                         item.isEdit = !isEdit;
+
                     }
 
                     const handleData = (event) => {
@@ -39,10 +38,15 @@ export default function DiaryList({ diaries }) {
                             event.target.value = editText;
                         }
                     }
-                    console.log(item.createdTime.toDate());
+
+                    const handleEdit = () => {
+                        editDocument(item.id, {editTitle, editText, isEdit});
+                        toggleEdit();
+                    }
+
+                    // console.log(item.createdTime.toDate());
                     return (
                         <li key={item.id}>
-
                             {!item.isEdit ? 
                             <>
                                 <article className={styles["diary_article"]}>
@@ -50,14 +54,13 @@ export default function DiaryList({ diaries }) {
                                         <h3 className={styles["article_title"]}>{item.title}</h3>
                                         <time className={styles["article_time"]} dateTime="2023-03-15">2023.02.24.THU</time>
                                     </header>
-                                    
                                     <p className={styles["article_content"]}>{item.text}</p>
                                     <div className={styles["btn_group"]}>
-                                        <button type="button" onClick={toggleEdit}>
+                                        <button type="button" onClick={toggleEdit} className={styles["btn_edit"]} disabled={isEdit}>
                                             <img src={iconEdit} alt="수정" />
                                         </button>
                                         <span></span>
-                                        <button type="button" onClick={() => {deleteDocument(item.id)}}>
+                                        <button type="button" onClick={() => {deleteDocument(item.id)}} disabled={isEdit}>
                                             <img src={iconDelete} alt="삭제" />
                                         </button>
                                     </div>
@@ -67,20 +70,18 @@ export default function DiaryList({ diaries }) {
                             <>
                                 <article className={styles["diary_article"]}>
                                     {/* 수정할 제목 */}
-                                    <input className={styles["article_title"]} id="diary-title-edit" value={editTitle} onChange={handleData}/>
-
-                                    <time className={styles["article_time"]} dateTime="2023-03-15">2023.02.24.THU</time>
-
+                                    <header>
+                                        <input className={styles["article_title"]} id="diary-title-edit" value={editTitle} onChange={handleData}/>
+                                        <time className={styles["article_time"]} dateTime="2023-03-15">2023.02.24.THU</time>
+                                    </header>
                                     {/* 수정할 내용 */}
                                     <textarea className={styles["article_content"]} id="diary-content-edit" value={editText} onChange={handleData}/>
-
-
                                     <div className={styles["btn_group"]}>
                                         <button type="button" onClick={toggleEdit}>
                                             취소
                                         </button>
                                         <span></span>
-                                        <button>저장</button>
+                                        <button onClick={handleEdit}>저장</button>
                                     </div>
                                 </article>
                             </>

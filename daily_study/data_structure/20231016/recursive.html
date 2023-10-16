@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        function sumArray(arr, index = 0) {
+            if(index === arr.length-1){
+                return arr[index]
+            }
+            return arr[index] + sumArray(arr, index + 1);
+        }
+
+        // 사용 예시
+        const arr = [1, 2, 3, 4, 5];
+        const result = sumArray(arr);
+        console.log(result);  // 출력: 15
+    </script>
+</body>
+</html>

@@ -88,13 +88,14 @@ export const useFirestore = (transaction) => {
     }
 
     // 컬렉션에서 문서를 수정합니다.
-    const editDocument = async(id, doc) => {
-        dispatch({type: 'editDocument'});
+    const editDocument = async(id, data) => {
         try{
             const docRef = await updateDoc(doc(colRef, id), {
-                title: doc.title,
-                text: doc.text
+                title: data.editTitle,
+                text: data.editText,
+                isEdit: false
             });
+            dispatch({type: 'editDocument', payload: docRef});
         }catch(error){
             dispatch({type: 'error', payload: error.message});
             console.error(error);
