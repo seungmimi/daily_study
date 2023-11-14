@@ -1,0 +1,47 @@
+.header {
+    position: absolute;
+    padding: 0 50px;
+    width: 100%;
+    z-index: 100;
+}
+.header-wrap {
+    height: 120px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    font-size: 25px;
+    font-family: 'PyeongChangPeace-Light';
+}
+.btn-area {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.btn-area .btn {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+.hello>strong {
+    position: relative;
+    font-family: 'Pretendard-Bold';
+    font-size: 18px;
+
+}
+.hello>strong::after {
+    content: '';
+    position: absolute;
+    height: 8px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background: rgba(2, 50, 174, 0.20);
+}
+@media (max-width: 768px) {
+    .header {
+        background-color: #EAEAEC;
+    }
+}

@@ -1,0 +1,139 @@
+/*font*/
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+  format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pretendard-Bold';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff')
+  format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PyeongChangPeace-Light';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Light.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+/*reset*/
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Pretendard-Regular";
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+button, input {
+  background: none;
+  border: none;
+  color: inherit;
+}
+button:enabled {
+  cursor: pointer;
+}
+img {
+  vertical-align: top;
+  /*드래그, 선택 방지*/
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}
+h1,
+h2,
+h3 {
+  font: inherit;
+}
+ol, ul {
+  list-style: none;
+}
+
+/* 공통 */
+.a11y-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+body {
+  background-color: #EAEAEC;
+}
+.page-wrap {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1280px;
+  height: 100vh;
+  overflow: hidden;
+}
+.content-area {
+  margin: 0 50px;
+}
+.icon {
+    vertical-align:middle;
+    display:inline-flex;
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+.icon::before {
+    display:inline-block;
+    content:'';
+    vertical-align:middle;
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position:center center;
+}
+
+.icon-delete{
+    width:25px;
+    height:25px;
+    background-image:url('../public/image/icon/icon-delete.svg');
+}
+.icon-edit{
+  width:25px;
+  height:25px;
+  background-image:url('../public/image/icon/icon-edit.svg');
+}
+.icon-join{
+  width:32px;
+  height:32px;
+  background-image:url('../public/image/icon/icon-join.svg');
+}
+.icon-login{
+  width:32px;
+  height:32px;
+  background-image:url('../public/image/icon/icon-login.svg');
+}
+.icon-logout{
+  width:32px;
+  height:32px;
+  background-image:url('../public/image/icon/icon-logout.svg');
+}
+.icon-heart{
+  width:25px;
+  height:25px;
+  background-image:url('../public/image/icon/icon-heart.svg');
+}
+
+@media (max-width: 768px) {
+  .page-wrap {
+    overflow-Y: scroll;
+  }
+}
