@@ -1,0 +1,58 @@
+.header {
+  width: 100%;
+  height: 90px;
+  padding: 26px 40px;
+  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.10);
+  background-color: #FFF;
+  position: fixed;
+  top: 0;
+}
+.contnent-area {
+  width: 100%;
+  max-width: 1124px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.left-contnet, .right-contnet {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.left-contnet .logo-area {
+  width: 124px;
+  flex-shrink: 0;
+}
+.left-contnet .logo-area > img {
+  width: 100%;
+}
+.left-contnet .search-box {
+  width: 400px;
+  position: relative;
+}
+.left-contnet .search-bar {
+  padding: 13px 50px 13px 22px;
+  width: 100%;
+  border-radius: 50px;
+  border: 2px solid #21BF48;
+  background: #FFF;
+}
+.left-contnet .search-btn {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.right-contnet .icon-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+}
+.right-contnet .icon-btn .btn-title {
+  color: #767676;
+  text-align: center;
+  font-size: 12px;
+}

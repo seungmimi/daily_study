@@ -1,0 +1,108 @@
+/*=================reset css=================*/
+* {
+  font-family: "Spoqa Han Sans Neo-Regular";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+button,
+input {
+  background: none;
+  border: none;
+  color: inherit;
+}
+
+button:enabled {
+  cursor: pointer;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font: inherit;
+}
+
+strong,
+b {
+  font-weight: inherit;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+/*=================font css=================*/
+@font-face {
+  font-family: 'Spoqa Han Sans Neo-Regular';
+  src: url(../public/fonts/SpoqaHanSansNeo-Regular.woff) format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Spoqa Han Sans Neo-Bold';
+  src: url(../public/fonts/SpoqaHanSansNeo-Bold.woff) format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Spoqa Han Sans Neo-Medium';
+  src: url(../public/fonts/SpoqaHanSansNeo-Medium.woff) format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*=================icon css=================*/
+.icon {
+    vertical-align:middle;
+    display:inline-flex;
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+.icon::before {
+    display:inline-block;
+    content:'';
+    vertical-align:middle;
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position:center center;
+}
+
+.icon-cart{
+    width:32px;
+    height:32px;
+    background-image:url('../public/image/icon/icon-shopping-cart.svg');
+}
+.icon-user{
+  width:32px;
+  height:32px;
+  background-image:url('../public/image/icon/icon-user.svg');
+}
+.icon-search{
+  width:28px;
+  height:28px;
+  background-image:url('../public/image/icon/icon-search.svg');
+}
+/*=================common css=================*/
+.a11y-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
