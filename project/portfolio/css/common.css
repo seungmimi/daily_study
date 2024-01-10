@@ -1,0 +1,345 @@
+:root[color-theme='dark'] {
+  --main-color-1: #3C3C3C;
+  --text-color-1: #ffffff;
+  --point-color-1: #004DF9;
+  --point-color-2: #FFFFFF;
+  --point-color-3: #000000;
+  --point-color-4: #004ff962;
+  --sub-color-1: #8C8C8C;
+  --sub-color-2: #D9D9D9;
+  --sub-color-3: #262626;
+  --sub-color-4: #262626;
+}
+
+:root[color-theme='light'] {
+  --main-color-1: #004DF9;
+  --text-color-1: #000000;
+  --point-color-1: #3C3C3C;
+  --point-color-2: #D9D9D9;
+  --point-color-3: #ffffff;
+  --point-color-4: #00000062;
+  --sub-color-1: #D9D9D9;
+  --sub-color-2: #8C8C8C;
+  --sub-color-3: #EDEDED;
+  --sub-color-4: #FFFFFF;
+}
+:root[color-theme='light'] .code-obj .icon.icon-arrow-right,
+:root[color-theme='light'] .icon.icon-gobtn,
+:root[color-theme='light'] .icon.icon-mobile{
+  filter: invert(1);
+}
+
+/*==========================reset==========================*/
+html {
+  scroll-behavior: smooth;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body.no-scroll {
+  overflow: hidden;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+p {
+  word-break: break-all;
+}
+button, input {
+  background: none;
+  border: none;
+  color: inherit;
+}
+button:enabled {
+  cursor: pointer;
+}
+img {
+  vertical-align: top;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}
+h1,
+h2,
+h3 {
+  font: inherit;
+}
+ol, ul {
+  list-style: none;
+}
+progress {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+::-webkit-progress-bar {
+  background-color: var(--point-color-2);
+}
+
+::-webkit-progress-value {
+  background-color: var(--point-color-1);
+}
+
+
+
+/*==========================공통 스타일==========================*/
+/*폰트*/
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+  format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pretendard-Bold';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff')
+  format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pretendard-Black';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Black.woff')
+  format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+/*커서 커스텀*/
+.cursor-circle {
+  position: absolute;
+  top: -120px;
+  left: -120px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid var(--text-color-1);
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: all 0.3s cubic-bezier(0, 0.28, 0.84, 0.99);
+  pointer-events: none;
+}
+.cursor-circle.pointer {
+  width: 120px;
+  height: 120px;
+  background-color: var(--point-color-4);
+  opacity: 0.5;
+}
+.cursor-circle.pointer::after {
+  content: 'CLICK!';
+  font-family: 'Pretendard-Black';
+  color: #ffffff;
+  position: absolute;
+  left: 50%;
+  bottom: 5px;
+  transform: translate(-50%, -50%);
+}
+
+/*슬라이드 텍스트*/
+@keyframes scroll-animation{
+  0%{
+    left: 0;
+  }
+  100%{
+    left: -300px;
+  }
+}
+.scroll-text.absolute {
+  position: absolute;
+}
+.scroll-text{
+  width: 100%;
+  overflow: hidden;
+  padding: 30px 0;
+  border-top: 1px solid #fff;
+  background-color: var(--point-color-4);
+}
+.track{
+  position: relative;
+  width: 2800px;
+  animation: scroll-animation 3s linear infinite;
+}
+.track p{
+  font-family: 'Pretendard-Black';
+  float: left;
+  width: 300px;
+  font-size: 36px;
+}
+
+
+/*접근성 숨김용*/
+.a11y-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+/*아이콘*/
+.icon {
+  vertical-align:middle;
+  display:inline-flex;
+  background-size:contain;
+  background-repeat:no-repeat;
+}
+.icon::before {
+  display:inline-block;
+  content:'';
+  vertical-align:middle;
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:center center;
+}
+.icon.icon-title-arrow {
+  width:37px;
+  height:18px;
+  background-image:url('../image/icon/icon-title-arrow.svg');
+}
+.icon.icon-arrow-right {
+  width:6px;
+  height:10px;
+  background-image:url('../image/icon/icon-arrow-right.svg');
+}
+.icon.icon-window-btn-1 {
+  width:22px;
+  height:22px;
+  background-image:url('../image/icon/icon-window-btn-1.svg');
+}
+.icon.icon-window-btn-2 {
+  width:22px;
+  height:22px;
+  background-image:url('../image/icon/icon-window-btn-2.svg');
+}
+.icon.icon-tool-1 {
+  width:20px;
+  height:20px;
+  background-image:url('../image/icon/icon-tool-1.png');
+}
+.icon.icon-tool-2 {
+  width:20px;
+  height:20px;
+  background-image:url('../image/icon/icon-tool-2.png');
+}
+.icon.icon-tool-3 {
+  width:14px;
+  height:20px;
+  background-image:url('../image/icon/icon-tool-3.png');
+}
+.icon.icon-tool-4 {
+  width:20px;
+  height:20px;
+  background-image:url('../image/icon/icon-tool-4.png');
+}
+.icon.icon-fb {
+  width:16px;
+  height:16px;
+  background-image:url('../image/icon/icon-stack-fb.svg');
+}
+.icon.icon-react {
+  width:16px;
+  height:16px;
+  background-image:url('../image/icon/icon-stack-react.svg');
+}
+.icon.icon-js {
+  width:16px;
+  height:16px;
+  background-image:url('../image/icon/icon-stack-js.svg');
+}
+.icon.icon-html {
+  width:16px;
+  height:16px;
+  background-image:url('../image/icon/icon-stack-html.svg');
+}
+.icon.icon-css {
+  width:16px;
+  height:16px;
+  background-image:url('../image/icon/icon-stack-css.svg');
+}
+.icon.icon-jquery {
+  width:16px;
+  height:16px;
+  background-image:url('../image/icon/icon-stack-jquery.png');
+}
+.icon.icon-mobile {
+  width:12px;
+  height:12px;
+  background-image:url('../image/icon/icon-mobile.svg');
+}
+.icon.icon-gobtn {
+  width:22px;
+  height:22px;
+  background-image:url('../image/icon/icon-gobtn.svg');
+}
+
+
+/*배지*/
+.bage {
+  display: inline-block;
+  font-size: 14px;
+}
+.bage.icon-right>i {
+  margin-right: 8px;
+}
+.bage.icon-left>i {
+  margin-left: 8px;
+}
+.bage.round {
+  padding: 6px 15px;
+  font-family: 'Pretendard-Bold';
+  letter-spacing: -0.7px;
+  border-radius: 5px;
+  background-color: var(--text-color-1) ;
+  color: var(--point-color-3);
+}
+.bage.round.black {
+  padding: 6px 15px;
+  font-family: 'Pretendard-Bold';
+  letter-spacing: -0.7px;
+  border-radius: 5px;
+  background-color: var(--point-color-3) ;
+  color: var(--text-color-1);
+}
+
+.stack-bage {
+  display: flex;
+  gap: 5px;
+  font-size: 12px;
+  font-family: 'Pretendard-Bold';
+  border-radius: 3px;
+  padding: 4px 6px;
+  color: #000000;
+  background-color: #D9D9D9;
+}
+.stack-bage.firebase {
+  background-color: #FFCA28;
+}
+.stack-bage.react {
+  background-color: #61DAFB;
+}
+.stack-bage.js {
+  background-color: #F7DF1E;
+}
+.stack-bage.html {
+  color: #fff;
+  background-color: #E34F26;
+}
+.stack-bage.css {
+  color: #fff;
+  background-color: #1572B6;
+}
+.stack-bage.jquery {
+  color: #fff;
+  background-color: #0769AD;
+}
