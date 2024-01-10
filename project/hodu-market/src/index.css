@@ -19,6 +19,12 @@ input {
   color: inherit;
 }
 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 button:enabled {
   cursor: pointer;
 }
@@ -95,6 +101,16 @@ ul {
   height:28px;
   background-image:url('../public/image/icon/icon-search.svg');
 }
+.icon-check-off{
+  width:28px;
+  height:28px;
+  background-image:url('../public/image/icon/icon-check-off.svg');
+}
+.icon-check-on{
+  width:28px;
+  height:28px;
+  background-image:url('../public/image/icon/icon-check-on.svg');
+}
 /*=================common css=================*/
 .a11y-hidden {
   clip: rect(1px, 1px, 1px, 1px);
@@ -105,4 +121,32 @@ ul {
   overflow: hidden;
   padding: 0;
   position: absolute;
+}
+.pageWrap {
+  width: 100%;
+  padding: 0 40px;
+}
+.pageWrap > .content-area {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto; 
+}
+.pageWrap > .content-area.header-top {
+  margin-top: 90px;
+}
+
+/*=================체크박스 커스텀 css=================*/
+.hodu-check {
+  display: none;
+}
+.hodu-check-img {
+  flex-shrink: 0;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url(../public/image/check-box.svg) no-repeat;
+  vertical-align: top;
+}
+.hodu-check:checked + .hodu-check-img  {
+  background: url(../public/image/check-fill-box.svg) no-repeat;
 }

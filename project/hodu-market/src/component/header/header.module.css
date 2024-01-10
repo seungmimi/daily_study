@@ -6,6 +6,7 @@
   background-color: #FFF;
   position: fixed;
   top: 0;
+  z-index: 100;
 }
 .contnent-area {
   width: 100%;

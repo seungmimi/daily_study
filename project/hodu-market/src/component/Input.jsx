@@ -22,6 +22,7 @@ export const BasicInput = styled.input`
   }
 `
 export const LabelInput = styled.label`
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -29,9 +30,15 @@ export const LabelInput = styled.label`
   ${BasicInput} {
     border-radius: 5px;
     border: 1px solid #C4C4C4;
+    height: 54px;
     &:focus {
     outline: 2px solid #21BF48;
     }
   }
+`
 
+export const LabelIconInput = styled(LabelInput)`
+  ${BasicInput} {
+    padding-right: 50px;
+  }
 `

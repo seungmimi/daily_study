@@ -28,11 +28,11 @@ const Login = () => {
   //에러 메시지
   const [alert, setAlert] = useState("");
 
-  //로그인 정보
+  //로그인 정보(로그인 상태관리 atom사용)
   const [userInfo, setUserInfo] = useRecoilState(userState);
 
   //로그인 기능
-  const LoginFn = async (username, password, loginType) => {
+  const loginFn = async (username, password, loginType) => {
     axios.post(baseUrl + '/accounts/login/', {
       username: username,
       password: password,
@@ -41,6 +41,7 @@ const Login = () => {
     .then(function(res){
       console.log(res);
       localStorage.setItem("token", res.data.token);
+      //로그인 상태관리 atom사용
       setUserInfo({username: username, login_type: loginType})
     })
     .catch(function(error){
@@ -55,10 +56,10 @@ const Login = () => {
       }
     });
   } 
-  //로그인 상태관리 atom사용
-  const click = (e) => {
+
+  const handelLogin = (e) => {
     e.preventDefault();
-    LoginFn(id, pw, loginType);
+    loginFn(id, pw, loginType);
   }
 
   return (
@@ -77,7 +78,7 @@ const Login = () => {
               판매회원 로그인
             </button>
           </div>
-          <form className={styles['input-area']} onSubmit={click}>
+          <form className={styles['input-area']} onSubmit={handelLogin}>
             <div className={styles['input-box']}>
               <BasicInput $fullwidth type='text' placeholder='아이디' autoComplete="current-username"  onChange={(e) => handelSetId(e)}  value={id}/>
               <BasicInput $fullwidth type='password' autoComplete="current-password" placeholder='비밀번호' onChange={(e) => handelSetPw(e)} value={pw}/>

@@ -1,7 +1,9 @@
 .page-wrap {
   width: 100%;
+  height: calc(100vh - 100px);
   margin-top: 100px;
   padding: 0 40px;
+  overflow: hidden;
 }
 .content-area {
   width: 100%;
@@ -40,35 +42,75 @@
   background-color: #F2F2F2;
   border-bottom: 1px solid #C4C4C4;
 }
-.content-area .input-area {
+.content-area .input-box {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 26px;
   padding: 35px;
   border: 1px solid #C4C4C4;
   border-radius: 10px;
+  height: calc(100vh - 500px);
+  overflow-y: scroll;
 }
-  .input-area .input-box {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    margin-bottom: 26px;
-  }
+/*스크롤 영역 커스텀*/
+.content-area .input-box::-webkit-scrollbar {
+  width: 20px;
+}
+.content-area .input-box::-webkit-scrollbar-thumb {
+  height: 50%;
+  background: #F2F2F2;
+  border-radius: 50px;
+  border: 8px solid #fff;
+}
+.content-area .input-box::-webkit-scrollbar-track {
+  background: none;
+}
 .content-area .warning-text {
   font-family: 'Spoqa Han Sans Neo-Medium';
   color: #EB5757;
   margin-bottom: 26px;
 }
-
-.content-area .ect-btn {
-  display: block;
-  text-align: center;
-
+.input-box .input-btn-box {
+  width: 100%;
+  display: flex;
+  gap: 12px;
 }
-.content-area .ect-btn a {
-  color: #333;
-  padding: 0 14px;
+.input-box .input-btn-box button {
+  width: 120px;
 }
-.content-area .ect-btn a:hover{
+.input-box .input-icon-box {
+  position: absolute;
+  top: 27px;
+  right: 10px;
+  transform: translateY(50%);
+}
+.input-box .alert-mes {
+  color: #EB5757;
+}
+
+.input-box .alert-mes-ok {
   color: #21BF48;
 }
-.content-area .ect-btn a:nth-child(2) {
-  border-left: 1px solid #333;
+
+.input-box .margin-area {
+  border-bottom: 1px solid #F2F2F2;
+  padding-bottom: 30px;
+  margin-bottom: 25px;
+}
+.agree-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 0 40px;
+  margin-bottom: 35px;
+}
+.agree-check .info-text {
+  display: inline-block;
+  color:#767676;
+}
+.agree-check strong {
+  cursor: pointer;
+  font-family: 'Spoqa Han Sans Neo-Bold';
+  text-decoration: underline;
 }
