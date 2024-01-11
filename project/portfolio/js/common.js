@@ -40,6 +40,22 @@ for(let i = 0; i < pointerBox.length; i++){
   });
 }
 
+/*다크모드-라이트모드 토글*/
+const docBody = document.getElementsByTagName('body')[0];
+const modeInfoText = document.querySelector('.toggle-info');
+const modeState = document.querySelector('#toggle');
+modeState.addEventListener('click',function(){
+  if(modeState.checked){
+    modeInfoText.innerHTML="LIGHT";
+    docBody.setAttribute('color-theme','light');
+  }else {
+    modeInfoText.innerHTML="dark";
+    docBody.setAttribute('color-theme','dark');
+  }
+})
+
+
+
 /*택스트 애니메이션*/
 document.addEventListener('mousemove', function(e) {
   const text = document.getElementsByClassName('ani-title');

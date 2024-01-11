@@ -1,4 +1,4 @@
-:root[color-theme='dark'] {
+body[color-theme='dark'] {
   --main-color-1: #3C3C3C;
   --text-color-1: #ffffff;
   --point-color-1: #004DF9;
@@ -11,7 +11,7 @@
   --sub-color-4: #262626;
 }
 
-:root[color-theme='light'] {
+body[color-theme='light'] {
   --main-color-1: #004DF9;
   --text-color-1: #000000;
   --point-color-1: #3C3C3C;
@@ -23,9 +23,9 @@
   --sub-color-3: #EDEDED;
   --sub-color-4: #FFFFFF;
 }
-:root[color-theme='light'] .code-obj .icon.icon-arrow-right,
-:root[color-theme='light'] .icon.icon-gobtn,
-:root[color-theme='light'] .icon.icon-mobile{
+body[color-theme='light'] .code-obj .icon.icon-arrow-right,
+body[color-theme='light'] .icon.icon-gobtn,
+body[color-theme='light'] .icon.icon-mobile{
   filter: invert(1);
 }
 
@@ -126,12 +126,23 @@ progress {
   transform: translate(-50%, -50%);
   transition: all 0.3s cubic-bezier(0, 0.28, 0.84, 0.99);
   pointer-events: none;
+  z-index: 201;
 }
 .cursor-circle.pointer {
   width: 120px;
   height: 120px;
   background-color: var(--point-color-4);
   opacity: 0.5;
+  transform: translate(-50%, -50%) skew(15deg);
+}
+.cursor-circle.pointer::before {
+  content: '>>>';
+  position: absolute;
+  font-family: 'Pretendard-Black';
+  color: #ffffff;
+  left: 50%;
+  top: 20px;
+  transform: translate(-50%, -50%);
 }
 .cursor-circle.pointer::after {
   content: 'CLICK!';
