@@ -49,7 +49,7 @@ modeState.addEventListener('click',function(){
     modeInfoText.innerHTML="LIGHT";
     docBody.setAttribute('color-theme','light');
   }else {
-    modeInfoText.innerHTML="dark";
+    modeInfoText.innerHTML="DARK";
     docBody.setAttribute('color-theme','dark');
   }
 })

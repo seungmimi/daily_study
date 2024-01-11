@@ -27,6 +27,7 @@ body::-webkit-scrollbar {
   top: 0;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 10px;
   width: 100%;
   max-width: 1180px;
@@ -39,14 +40,19 @@ body::-webkit-scrollbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
 }
-.nav-title {
-  font-size: 1.875rem;
+.nav-title img {
+  width: 80px;
+  height: 80px;
+  animation: logo-animation 8s linear infinite;
 }
-.nav-title>i {
-  margin-left: 3px;
+
+@keyframes logo-animation {
+  100% {
+    transform: rotate(360deg);
+  }
 }
+
 .nav-list {
   flex-shrink: 0;
   display: flex;
@@ -286,7 +292,7 @@ body::-webkit-scrollbar {
 /*==========================About Me==========================*/
 .main .about-me {
   display: flex;
-  padding-top: 76px;
+  padding-top: 121px;
 }
 .about-me .profile {
   margin-top: 104.38px;
@@ -571,8 +577,7 @@ body::-webkit-scrollbar {
 /*==========================projects==========================*/
 .main .projects {
   border-top: 1px solid #fff;
-  padding-top: 3rem;
-  padding-top: 76px;
+  padding-top: 121px;
 }
 .projects .projects-box {
   margin-bottom: 3rem;
