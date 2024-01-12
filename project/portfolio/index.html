@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <title>seungmi Portfolio</title>
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/style.css">
+    <!--반응형-->
+    <link rel="stylesheet" href="./css/ responsive-style.css">
+
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 </head>
@@ -123,8 +126,26 @@
           <img src="./image/logo.svg" alt="seungmi Portfolio">
         </a>
       </h1>
-      <nav>
+      <nav class="nav">
         <ul class="nav-list">
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#aboutMe">About Me</a>
+          </li>
+          <li>
+            <a href="#projects">Projects</a>
+          </li>
+        </ul>
+      </nav>
+      <nav class="mobile-nav">
+        <button type="button" class="more-nav">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+        <ul class="mobile-nav-list">
           <li>
             <a href="#">Home</a>
           </li>
@@ -408,32 +429,22 @@
               </ul>
               <div class="tools" data-aos="fade-right" data-aos-duration="1000">
                 <strong>Tools |</strong>
-                <ul>
-                  <li>
-                    <span class="bage round icon-right">
-                      <i class="icon icon-tool-1"></i>
-                      vscode
-                    </span>
-                  </li>
-                  <li>
-                    <span class="bage round icon-right">
-                      <i class="icon icon-tool-2"></i>
-                      Github
-                    </span>
-                  </li>
-                  <li>
-                    <span class="bage round icon-right">
-                      <i class="icon icon-tool-3"></i>
-                      Figma
-                    </span>
-                  </li>
-                  <li>
-                    <span class="bage round icon-right">
-                      <i class="icon icon-tool-4"></i>
-                      Photoshop
-                    </span>
-                  </li>
-                </ul>
+                <span class="bage round icon-right">
+                  <i class="icon icon-tool-1"></i>
+                  vscode
+                </span>
+                <span class="bage round icon-right">
+                  <i class="icon icon-tool-2"></i>
+                  Github
+                </span>
+                <span class="bage round icon-right">
+                  <i class="icon icon-tool-3"></i>
+                  Figma
+                </span>
+                <span class="bage round icon-right">
+                  <i class="icon icon-tool-4"></i>
+                  Photoshop
+                </span>
               </div>
             </div>
             <div class="extra">
@@ -647,7 +658,7 @@
                 </div>
                 <div class="contnet">
                   <p>
-                    모마일 앱의 유지보수를 담당했습니다.
+                    모마일 앱의 퍼블리싱 유지보수를 담당했습니다.
                     신규기능 및 화면을 제작하였으며,
                     기존에 짜여진 마크업 규칙을 준수하며,
                     css가 중첩되는 경우를 최소화하는 것에
@@ -690,7 +701,7 @@
                 </div>
                 <div class="contnet">
                   <p>
-                    모마일 앱의 신규 제작을 담당하였습니다.
+                    모마일 앱의 퍼블리싱 신규 제작을 담당하였습니다.
                     화면 작업 전 향 후 유지보수를 용이하게 하기 위해 기획서와 디자인을 기반으로
                     퍼블리싱 가이드 제작 후 화면을 작업을 하였습니다.
                   </p>
@@ -730,7 +741,7 @@
                 </div>
                 <div class="contnet">
                   <p>
-                    앞서 제작한 그린재킷 앱과 세트가되는 모바일 앱 제작을 담당하였습니다.
+                    앞서 제작한 그린재킷 앱과 세트가되는 모바일 앱 퍼블리싱을 담당하였습니다.
                     그린재킷을 제작하며 만들어놓은 퍼블리싱 가이드에 따라 필요화면들을 작업하였습니다.
                   </p>
                 </div>

@@ -39,6 +39,14 @@ for(let i = 0; i < pointerBox.length; i++){
     circle.classList.remove('pointer');
   });
 }
+/*모바일 nav*/
+const mobileNavBtn = document.querySelector('.more-nav');
+const mobileNavList = document.querySelector('.mobile-nav-list');
+mobileNavBtn.addEventListener('click',function(){
+  mobileNavList.classList.contains('active')?
+  mobileNavList.classList.remove('active'):
+  mobileNavList.classList.add('active');
+});
 
 /*다크모드-라이트모드 토글*/
 const docBody = document.getElementsByTagName('body')[0];

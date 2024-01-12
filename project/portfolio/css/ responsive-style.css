@@ -1,0 +1,302 @@
+@media (max-width:1035px){
+  .about-me .detail-info .info-summary .record {
+    flex-direction: column;
+  }
+}
+@media (max-width:997px){
+  .home .home-bottom strong {
+    font-size: 10rem;
+  }
+  .home .typo-box h3 {
+    font-size: 2.75rem;
+  }
+}
+@media (max-width:960px){
+  .about-me .detail-info .extra-list{
+    flex-direction: column;
+  }
+  .projects .project-obj {
+    flex-direction: column;
+  }
+  .projects .project-obj .img-box {
+    align-self: center;
+  }
+  .projects .project-block {
+    flex-direction: column;
+  }
+}
+@media (max-width: 930px){
+  .home .code-box {
+    width: auto;
+  }
+  .home .code-box .code-box-top {
+    display: none;
+  }
+  .home .code-box .code-box-body {
+    position: static;
+    height: auto;
+  }
+  .home .code-box .code-box-content .code-obj {
+    min-width: 200px;
+  }
+  .home .typo-box {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    border-right: none;
+  }
+  .home .typo-box h3 {
+    font-family: 'Pretendard-Black';
+    text-align: center;
+    text-shadow: 0px 0px 10px rgba(0,0,0,0.8), 0px 0px 40px rgba(255, 255, 255, 0.8);
+  }
+  .home .code-box .code-box-content .code-obj:nth-child(1) {
+    top: 250px;
+    left: 40px;
+  }
+  .home .code-box .code-box-content .code-obj:nth-child(2) {
+    top: 410px;
+    left: -50px;
+  }
+  .home .code-box .code-box-content .code-obj:nth-child(3) {
+    top: 270px;
+    right: -100px;
+    left: unset;
+  }
+  .home .home-bottom strong {
+    display: block;
+    text-align: center;
+    animation: none;
+  }
+  .home .home-bottom strong:nth-child(2),
+  .home .home-bottom strong:nth-child(3){
+    left: 50%;
+    transform: translateX(-50%);
+    animation: none;
+  }
+}
+@media (max-width:800px){
+  .home .home-bottom strong {
+    font-size: 8rem;
+  }
+  .nav-list {
+    gap: 2rem;
+  }
+  .about-me .profile {
+    width: 280px;
+  }
+  .about-me .profile .img-box {
+    width: 100%;
+    padding: 3rem 3rem 0
+  }
+  .about-me .profile .info-box .info-list {
+    gap: 1rem;
+  }
+  .about-me .profile .info-box .info-obj {
+    flex-direction: column;
+    gap: 3px;
+  }
+  .about-me .profile .info-box .name>span {
+    display: block;
+    margin-left: 0;
+  }
+  .about-me .profile .info-box .info-obj>a {
+    text-align: center;
+  }
+}
+@media (max-width:700px){
+  .cursor-circle {
+    display: none;
+  }
+  .page-wrap {
+    padding-top: 20px;
+  }
+  footer>.page-wrap {
+    padding-top: 100px;
+  }
+  .header {
+    padding: 20px 30px
+  }
+  .header .nav {
+    display: none;
+  }
+  .mobile-nav {
+    display: block;
+  }
+  .color-toggle-box {
+    margin-left: auto;
+  }
+  .home .typo-box {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .home .home-bottom {
+    margin-top: 1rem;
+  }
+  .home .home-bottom strong {
+    font-size: 6rem;
+  }
+  .home .home-bottom strong:nth-child(2){
+    top: 15px;
+  }
+  .home .home-bottom strong:nth-child(3){
+    top: 30px;
+  }
+  .main .about-me {
+    flex-direction: column;
+  }
+  .about-me .profile {
+    width: 100%;
+    position: relative;
+    display: flex;
+    padding-top: 20px;
+    margin-top: 42px;
+  }
+  .about-me .profile .img-box{
+    border-bottom: none;
+  }
+  .about-me .profile .info-box .banner {
+    left: 30px;
+    padding: 0.5rem 1.125rem;
+  }
+  .about-me .profile .info-box .banner::before {
+    display: none;
+  }
+  .about-me .profile .info-box {
+    width: 100%;
+    padding: 5rem 1.375rem 0;
+  }
+  .home .code-box .code-box-content .code-obj:nth-child(1) {
+    top: 155px;
+    left: 10px;
+  }
+  .home .code-box .code-box-content .code-obj:nth-child(2) {
+    top: 380px;
+    left: -50px;
+  }
+  .home .code-box .code-box-content .code-obj:nth-child(3) {
+    top: 190px;
+    right: -100px;
+    left: unset;
+  }
+}
+@media (max-width:610px) {
+  .home .typo-box h3:nth-child(2){
+    font-size: 4rem;
+  }
+  .projects .project-obj .img-box {
+    width: 100%;
+  }
+  .projects .project-obj .url-box {
+    flex-direction: column;
+  }
+  .projects .project-obj .url-box .url-btn{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+  }
+  .projects .project-obj .url-box .url-btn>a {
+    text-align: center;
+    margin-top: 10px;
+    width: 100%;
+  }
+}
+@media (max-width:570px) {
+  .about-me .profile{
+    flex-direction: column;
+  }
+  .about-me .profile .img-box {
+    width: 250px;
+    align-self: center;
+  }
+  .about-me .profile .info-box .banner {
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 210px;
+    text-align: center;
+  }
+  .about-me .profile .info-box {
+    padding: 3rem 1.375rem 0;
+  }
+  .about-me .profile .info-box .name {
+    text-align: center;
+  }
+  .about-me .profile .info-box .name>span {
+    padding-bottom: 1rem;
+  }
+  /*======팝업 반응형======*/
+  .modal-content .main-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .main-content .text-info>strong {
+    font-size: 1.2rem;
+  }
+  /* .main-content .text-detail {
+    height: 80px;
+  } */
+  .main-content .img-box {
+    align-self: center;
+    max-width: 100px;
+    min-width: 80px;
+  }
+  .sub-content.img>img {
+    max-width: 100px;
+  }
+  .sub-content .img-slide img {
+    height: 100px;
+  }
+}
+@media (max-width:520px) {
+  .page-wrap {
+    width: 100%;
+    border-right: none;
+    border-left: none;
+    padding-top: 0;
+  }
+  footer>.page-wrap {
+    padding-top: 100px;
+  }
+  .projects .project-block {
+    border-bottom: none;
+  }
+}
+@media (max-width:475px){
+  body {
+    font-size: 12px;
+  }
+  .home .typo-box {
+    padding: 3.125rem 0.5rem;
+  }
+  .home .home-bottom {
+    padding: 0 0.25rem 2.5rem 0.25rem;
+  }
+  .projects .project-list {
+    padding: 0 1.813rem;
+  }
+  .projects .project-obj {
+    padding: 1.625rem 1.813rem;
+    border: none;
+  }
+  /*======팝업 반응형======*/
+  .modal-body {
+    width: calc(100% - 50px);
+  }
+  .modal-content,.modal-title, .modal-body .close-btn {
+    padding: 20px;
+  }
+}
+@media (max-width: 440px){
+  .home .home-bottom strong {
+    font-size: 4.5rem;
+  }
+  .projects .project-block {
+    padding: 0 1.813rem 4rem;
+  }
+}
+@media (max-width: 375px){
+  
+}
