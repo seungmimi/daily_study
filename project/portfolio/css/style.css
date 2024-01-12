@@ -169,6 +169,9 @@ body::-webkit-scrollbar {
 
 /*==========================main==========================*/
 /*home*/
+.main {
+  overflow-x: hidden;
+}
 .main .home {
   display: flex;
   flex-direction: column;

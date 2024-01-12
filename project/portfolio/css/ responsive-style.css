@@ -170,10 +170,10 @@
   }
   .home .code-box .code-box-content .code-obj:nth-child(1) {
     top: 155px;
-    left: 10px;
+    left: -35px;
   }
   .home .code-box .code-box-content .code-obj:nth-child(2) {
-    top: 380px;
+    top: 340px;
     left: -50px;
   }
   .home .code-box .code-box-content .code-obj:nth-child(3) {
@@ -262,6 +262,18 @@
   }
   .projects .project-block {
     border-bottom: none;
+  }
+  .header {
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    border-bottom: 1px solid #fff;
+  }
+  .about-me .detail-info .info-summary {
+    border-left: none;
+  }
+  footer>.page-wrap {
+    font-size: 0.75rem;
   }
 }
 @media (max-width:475px){
