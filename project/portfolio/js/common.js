@@ -39,15 +39,6 @@ for(let i = 0; i < pointerBox.length; i++){
     circle.classList.remove('pointer');
   });
 }
-/*모바일 nav*/
-const mobileNavBtn = document.querySelector('.more-nav');
-const mobileNavList = document.querySelector('.mobile-nav-list');
-mobileNavBtn.addEventListener('click',function(){
-  mobileNavList.classList.contains('active')?
-  mobileNavList.classList.remove('active'):
-  mobileNavList.classList.add('active');
-});
-
 /*다크모드-라이트모드 토글*/
 const docBody = document.getElementsByTagName('body')[0];
 const modeInfoText = document.querySelector('.toggle-info');
@@ -61,6 +52,29 @@ modeState.addEventListener('click',function(){
     docBody.setAttribute('color-theme','dark');
   }
 })
+
+/*모바일 nav*/
+const mobileNavBtn = document.querySelector('.more-nav');
+const mobileNavList = document.querySelector('.mobile-nav-list');
+const mobileNavListObj = document.querySelectorAll('.mobile-nav-list .nav-obj');
+
+mobileNavBtn.addEventListener('click',function(){
+  mobileNavList.classList.contains('active')?
+  mobileNavList.classList.remove('active'):
+  mobileNavList.classList.add('active');
+});
+for(let i = 0; i<mobileNavListObj.length; i++){
+  mobileNavListObj[i].addEventListener('click',function(){
+    mobileNavList.classList.remove('active');
+  });
+}
+docBody.addEventListener("click", function(e) {
+  if(!e.target.classList.contains('more-nav') && !e.target.classList.contains('bar')){
+    mobileNavList.classList.remove('active');
+  }
+});  
+
+
 
 
 

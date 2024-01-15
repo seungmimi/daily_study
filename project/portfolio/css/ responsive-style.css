@@ -87,7 +87,7 @@
   }
   .about-me .profile .img-box {
     width: 100%;
-    padding: 3rem 3rem 0
+    padding: 4.5rem 3rem 0
   }
   .about-me .profile .info-box .info-list {
     gap: 1rem;
@@ -204,6 +204,9 @@
   }
 }
 @media (max-width:570px) {
+  .stack-bage {
+    font-size: 10px;
+  }
   .about-me .profile{
     flex-direction: column;
   }
@@ -269,7 +272,7 @@
     border-top: none;
     border-bottom: 1px solid #fff;
   }
-  .about-me .detail-info .info-summary {
+  .about-me .detail-info {
     border-left: none;
   }
   footer>.page-wrap {

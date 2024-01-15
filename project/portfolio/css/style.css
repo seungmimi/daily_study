@@ -169,9 +169,6 @@ body::-webkit-scrollbar {
 
 /*==========================main==========================*/
 /*home*/
-.main {
-  overflow-x: hidden;
-}
 .main .home {
   display: flex;
   flex-direction: column;
@@ -353,7 +350,7 @@ body::-webkit-scrollbar {
 }
 .about-me .profile .img-box {
   width: 367px;
-  padding: 3rem 5rem 0;
+  padding: 4.5rem 5rem 0;
   border-bottom: 1px solid #fff;
 }
 .about-me .profile .img-box>img {
@@ -630,7 +627,7 @@ body::-webkit-scrollbar {
   border-top: 1px solid #fff;
   padding-top: 121px;
 }
-.projects .projects-box {
+.projects .scroll-text + .projects-box{
   margin-bottom: 3rem;
 }
 .projects .projects-title {
@@ -655,7 +652,7 @@ body::-webkit-scrollbar {
   padding: 2.625rem 2.813rem;
   display: flex;
   gap: 2.188rem;
-  background-color: var(--sub-color-4);
+  background-color: var(--sub-color-3);
   border: 1px solid var(--point-color-1);
   color: var(--text-color-1);
 }
@@ -694,6 +691,7 @@ body::-webkit-scrollbar {
   background: url(../image/icon/icon-arrow-right.svg) no-repeat;
   background-size: contain;
   position:absolute;
+  top: 50%;
   right: 10px;
   width:10px;
   height:14px;
@@ -736,7 +734,7 @@ body::-webkit-scrollbar {
   align-items: center;
   gap: 5px;
   font-size: 0.875rem;
-  color: var(--sub-color-2);
+  color: var(--text-color-1);
 }
 .projects .project-obj .text-info .stack>strong{
   margin-right: 5px;
@@ -749,7 +747,8 @@ body::-webkit-scrollbar {
 }
 .projects .project-obj .text-detail>p {
   font-size: 0.875rem;
-  margin-bottom: 1rem
+  margin-bottom: 1rem;
+  color: var(--sub-color-2);
 }
 .projects .project-obj .url-box {
   display: flex;
@@ -758,6 +757,7 @@ body::-webkit-scrollbar {
 }
 .projects .project-obj .url-box .test-acc {
   font-size: 0.875rem;
+  color: var(--sub-color-2);
 }
 .projects .project-obj .url-box .url-btn>a{
   font-family: 'Pretendard-Bold';
