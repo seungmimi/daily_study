@@ -82,5 +82,7 @@
   right: 0;
   bottom: 0;
   background: rgba(2, 50, 174, 0.20);
-
+}
+.err-msg {
+  color: #aa1a1a;
 }

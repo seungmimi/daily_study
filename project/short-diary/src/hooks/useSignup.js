@@ -18,7 +18,6 @@ export const useSignup = () => {
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
-                console.log(user);
                 if(!user){
                     throw new Error('회원정보를 불러올 수 없습니다.')
                 }
@@ -34,12 +33,11 @@ export const useSignup = () => {
                     setIsPending(false);
                     console.error(error);
                 })
-
             })
             .catch((err) => {
-                setError(err.message);
+                setError('이미 사용중인 이메일 입니다! 다른 이메일로 시도해주세요');
                 setIsPending(false);
-                console.error(error);
+                console.error('회원가입 실패:' + err);
             });
     }
     return {error, isPending, signup}

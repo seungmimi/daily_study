@@ -28,7 +28,6 @@ const Signup = () => {
 
   const handleSubmit = (event) => {
       event.preventDefault();
-      console.log(email, password, displayName);
       signup(email, password, displayName);
   }
   return (
@@ -60,7 +59,10 @@ const Signup = () => {
                 닉네임
                 <input type='text' placeholder='닉네임을 입력해 주세요' required onChange={handleData} value={displayName}/>
               </label>
-              <SubmitBtn type='submit'>회원가입</SubmitBtn>
+              {isPending && <strong>회원가입이 완료 되었습니다!</strong>}
+              {!isPending && <SubmitBtn type='submit'>회원가입</SubmitBtn>}
+              {error && <strong className={styles['err-msg']}>{error}</strong>}
+              
             </InfoForm>
             <Link to="/login" className={styles.movePage}>이미 회원이신가요? | 로그인 하러 가기</Link>
           </section> 

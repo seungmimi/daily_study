@@ -17,7 +17,6 @@ export const useLogin = () => {
         signInWithEmailAndPassword(appAuth, email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
-                console.log(user);
                 dispatch({type: 'login' , payload: user });
                 setIsPending(false);
                 if(!user){
@@ -25,9 +24,9 @@ export const useLogin = () => {
                 }
             })
             .catch((err) => {
-                setError(err.message);
+                setError('회원정보가 일치하지 않습니다.');
                 setIsPending(false);
-                console.error(error);
+                console.error('로그인 실패:' + err);
             });
     }
     return {error, isPending, login}

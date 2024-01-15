@@ -21,7 +21,6 @@ const Login = () => {
 
   const handleSubmit = (event) => {
       event.preventDefault();
-      console.log(email, password);
       login(email, password);
   }
   return (
@@ -51,7 +50,7 @@ const Login = () => {
               </label>
               {isPending && <strong>로그인진행 중 입니다.</strong>}
               {!isPending && <SubmitBtn type='submit'>하루 기록하러 가기</SubmitBtn>}
-              {error && <strong>{error}</strong>}
+              {error && <strong className={styles['err-msg']}>{error}</strong>}
             </InfoForm>
             <Link to="/signup" className={styles.movePage}>아직 계정이 없으신가요? | 회원 가입 하러 가기</Link>
           </section>
