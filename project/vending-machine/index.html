@@ -9,18 +9,56 @@
 </head>
 <body>
     <div class="tost_message" id="tost_message">입금이 완료 되었습니다!</div>
-    <header class="header">
-        <h1 class="logo img_wrap">
-            <img src="./img/cola-logo.png" alt="자판기 로고">
-        </h1>
-    </header>
+    <div class="bg-box"></div>
     <main class="container max_width">
         <!--왼쪽 박스-->
+        <section class="area bill_area">
+            <header class="header">
+                <h1 class="logo img_wrap">
+                    <img src="./img/logo.svg" alt="자판기 로고">
+                </h1>
+            </header>
+            <div class="wallet_wrap">
+                <h2 class="a11y_hidden">소지금</h2>
+                <div class="wrap input_wrap_1">
+                    <div class="point_box">
+                        <h2 class="title">소지금</h2>
+                        <p class="value fw_700" id="wallet">25,000<span class="unit">원</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="bill_wrap">
+                <h2>흭득한 음료</h2>
+                <div class="wrap input_wrap_1 order_wrap">
+                    <div class="scroll_box h_320">
+                        <ul class="menu_list list_type">
+                            <li>
+                                <div class="obj">
+                                    <div class="img_wrap obj_img">
+                                        <img src="./img/cola-original.png" alt="오리지널 콜라">
+                                    </div>
+                                    <span class="obj_name">Original_Cola</span>
+                                    <strong class="obj_count">1</strong>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="price_sum">총 금액: <span>9,000</span>원</p>
+            </div>
+        </section>
+
+
+        <!--오른쪽 박스-->
         <section class="area order_form_area">
             <h2 class="a11y_hidden">자판기 메뉴</h2>
+            <div class="wrap top_img">
+                <img src="./img/machine-logo.svg" alt="">
+                <img src="./img/sticker.png" alt="">
+            </div>
             <div class="wrap menu_wrap">
                 <ul class="menu_list button_type">
-                    <li>
+                    <!-- <li>
                         <button type="button" class="obj">
                             <div class="img_wrap obj_img">
                                 <img src="./img/cola-original.png" alt="오리지널 콜라">
@@ -28,9 +66,9 @@
                             <span class="obj_name">Original_Cola</span>
                             <strong class="obj_price">1000원</strong>
                         </button>
-                    </li>
-                    <li>
-                        <!--====active: 선택 상품 UI===-->
+                    </li> -->
+                    <!-- <li>
+                        ====active: 선택 상품 UI===
                         <button type="button" class="obj active">
                             <div class="img_wrap obj_img">
                                 <img src="./img/cola-violet.png" alt="보라색 콜라">
@@ -38,9 +76,9 @@
                             <span class="obj_name">violet_Cola</span>
                             <strong class="obj_price">1000원</strong>
                         </button>
-                    </li>
-                    <li>
-                        <!--====active: 품절 상품 UI===-->
+                    </li> -->
+                    <!-- <li>
+                        ====active: 품절 상품 UI===
                         <button type="button" class="obj soldout" disabled>
                             <div class="img_wrap obj_img">
                                 <img src="./img/cola-yellow.png" alt="노란색 콜라">
@@ -48,37 +86,21 @@
                             <span class="obj_name">yellow_Cola</span>
                             <strong class="obj_price">1000원</strong>
                         </button>
-                    </li>
-                    <li>
-                        <button type="button" class="obj">
-                            <div class="img_wrap obj_img">
-                                <img src="./img/cola-cool.png" alt="하늘색 콜라">
-                            </div>
-                            <span class="obj_name">cool_Cola</span>
-                            <strong class="obj_price">1000원</strong>
-                        </button>
-                    </li>
-                    <li>
-                        <button type="button" class="obj">
-                            <div class="img_wrap obj_img">
-                                <img src="./img/cola-green.png" alt="초록색 콜라">
-                            </div>
-                            <span class="obj_name">green_Cola</span>
-                            <strong class="obj_price">1000원</strong>
-                        </button>
-                    </li>
-                    <li>
-                        <button type="button" class="obj">
-                            <div class="img_wrap obj_img">
-                                <img src="./img/cola-orange.png" alt="오랜지 콜라">
-                            </div>
-                            <span class="obj_name">orange_Cola</span>
-                            <strong class="obj_price">1000원</strong>
-                        </button>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
-
+            <div class="wrap deco_wrap">
+                <div class="scroll-text">
+                    <div class="track">
+                        <p>welcome!</p>
+                        <p>welcome!</p>
+                        <p>welcome!</p>
+                        <p>welcome!</p>
+                        <p>welcome!</p>
+                    </div>
+                </div>
+                <img src="./img/deco-img.png" alt="">
+            </div>
             <div class="wrap input_wrap_1">
                 <div class="point_box">
                     <h2 class="title">잔액</h2>
@@ -103,167 +125,9 @@
                                 <strong class="obj_count">1</strong>
                             </div>
                         </li>
-                        <li>
-                            <div class="obj">
-                                <div class="img_wrap obj_img">
-                                    <img src="./img/cola-cool.png" alt="하늘색 콜라">
-                                </div>
-                                <span class="obj_name">cool_Cola</span>
-                                <strong class="obj_count">1</strong>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="obj">
-                                <div class="img_wrap obj_img">
-                                    <img src="./img/cola-green.png" alt="초록색 콜라">
-                                </div>
-                                <span class="obj_name">green_Cola</span>
-                                <strong class="obj_count">1</strong>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="obj">
-                                <div class="img_wrap obj_img">
-                                    <img src="./img/cola-orange.png" alt="오랜지 콜라">
-                                </div>
-                                <span class="obj_name">orange_Cola</span>
-                                <strong class="obj_count">1</strong>
-                            </div>
-                        </li>
                     </ul>
                 </div>
                 <button type="button" class="button bg_main">흭득</button>
-            </div>
-        </section>
-
-        <!--오른쪽 박스-->
-        <section class="area bill_area">
-            <div class="wallet_wrap">
-                <h2 class="a11y_hidden">소지금</h2>
-                <div class="wrap input_wrap_1">
-                    <div class="point_box">
-                        <h2 class="title">소지금</h2>
-                        <p class="value fw_700" id="wallet">25,000<span class="unit">원</span></p>
-                    </div>
-                </div>
-            </div>
-            <div class="bill_wrap">
-                <h2>흭득한 음료</h2>
-                <div class="wrap input_wrap_1 order_wrap">
-                    <div class="scroll_box h_364">
-                        <ul class="menu_list list_type">
-                            <li>
-                                <div class="obj">
-                                    <div class="img_wrap obj_img">
-                                        <img src="./img/cola-original.png" alt="오리지널 콜라">
-                                    </div>
-                                    <span class="obj_name">Original_Cola</span>
-                                    <strong class="obj_count">1</strong>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="obj">
-                                    <div class="img_wrap obj_img">
-                                        <img src="./img/cola-cool.png" alt="하늘색 콜라">
-                                    </div>
-                                    <span class="obj_name">cool_Cola</span>
-                                    <strong class="obj_count">1</strong>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="obj">
-                                    <div class="img_wrap obj_img">
-                                        <img src="./img/cola-green.png" alt="초록색 콜라">
-                                    </div>
-                                    <span class="obj_name">green_Cola</span>
-                                    <strong class="obj_count">1</strong>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="obj">
-                                    <div class="img_wrap obj_img">
-                                        <img src="./img/cola-orange.png" alt="오랜지 콜라">
-                                    </div>
-                                    <span class="obj_name">orange_Cola</span>
-                                    <strong class="obj_count">1</strong>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="obj">
-                                    <div class="img_wrap obj_img">
-                                        <img src="./img/cola-original.png" alt="오리지널 콜라">
-                                    </div>
-                                    <span class="obj_name">Original_Cola</span>
-                                    <strong class="obj_count">1</strong>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="obj">
-                                    <div class="img_wrap obj_img">
-                                        <img src="./img/cola-cool.png" alt="하늘색 콜라">
-                                    </div>
-                                    <span class="obj_name">cool_Cola</span>
-                                    <strong class="obj_count">1</strong>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="obj">
-                                    <div class="img_wrap obj_img">
-                                        <img src="./img/cola-green.png" alt="초록색 콜라">
-                                    </div>
-                                    <span class="obj_name">green_Cola</span>
-                                    <strong class="obj_count">1</strong>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="obj">
-                                    <div class="img_wrap obj_img">
-                                        <img src="./img/cola-orange.png" alt="오랜지 콜라">
-                                    </div>
-                                    <span class="obj_name">orange_Cola</span>
-                                    <strong class="obj_count">1</strong>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="obj">
-                                    <div class="img_wrap obj_img">
-                                        <img src="./img/cola-original.png" alt="오리지널 콜라">
-                                    </div>
-                                    <span class="obj_name">Original_Cola</span>
-                                    <strong class="obj_count">1</strong>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="obj">
-                                    <div class="img_wrap obj_img">
-                                        <img src="./img/cola-cool.png" alt="하늘색 콜라">
-                                    </div>
-                                    <span class="obj_name">cool_Cola</span>
-                                    <strong class="obj_count">1</strong>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="obj">
-                                    <div class="img_wrap obj_img">
-                                        <img src="./img/cola-green.png" alt="초록색 콜라">
-                                    </div>
-                                    <span class="obj_name">green_Cola</span>
-                                    <strong class="obj_count">1</strong>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="obj">
-                                    <div class="img_wrap obj_img">
-                                        <img src="./img/cola-orange.png" alt="오랜지 콜라">
-                                    </div>
-                                    <span class="obj_name">orange_Cola</span>
-                                    <strong class="obj_count">1</strong>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <p class="price_sum">총 금액: <span>9,000</span>원</p>
             </div>
         </section>
     </main>

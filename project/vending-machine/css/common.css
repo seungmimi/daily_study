@@ -1,11 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 :root {
     --point-color: #6327FE;
     --sub-color: #EAE8FE;
     --gray1:#333333;
     --gray2: #BDBDBD;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
 
 /*===============reset===============*/
 * {
@@ -99,7 +98,7 @@ img {
 .button.bg_main {
     font-weight: 700;
     color: #fff;
-    background-color: var(--point-color);
+    background-color: #251F25;
 }
 /*font*/
 .fw_400 {
@@ -108,36 +107,94 @@ img {
 .fw_700 {
     font-weight: 700;
 }
-
+/*슬라이드 텍스트*/
+@keyframes scroll-animation{
+    0%{
+        left: 0;
+    }
+    100%{
+        left: -280px;
+    }
+}
+.scroll-text{
+    width: 100%;
+    overflow: hidden;
+    padding: 10px 0;
+    background-color: #251F25;
+    border-radius: 4px;
+}
+.track{
+    position: relative;
+    width: 2800px;
+    animation: scroll-animation 3s linear infinite;
+}
+.track p{
+    font-family: 'Press Start 2P', system-ui;;
+    float: left;
+    width: 280px;
+    font-size: 20px;
+    color: #FDE900;
+}
 /*===============style===============*/
 body {
-    background-color: var(--sub-color);
-    font-family: 'Noto Sans KR';
+    background-color: #E7F3FF;
     font-weight: 500;
+}
+.bg-box {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 65%;
+    width: 100%;
+    background-image: url(../img/bgImg.png);
+    z-index: -100;
 }
 .header {
     width: 100%;
-    margin-bottom: 54px;
+    margin-bottom: 40px;
 }
 .header h1.logo {
     max-width: 386px;
     margin: 0 auto;
 }
 main.container {
-    padding-bottom: 40px;
+    height: 100vh;
+    padding-top: 40px;
+    align-items: center;
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px;
     justify-content: center;
-
+}
+main.container .top_img {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+main.container .top_img>img:nth-child(2){
+    align-self: flex-end;
+    max-width: 120px;
+    width: 100%;
+}
+main.container .menu_wrap {
+    padding: 35px 20px 0;
+    border-radius: 28px;
+    border: 3px solid #D9D9D9;
+    background: #FFF;
+    box-shadow: 0px 20px 0px 0px rgba(0, 0, 0, 0.10) inset;
 }
 main.container .order_form_area {
-    width: 360px;
+    align-self: flex-end;
+    width: 100%;
+    max-width: 450px;
     display: flex;
     flex-direction: column;
     gap: 11px;
-    background-color: #fff;
     padding: 31px 27px 28px 27px;
+    border-radius: 30px 30px 0px 0px;
+    background-color: #FF1215;
+    box-shadow: 4px 4px 10px 0px rgba(238, 192, 192, 0.30) inset, 10px 10px 0px 10px #E20709;
 }
 .menu_list.button_type {
     display: grid;
@@ -146,6 +203,7 @@ main.container .order_form_area {
     margin-bottom: 9px;
 }
 .menu_list.button_type .obj {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -173,12 +231,11 @@ main.container .order_form_area {
     left: 0;
 }
 .menu_list.button_type .obj .obj_img {
-    width: calc(100% - 36px);
+    width: calc(100% - 46px);
 }
 .menu_list .obj .obj_name {
     color: var(--gray1);
-    font-family: Noto Sans KR;
-    font-size: 0.563rem;
+    font-size: 0.75rem;
 }
 .menu_list .obj .obj_price {
     padding: 5px 16px;
@@ -194,7 +251,7 @@ main.container .order_form_area {
     padding: 12px 8px 12px 12px;
     overflow-y: scroll;
     width: 100%;
-    background-color: var(--sub-color);
+    background-color: #D9D9D9;
     border: 1px solid var(--gray2);
 
     border-radius: 5px;
@@ -207,7 +264,7 @@ main.container .order_form_area {
     height: 30%; /* 스크롤바의 길이 */
     background: #ffffff; /* 스크롤바의 색상 */
     border-radius: 10px;
-    border: 4px solid var(--sub-color);
+    border: 4px solid #D9D9D9;
 }
 .scroll_box::-webkit-scrollbar-track {
     background: none;  /*스크롤바 뒷 배경 색상*/
@@ -215,8 +272,8 @@ main.container .order_form_area {
 .scroll_box.h_106 {
     height: 106px;
 }
-.scroll_box.h_364 {
-    height: 364px;
+.scroll_box.h_320 {
+    height: 320px;
 }
 .menu_list.list_type {
     width: 100%;
@@ -246,6 +303,15 @@ main.container .order_form_area {
     border-radius: 5px;
     border: 1px solid var(--gray2);
 }
+.deco_wrap {
+    display: flex;
+    gap: 10px;
+}
+.deco_wrap>img {
+    max-width: 100px;
+    height: auto;
+    align-self: flex-start;
+}
 .input_wrap_1 {
     display: flex;
     gap: 12px;
@@ -257,11 +323,11 @@ main.container .order_form_area {
     justify-content: space-between;
     align-items: center;
     padding: 0 10px;
-    background-color: var(--sub-color);
+    background-color: #251F25;
+    color: #fff;
     border-radius: 5px;
 }
 .input_wrap_1 .point_box .title,
-.input_wrap_1 .point_box .value,
 .input_wrap_1 .point_box .unit {
     font-size: 14px;
 }
@@ -270,31 +336,34 @@ main.container .order_form_area {
     flex-shrink: 0;
 }
 .bill_area {
+    width: 100%;
+    max-width: 450px;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 .bill_area .wallet_wrap, .bill_area .bill_wrap{
-    width: 360px;
     background-color: #fff;
-    padding: 9px 27px;
+    padding: 9px;
+    border-radius: 5px;
 }
 .bill_area .bill_wrap {
     height: 100%;
 }
 .bill_area .bill_wrap h2 {
-    font-size: 14px;
     font-weight: 700;
     text-align: center;
-    padding-top: 25px;
-    margin-bottom: 13px;
+    padding: 15px 0;
 }
 .bill_area .bill_wrap .scroll_box {
-    margin-bottom: 6px;
+    margin-bottom: 20px;
 }
 .bill_area .bill_wrap .price_sum {
-    font-size: 12px;
     text-align: right;
+    margin-bottom: 15px;
+}
+.bill_area .bill_wrap .price_sum>span {
+    font-weight: 700;
 }
 
 /*토스트 메시지*/
@@ -317,9 +386,6 @@ main.container .order_form_area {
 }
 /*===============media===============*/
 @media(max-width: 385px){
-    body {
-        background-color: #fff;
-    }
     .header h1.logo {
         max-width: 50%;
     }

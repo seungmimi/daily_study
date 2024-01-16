@@ -28,7 +28,7 @@ class ColaMaker{
                     <img src="./img/${el.img}" alt=${el.name}>
                 </div>
                 <span class="obj_name">${el.name}</span>
-                <strong class="obj_price">${el.cost}</strong>
+                <strong class="obj_price">${el.cost}원</strong>
             </button>`
             liWrap.innerHTML = liTemplate;
             list.append(liWrap);

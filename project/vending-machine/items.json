@@ -6,33 +6,33 @@
         "count": 5
     },
     {
-        "name": "Violet Cola",
+        "name": "Welchh",
         "cost": 1000,
-        "img": "cola-violet.png",
+        "img": "drink-violet.png",
         "count": 5
     },
     {
-        "name": "Yellow Cola",
+        "name": "Lemon Soda",
         "cost": 1000,
-        "img": "cola-yellow.png",
+        "img": "drink-orange.png",
         "count": 5
     },
     {
-        "name": "Cool Cola",
+        "name": "Pocari Sweet",
         "cost": 1000,
-        "img": "cola-cool.png",
+        "img": "drink-blue.png",
         "count": 5
     },
     {
-        "name": "Green Cola",
+        "name": "Cider",
         "cost": 1000,
-        "img": "cola-green.png",
+        "img": "drink-green.png",
         "count": 5
     },
     {
-        "name": "Orange Cola",
+        "name": "Orange Soda",
         "cost": 1000,
-        "img": "cola-orange.png",
+        "img": "drink-lemon.png",
         "count": 5
     }
 ]

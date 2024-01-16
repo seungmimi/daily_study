@@ -20,6 +20,8 @@ let walletCoin = 25000;
 insertCoinBtn.addEventListener('click',function(){
     if(insertCoinForm.value == 0){
         alert('입금하실 금액을 입력해 주세요!');
+    }else if(insertCoinForm.value > walletCoin){
+        alert('소지금이 부족합니다!');
     }else{
         //1. 입금을 하면 잔액에 + 
         let insertCoin = insertCoinForm.value;
