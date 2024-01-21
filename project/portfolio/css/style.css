@@ -658,6 +658,10 @@ body::-webkit-scrollbar {
 }
 .projects .project-obj .img-box {
   width: 350px;
+  flex-shrink: 0;
+}
+.projects .project-obj .img-box>img {
+  width: 100%;
 }
 .projects .project-obj .img-box .show-img>img {
   width: 100%;
