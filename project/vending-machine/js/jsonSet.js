@@ -1,4 +1,4 @@
-class ColaMaker{
+class DrinkMaker{
     constructor(){
         this.itemBox = document.querySelector('.menu_list.button_type');
     }
@@ -23,7 +23,7 @@ class ColaMaker{
         data.forEach(el => {
             const liWrap = document.createElement('li');
             const liTemplate = 
-            `<button type="button" class="obj">
+            `<button type="button" class="obj" data-item="${el.name}" data-count="${el.count}" data-price="${el.cost}" data-img="${el.img}">
                 <div class="img_wrap obj_img">
                     <img src="./img/${el.img}" alt=${el.name}>
                 </div>
@@ -37,4 +37,4 @@ class ColaMaker{
     }
 }
 
-export default ColaMaker
+export default DrinkMaker
