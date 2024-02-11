@@ -57,3 +57,21 @@
   text-align: center;
   font-size: 12px;
 }
+
+/*반응형 처리*/
+@media (max-width: 770px){
+  .right-contnet{
+    gap: 15px;
+  }
+  .left-contnet .search-box {
+    width: 100%;
+  }
+}
+@media (max-width: 575px){
+  .right-contnet .icon-btn .btn-title {
+    display: none;
+  }
+  .left-contnet {
+    gap: 15px;
+  }
+}

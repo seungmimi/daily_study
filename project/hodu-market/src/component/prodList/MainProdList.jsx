@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import styled from "styled-components"
 import axios from 'axios';
 
@@ -75,11 +76,14 @@ const MainProdList = () => {
     getProdList();
   },[]);
 
-  // const [prodDetail, setProdDetail] = useState('');
+  //상품 상세페이지로 이동 + 클릭 된 상품 정보 전달
+  const navigate = useNavigate();
   const getProdDetail = async(prodId) => {
     axios.get(baseUrl + `/products/${prodId}/`)
     .then(function(res){
-      console.log(res);
+      navigate('/prod',{state: {
+        product_id: `${res.data.product_id}`,
+      }});
     })
     .catch(function(error){
       console.log(error);

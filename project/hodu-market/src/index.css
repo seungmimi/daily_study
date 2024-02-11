@@ -128,7 +128,7 @@ ul {
 }
 .pageWrap > .content-area {
   width: 100%;
-  max-width: 1280px;
+  max-width: 980px;
   margin: 0 auto; 
 }
 .pageWrap > .content-area.header-top {
@@ -149,4 +149,31 @@ ul {
 }
 .hodu-check:checked + .hodu-check-img  {
   background: url(../public/image/check-fill-box.svg) no-repeat;
+}
+
+/*=================카운터=================*/
+.counter-box{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  width: 150px;
+  border-radius: 5px;
+  border: 1px solid #C4C4C4;
+  overflow: hidden;
+}
+.counter-box>input,
+.counter-box>.counter-btn {
+  width: 50px;
+  text-align: center;
+}
+.counter-box>input {
+  height: 100%;
+  border-left: 1px solid #C4C4C4;
+  border-right: 1px solid #C4C4C4;
+  font-size: 18px;
+}
+.counter-box>.counter-btn {
+  font-size: 30px;
+  color: #C4C4C4;
 }

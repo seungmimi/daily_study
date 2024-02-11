@@ -1,5 +1,5 @@
 import { atom } from "recoil";
-import axios from "axios"
+// import axios from "axios"
 
 //유저 정보 관리
 // const baseUrl = "https://openmarket.weniv.co.kr/"
