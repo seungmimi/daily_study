@@ -114,3 +114,19 @@
   font-family: 'Spoqa Han Sans Neo-Bold';
   text-decoration: underline;
 }
+.content-area .ect-btn {
+  margin: 20px 0;
+  display: block;
+  text-align: center;
+
+}
+.content-area .ect-btn a {
+  color: #333;
+  padding: 0 14px;
+}
+.content-area .ect-btn a:hover{
+  color: #21BF48;
+}
+.content-area .ect-btn a:nth-child(2) {
+  border-left: 1px solid #333;
+}

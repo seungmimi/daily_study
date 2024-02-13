@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import BasicBtn from '../../component/Button'
 import { BasicInput, LabelIconInput, LabelInput } from '../../component/Input'
 import styles from './join.module.css'
@@ -6,6 +7,7 @@ import axios from 'axios'
 
 const Join = () => {
   const baseUrl = "https://openmarket.weniv.co.kr/"
+  const navigation = useNavigate();
 
   //회원가입 타입
   const [loginType, setLoginType] = useState('BUYER');
@@ -127,6 +129,7 @@ const Join = () => {
 
   //스토어 이름 검증
   const [storeName, setStoreName] = useState("");
+  const [storeNameAlert, setStoreNameAlert] = useState("");
   const [storeNameCheck, setStoreNameCheck] = useState(false);
   const handleStoreName = (e) => {
     setStoreName(e.target.value);
@@ -164,10 +167,21 @@ const Join = () => {
         "name": name, // 이름
       })
       .then(function(res){
-        console.log(res);
+        navigation('/login');
       })
       .catch(function(error){
         console.log(error);
+        const errorMes = Object.entries(JSON.parse(error.request.response));
+        errorMes.map(e => {
+          if(e[0] === 'username'){
+            setIdCheck(false);
+            setIdAlert(e[1]);
+          }else if(e[0] === 'password'){
+            setPwAlert(e[1]);
+          }else if(e[0] === 'phone_number'){
+            setPhoneAlert(e[1]);
+          }
+        });
       })
     }else{
       axios.post(baseUrl + '/accounts/signup_seller/', {
@@ -181,10 +195,23 @@ const Join = () => {
     
       })
       .then(function(res){
-        console.log(res);
+        navigation('/login');
       })
       .catch(function(error){
         console.log(error);
+        const errorMes = Object.entries(JSON.parse(error.request.response));
+        errorMes.map(e => {
+          if(e[0] === 'username'){
+            setIdCheck(false);
+            setIdAlert(e[1]);
+          }else if(e[0] === 'password'){
+            setPwAlert(e[1]);
+          }else if(e[0] === 'phone_number'){
+            setPhoneAlert(e[1]);
+          }else if(e[0] === 'store_name'){
+            setStoreNameAlert(e[1]);
+          }
+        });
       })
     }
   }
@@ -236,7 +263,7 @@ const Join = () => {
                 <BasicInput $fullwidth type='text' onChange={(e) => handleSetName(e)} value={name}/>
               </LabelInput>
               <LabelInput>
-                휴대폰 번호
+                휴대폰 번호 &#40;-는 제외하고 작성해 주세요&#41;
                 <BasicInput $fullwidth type='tel' onChange={(e) => handleSetPhone(e)} value={phone} onBlur={(e) => {handleChecktPhone(e)}}/>
                 <p className={styles['alert-mes']}>{phoneAlert}</p>
               </LabelInput>
@@ -254,6 +281,7 @@ const Join = () => {
                 <LabelInput>
                   스토어 이름
                   <BasicInput $fullwidth type='text' onChange={(e)=>{handleStoreName(e)}} value={storeName}/>
+                  <p className={styles['alert-mes']}>{storeNameAlert}</p>
                 </LabelInput>
               </>
               :
@@ -267,6 +295,9 @@ const Join = () => {
             <BasicBtn $fullwidth type='submit' disabled = {joinBtnActiveFn()} onClick={(e) => {joinFn(e,loginType)}}>
               회원 가입
             </BasicBtn>
+            <div className={styles['ect-btn']}>
+              <Link to={'/login'}>로그인 화면으로 돌아가기</Link>
+            </div>
           </form>
         </section>
       </div>
