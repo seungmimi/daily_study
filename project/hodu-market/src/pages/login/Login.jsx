@@ -1,15 +1,16 @@
 import React, { useState } from 'react'
+import axios from "axios"
+import { useSetRecoilState } from "recoil"
+import { userState, isLoginState } from "../../atom/LoginState"
+import { Link, useNavigate } from 'react-router-dom'
 import BasicBtn from '../../component/Button'
 import { BasicInput } from '../../component/Input'
 import styles from './login.module.css'
-import axios from "axios"
-import { useRecoilState } from "recoil"
-import { userState } from "../../atom/LoginState"
-import { Link } from 'react-router-dom'
 
 
 const Login = () => {
   const baseUrl = "https://openmarket.weniv.co.kr/"
+  const navigation = useNavigate();
   const [loginType, setLoginType] = useState('BUYER');
   const handelLoginType = (type) => {
     setLoginType(type);
@@ -29,7 +30,8 @@ const Login = () => {
   const [alert, setAlert] = useState("");
 
   //로그인 정보(로그인 상태관리 atom사용)
-  const [userInfo, setUserInfo] = useRecoilState(userState);
+  const setUserInfo = useSetRecoilState(userState);
+  const setIsLogin = useSetRecoilState(isLoginState);
 
   //로그인 기능
   const loginFn = async (username, password, loginType) => {
@@ -39,12 +41,17 @@ const Login = () => {
       login_type: loginType
     })
     .then(function(res){
-      console.log(res);
       localStorage.setItem("token", res.data.token);
+      localStorage.setItem("username", username);
+      localStorage.setItem("login_type", loginType);
       //로그인 상태관리 atom사용
-      setUserInfo({username: username, login_type: loginType})
+      setUserInfo({username: username, login_type: loginType});
+      setIsLogin(true);
+      navigation('/');
     })
     .catch(function(error){
+      setUserInfo({username: '', login_type: ''});
+      setIsLogin(false);
       if(error.response.request.status === 401) {
         setAlert("아이디 또는 비밀번호가 일치하지 않습니다.");
       }
@@ -91,7 +98,6 @@ const Login = () => {
         </section>
         <div className={styles['ect-btn']}>
           <Link to={'/join'}>회원 가입</Link>
-          <a href="#">비밀번호 찾기</a>
         </div>
       </div>
     </div>

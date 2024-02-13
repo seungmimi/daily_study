@@ -72,24 +72,23 @@ ul {
 
 /*=================icon css=================*/
 .icon {
-    vertical-align:middle;
-    display:inline-flex;
-    background-size:contain;
-    background-repeat:no-repeat;
+  vertical-align:middle;
+  display:inline-flex;
+  background-size:contain;
+  background-repeat:no-repeat;
 }
 .icon::before {
-    display:inline-block;
-    content:'';
-    vertical-align:middle;
-    background-repeat:no-repeat;
-    background-size:contain;
-    background-position:center center;
+  display:inline-block;
+  content:'';
+  vertical-align:middle;
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:center center;
 }
-
 .icon-cart{
-    width:32px;
-    height:32px;
-    background-image:url('../public/image/icon/icon-shopping-cart.svg');
+  width:32px;
+  height:32px;
+  background-image:url('../public/image/icon/icon-shopping-cart.svg');
 }
 .icon-user{
   width:32px;
@@ -111,6 +110,12 @@ ul {
   height:28px;
   background-image:url('../public/image/icon/icon-check-on.svg');
 }
+.icon-delete{
+  width: 22px;
+  height: 22px;
+  background-image:url('../public/image/icon/icon-delete.svg');
+}
+
 /*=================common css=================*/
 .a11y-hidden {
   clip: rect(1px, 1px, 1px, 1px);

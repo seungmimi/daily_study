@@ -5,6 +5,7 @@ import Header from '../../component/header/Header'
 import styles from './prodDetail.module.css'
 import BasicBtn from '../../component/Button'
 import Counter from '../../component/Counter';
+import CartPopup from './CartPopup';
 
 const ProdDetail = () => {
   const location = useLocation();
@@ -99,6 +100,7 @@ const ProdDetail = () => {
               </div>
             </div>
           </section>
+          {/* <CartPopup title="상품이 장바구니에 담겼습니다." subtext="장바구니로 이동하시겠습니까?" link=""/> */}
           </>
           }
         </div>
