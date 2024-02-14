@@ -1,17 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import axios from 'axios';
-import Header from '../../component/header/Header'
+import { useRecoilValue } from 'recoil';
+import { isLoginState, userState } from '../../atom/LoginState';
 import styles from './prodDetail.module.css'
 import BasicBtn from '../../component/Button'
 import Counter from '../../component/Counter';
 import CartPopup from './CartPopup';
 
+
 const ProdDetail = () => {
   const location = useLocation();
   const prodID = location.state.product_id;
-  
+
   const baseUrl = "https://openmarket.weniv.co.kr/";
+  const token = localStorage.getItem("token");
   const [prodInfo, setProdInfo] = useState('');
   const [isLoading, setIsLoading] = useState(true);
 
@@ -46,9 +49,35 @@ const ProdDetail = () => {
     setCounterValue(num);
   }
 
+  //회원 종류 구분
+  const isLogin = useRecoilValue(isLoginState);
+  const userType = useRecoilValue(userState);
+
+  //상품 구매/장바구니 팝업
+  const [isPopOpen, setIsPopOpen] = useState(false);
+
+  //상품 담기
+  const goCart = async() => {
+    axios.post(baseUrl + '/cart/',{
+      "product_id": prodID,
+      "quantity": counterValue,
+      "check" : false ,
+      },
+      {
+        headers: {
+          Authorization : `JWT ${token}`,
+        }
+      }
+    ).then(function(res){
+      setIsPopOpen(true);
+    }).catch(function(error){
+      console.log(error);
+    })
+  }
+
+
   return (
     <>
-      <Header />
       <div className='pageWrap'>
         <div className='content-area header-top'>
           {isLoading ? '로딩중' : 
@@ -78,8 +107,18 @@ const ProdDetail = () => {
                   </div>
                 </div>
                 <div className={styles['prod-btn']}>
+                {userType.login_type === 'SELLER' ? 
+                <>
+                  <BasicBtn $textMs disabled>바로 구매</BasicBtn>
+                  <BasicBtn $textMs $dark disabled>장바구니</BasicBtn>
+                </>
+                  : 
+                <>
                   <BasicBtn $textMs>바로 구매</BasicBtn>
-                  <BasicBtn $textMs $dark>장바구니</BasicBtn>
+                  <BasicBtn $textMs $dark onClick={goCart}>장바구니</BasicBtn>
+                </>
+                }
+
                 </div>
               </div>
             </div>
@@ -100,7 +139,12 @@ const ProdDetail = () => {
               </div>
             </div>
           </section>
-          {/* <CartPopup title="상품이 장바구니에 담겼습니다." subtext="장바구니로 이동하시겠습니까?" link=""/> */}
+          {isPopOpen ? 
+            isLogin ? 
+            <CartPopup title="상품이 장바구니에 담겼습니다." subtext="장바구니로 이동하시겠습니까?" link="/cart" isOpen={setIsPopOpen} />
+            :
+            <CartPopup title="로그인이 필요한 서비스 입니다." subtext="로그인화면으로 이동하시겠습니까?" link="/login" isOpen={setIsPopOpen} />
+            : ''};
           </>
           }
         </div>

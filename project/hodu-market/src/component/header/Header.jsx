@@ -3,7 +3,7 @@ import styles from './header.module.css';
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import { userState, isLoginState } from '../../atom/LoginState';
-import { useRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilState } from 'recoil';
 import axios from 'axios';
 
 const Header = () => {
@@ -27,13 +27,12 @@ const Header = () => {
       console.log(error);
     })
   }
-
   const [showMenu, setShowMenu] = useState(false);
   const moreMenuFn = () => {
     setShowMenu(!showMenu);
   }
 
-
+  if (window.location.pathname === '/login' || window.location.pathname === '/join') return null;
 
   return (
     <header className={styles.header}>
@@ -54,10 +53,10 @@ const Header = () => {
         //구매 회원일 경우
         loginType.login_type === 'BUYER' ?
         <div className={styles['right-contnet']}>
-          <a href='#' className={styles['icon-btn']}>
+          <Link to='/cart' className={styles['icon-btn']}>
             <i className='icon icon-cart'></i>
             <span className={styles['btn-title']}>장바구니</span>
-          </a>
+          </Link>
           <button className={styles['icon-btn']} onClick={moreMenuFn}>
             <i className='icon icon-user'></i>
             <span className={styles['btn-title']}>마이페이지</span>
