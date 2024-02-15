@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 const Counter = (props) => {
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(props.value || 1 );
   const handelSetCount = (e) => {
     if(count >= 1){
       setCount(parseInt(e.target.value));

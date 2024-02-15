@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom';
 
-const CartPopup = (props) => {
+const CartInfoPopup = (props) => {
   //팝업 오픈 시 윈도우 스크롤 막기
   useEffect(() => {
     document.body.style.cssText = `
@@ -19,10 +18,9 @@ const CartPopup = (props) => {
   const closePopup = () => {
     props.isOpen(false);
   }
-  //페이지 이동(props.link)
-  const navigate = useNavigate();
+
   const moveUrl = () => {
-    navigate(props.link);
+    props.actionFn();
   }
   return (
     <div className='pop-bg'>
@@ -43,4 +41,4 @@ const CartPopup = (props) => {
   )
 }
 
-export default CartPopup
+export default CartInfoPopup
