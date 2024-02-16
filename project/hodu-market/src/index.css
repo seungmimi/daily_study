@@ -115,6 +115,16 @@ ul {
   height: 22px;
   background-image:url('../public/image/icon/icon-delete.svg');
 }
+.icon-minus-line{
+  width: 18px;
+  height: 18px;
+  background-image:url('../public/image/icon/icon-minus-line.svg');
+}
+.icon-plus-line{
+  width: 18px;
+  height: 18px;
+  background-image:url('../public/image/icon/icon-plus-line.svg');
+}
 
 /*=================common css=================*/
 .a11y-hidden {

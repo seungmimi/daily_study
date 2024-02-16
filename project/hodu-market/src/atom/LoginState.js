@@ -1,5 +1,4 @@
 import { atom } from "recoil";
-// import axios from "axios"
 
 //유저 정보 관리
 // const baseUrl = "https://openmarket.weniv.co.kr/"
@@ -15,6 +14,3 @@ export const isLoginState = atom({
   key: "isLoginState",
   default: localStorage.getItem("token") ? true : false
 });
-
-
-//로그아웃 기능

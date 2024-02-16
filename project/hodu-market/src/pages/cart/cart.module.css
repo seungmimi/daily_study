@@ -1,0 +1,82 @@
+.cart-title {
+  padding: 54px 10px;
+  display: block;
+  font-family: 'Spoqa Han Sans Neo-Bold';
+  font-size: 36px;
+  text-align: center;
+}
+.cart-item-box {
+  margin-bottom: 80px;
+}
+.cart-item-box  .cart-item-title {
+  width: 100%;
+  padding: 16px 66px 16px 10px;
+  margin-bottom: 28px;
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #F2F2F2;
+  text-align: center;
+}
+.cart-item-box  .cart-item-title>label {
+  padding: 0 10px;
+}
+.cart-item-box  .cart-item-title .title-prodName {
+  width: 300px;
+}
+
+.cart-sum-box {
+  width: 100%;
+  padding: 30px 46px;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  background-color: #F2F2F2;
+  border-radius: 10px;
+}
+.cart-sum-box .icon-box {
+  border-radius: 100%;
+  background-color: #fff;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cart-sum-box .sum-obj {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.cart-sum-box .sum-obj .sum-price>strong {
+  font-size: 24px;
+  font-family: 'Spoqa Han Sans Neo-Bold';
+  margin-right: 3px;
+}
+.cart-sum-box .sum-obj.total {
+  margin-left: auto;
+}
+.cart-sum-box .sum-obj.total .sum-title {
+  font-size: 18px;
+  font-family: 'Spoqa Han Sans Neo-Bold';
+}
+.cart-sum-box .sum-obj.total .sum-price {
+  color: #EB5757;
+  font-size: 18px;
+}
+.cart-sum-box .sum-obj.total .sum-price>strong {
+  font-size: 36px;
+}
+.cart-order-btn {
+  width: 100%;
+  max-width: 280px;
+  padding: 0 20px;
+  margin-bottom: 80px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}

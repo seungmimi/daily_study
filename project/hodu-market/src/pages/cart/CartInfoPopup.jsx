@@ -19,8 +19,9 @@ const CartInfoPopup = (props) => {
     props.isOpen(false);
   }
 
-  const moveUrl = () => {
-    props.actionFn();
+  //상품 삭제
+  const delProdFn = () => {
+    props.actionFn(props.prodCode);
   }
   return (
     <div className='pop-bg'>
@@ -29,11 +30,10 @@ const CartInfoPopup = (props) => {
           <button className='pop-close-btn' onClick={closePopup}>
             <i className='icon icon-delete'></i>
           </button>
-          <h4>{props.title}</h4>
-          <p>{props.subtext}</p>
+          <h4>상품을 삭제하시겠습니까?</h4>
           <div className='pop-btn-box'>
             <button type='button' onClick={closePopup}>아니오</button>
-            <button type='button' onClick={moveUrl}>예</button>
+            <button type='button' onClick={delProdFn}>예</button>
           </div>
         </div>
       </div>

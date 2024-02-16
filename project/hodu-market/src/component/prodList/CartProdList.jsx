@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import React, { useCallback, useEffect, useState } from 'react'
 import axios from 'axios';
+import { useSetRecoilState } from 'recoil';
+import { cartProdListInfo } from '../../atom/CartProd';
+
 import styled from "styled-components";
-import Counter from '../../component/Counter';
+import styles from '../../pages/cart/cart.module.css'
 import BasicBtn from '../Button';
 import CartInfoPopup from '../../pages/cart/CartInfoPopup';
+
 
 
 //스타일
@@ -50,7 +53,7 @@ const ProdInfo = styled.div`
     flex-direction: column;
     gap: 5px;
     span {
-      color: #767676;
+      color: #4c4747;
       font-size: 14px;
       align-content: space-between
     }
@@ -76,6 +79,18 @@ text-align: center;
     color: #EB5757;
   }
 `
+const NullInfo = styled.p`
+  width: 100%;
+  padding: 20px 30px;
+  text-align: center;
+  font-family: 'Spoqa Han Sans Neo-Bold';
+  font-size: 18px;
+  p{
+    padding-top: 20px;
+    font-size: 14px;
+    color: #767676;
+  }
+`
 const Notice = styled.div`
   position: fixed;
   left: 50%;
@@ -92,9 +107,39 @@ const Notice = styled.div`
 
 const CartProdList = () => {
   const baseUrl = "https://openmarket.weniv.co.kr/";
+
   const token = localStorage.getItem("token");
   const [isLoading, setIsLoading] = useState(true);
+  const [isNull, setIsNull] = useState(false);
   const [cartPordList, setCartPordList] = useState([]);
+
+
+  // 전체 체크 클릭 시
+  const [checkedList, setCheckedLists] = useState([]);
+  const onCheckedAll = useCallback(
+    (checked) => {
+      if (checked) {
+        const checkedListArray = [];
+        cartPordList.forEach((list) => checkedListArray.push(list));
+        setCheckedLists(checkedListArray);
+      } else {
+        setCheckedLists([]);
+      }
+    },
+    [cartPordList]
+  );
+
+  // 개별 체크 클릭 시
+  const onCheckedElement = useCallback(
+    (checked, list) => {
+      if (checked) {
+        setCheckedLists([...checkedList, list]);
+      } else {
+        setCheckedLists(checkedList.filter((el) => el !== list));
+      }
+    },
+    [checkedList]
+  );
 
   //장바구니 정보 API
   const getCartList = async() => {
@@ -103,7 +148,12 @@ const CartProdList = () => {
         Authorization : `JWT ${token}`,
       }
     }).then(function(res){
-      getAddCartInfo(res.data.results);
+      if(res.data.count !== 0){
+        getAddCartInfo(res.data.results);
+      }else{
+        setIsNull(true);
+        setIsLoading(false);
+      }
     })        
     .catch(function(error){
       console.log(error);
@@ -122,36 +172,76 @@ const CartProdList = () => {
         })
     })
   }  
+
+  //장바구니 상품 삭제 API
+  const [delPopOpen, setdelPopOpen] = useState(false);
+  const [delProdCode, setDelProdCode] = useState();
+  const delProdPop = (prodId) => {
+      setDelProdCode(prodId);
+      setdelPopOpen(true);
+  }
+  const delProdFn = (prodId) => {
+    axios.delete(baseUrl + `/cart/${prodId}`,{
+      headers: {
+        Authorization : `JWT ${token}`,
+      }
+    })
+    .then(function(res){
+      setdelPopOpen(false);
+      window.location.replace('/cart');
+    })
+    .catch(function(error){
+      console.log(error);
+    })
+  }
+
+  //주문상품(선택 상품)상태 관리
+  const setCartOrder = useSetRecoilState(cartProdListInfo);
+  useEffect(() => {
+    setCartOrder(checkedList);
+  },[checkedList]);
+  
   useEffect(() => {
     getCartList();
   },[]);
 
-  //장바구니 상품 삭제 API
-  const [isPopOpen, setIsPopOpen] = useState(false);
-  const delProd = (prodId) => {
-    axios.delete(baseUrl + `/cart/${prodId}/`)
-    .then(function(res){
-      setIsPopOpen(true);
-    }).catch(function(error){
-      console.error(error);
-    })
-  }
-  const [counterValue, setCounterValue] = useState(1);
-  const getCounterValue = (num) => {
-    setCounterValue(num);
-  }
   return (
     <>
-      
+      <div className={styles['cart-item-title']}>
+        <label>
+          <input type='checkbox' className='hodu-check'
+          onChange={(e) => onCheckedAll(e.target.checked)}
+          checked={
+            checkedList.length === 0
+              ? false
+              : checkedList.length === cartPordList.length
+              ? true
+              : false
+          }/>
+          <span className='hodu-check-img'></span>
+        </label>
+        <span className={styles['title-prodName']}>상품 정보</span>
+        <span>수량</span>
+        <span>상품 금액</span>
+      </div>
+      {delPopOpen ? <CartInfoPopup prodCode={delProdCode} isOpen={setdelPopOpen} actionFn={delProdFn}/> : ''}
       <CartItemList>
-        {isLoading ? '로딩중' : cartPordList.map((e,i) => {
+        {isLoading ? '로딩중' : isNull ? 
+        <NullInfo>
+          장바구니에 담긴 상품이 없습니다.
+          <p>원하는 상품을 장바구니에 담아보세요!</p>
+        </NullInfo>
+        :
+        cartPordList.map((e,i) => {
           return(
           <CartItemListObj key={i}>
-            <CloseBtn onClick={() => {setIsPopOpen(true)}}>
+            <CloseBtn onClick={() => delProdPop(e.cart_item_id)}>
               <i className='icon icon-delete'></i>
             </CloseBtn>
             <label>
-              <input type='checkbox' className='hodu-check' checked/>
+              <input key={i} type='checkbox' className='hodu-check'
+              onChange={(event) => onCheckedElement(event.target.checked, e)}
+              checked={checkedList.includes(e) ? true : false} />
               <span className='hodu-check-img'></span>
             </label>
             <ProdInfo>
@@ -159,26 +249,23 @@ const CartProdList = () => {
               <div>
                 <span>{e.store_name}</span>
                 <strong>{e.product_name}</strong>
-                <p>{e.price}원</p>
+                <p>{e.price.toLocaleString()}원</p>
                 <span>{e.shipping_method === 'PARCEL' ? '소포배송' : '택배배송'} / 배송비: {e.shipping_fee.toLocaleString()}원</span>
               </div>
             </ProdInfo>
-            <Counter getCounterValue={() => getCounterValue()} value={e.quantity}/>
+            <div className='counter-box'>
+              <button className='counter-btn'>-</button>
+              <input type='number' value={e.quantity} readOnly/>
+              <button className='counter-btn'>+</button>
+            </div>
             <ProdSumBuy>
               <strong>{(e.quantity * e.price).toLocaleString()}원</strong>
-              <BasicBtn $fullwidth $textMs>주문하기</BasicBtn>
+              {/* <BasicBtn $fullwidth $textMs onClick={goOrder}>주문하기</BasicBtn> */}
             </ProdSumBuy>
           </CartItemListObj>
           )
         })
         }
-        {/* {delAlert ? 
-        <Notice>
-          <p>장바구니의 상품이 삭제되었습니다.</p>
-        </Notice>
-        :
-        ''
-        } */}
       </CartItemList>
     </>
   )

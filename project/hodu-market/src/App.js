@@ -5,6 +5,7 @@ import Join from "./pages/join/Join";
 import ProdDetail from "./pages/prodDetail/ProdDetail";
 import Cart from "./pages/cart/Cart";
 import Header from "./component/header/Header";
+import Order from "./pages/Order/Order";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/join" element={<Join />} />
         <Route path="/prod" element={<ProdDetail />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/order" element={<Order />} />
       </Routes>
     </>
 
