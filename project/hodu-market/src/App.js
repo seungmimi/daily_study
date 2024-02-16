@@ -5,7 +5,7 @@ import Join from "./pages/join/Join";
 import ProdDetail from "./pages/prodDetail/ProdDetail";
 import Cart from "./pages/cart/Cart";
 import Header from "./component/header/Header";
-import Order from "./pages/Order/Order";
+import Order from "./pages/order/Order";
 
 function App() {
   return (
