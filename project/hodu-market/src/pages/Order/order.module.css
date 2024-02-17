@@ -87,3 +87,92 @@
 .order-info-obj .obj-input .input-box .add-input>label button {
   padding: 0 10px;
 }
+.pay-info {
+  display: flex;
+  gap: 20px;
+}
+.payment-info {
+  width: 100%;
+  min-width: 550px;
+}
+.payment-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 15px 10px;
+  border: none;
+  border-bottom: 2px solid #C4C4C4;
+}
+.payment-box>label {
+  font-size: 14px;
+}
+.payment-box>label>input{
+  margin-right: 10px;
+}
+.sumprice-info {
+  margin-bottom: 80px;
+  width: 100%;
+}
+.sumprice-info>.order-info-title {
+  border-bottom: none;
+}
+.sumprice-box {
+  border-radius: 10px;
+  border: 2px solid #21BF48;
+  overflow: hidden;
+}
+.sum-obj-box {
+  padding: 28px 28px 10px 28px;
+}
+.sumprice-box .sum-obj {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.sumprice-box .sum-obj>p {
+  color: #767676;
+  font-size: 14px;
+}
+.sumprice-box .sum-obj>p strong {
+  font-family: 'Spoqa Han Sans Neo-Bold';
+  font-size: 18px;
+  color: #000;
+  padding-right: 3px;
+}
+
+.sumprice-box .sum-obj.last-obj {
+  padding-top: 15px;
+  border-top: 1px solid #C4C4C4;
+}
+
+.sumprice-box .sum-obj.last-obj>p{
+  color: #EB5757;
+  font-size: 24px;
+}
+.sumprice-box .sum-obj.last-obj>p strong {
+  color: inherit;
+  font-size: inherit;
+}
+
+.sumprice-box .go-pay {
+  background-color: #F2F2F2;
+  padding: 20px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+}
+.sumprice-box .go-pay>button {
+  padding: 0 28px;
+}
+.sumprice-box .go-pay .agree-check {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.sumprice-box .go-pay .agree-check .info-text {
+  font-size: 14px;
+}
