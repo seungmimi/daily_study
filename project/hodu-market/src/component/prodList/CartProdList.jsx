@@ -5,10 +5,7 @@ import { cartProdListInfo } from '../../atom/CartProd';
 
 import styled from "styled-components";
 import styles from '../../pages/cart/cart.module.css'
-import BasicBtn from '../Button';
 import CartInfoPopup from '../../pages/cart/CartInfoPopup';
-
-
 
 //스타일
 const CartItemList = styled.ul`

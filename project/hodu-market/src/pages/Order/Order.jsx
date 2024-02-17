@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './order.module.css'
 import BasicBtn from '../../component/Button'
 
 import OrderProdList from '../../component/prodList/OrderProdList'
+import OrderSum from './OrderSum'
+import CartPopup from '../prodDetail/CartPopup'
 
 
 function Order() {
+  const [isOpen, setIsOpen] = useState(false);
+  const payAlert = () => {
+    setIsOpen(true);
+  }
   return (
     <div className='pageWrap'>
       <div className='content-area header-top'>
@@ -13,7 +19,7 @@ function Order() {
           주문/결제하기
         </h2>
         <OrderProdList />
-        <form className={styles['order-info']}>
+        <form className={styles['order-info']} onClick={payAlert}>
           <div className={styles['order-info-title']}>
             <h3>배송정보</h3>
           </div>
@@ -105,43 +111,15 @@ function Order() {
               </label>
             </fieldset>
           </div>
-          <div className={styles['sumprice-info']}>
-            <div className={styles['order-info-title']}>
-              <h3>최종결제 정보</h3>
-            </div>
-            <div className={styles['sumprice-box']}>
-              <div className={styles['sum-obj-box']}>
-                <div className={styles['sum-obj']}>
-                  <span>- 상품금액</span>
-                  <p><strong>46000</strong>원</p>
-                </div>
-                <div className={styles['sum-obj']}>
-                  <span>- 할인금액</span>
-                  <p><strong>0</strong>원</p>
-                </div>
-                <div className={styles['sum-obj']}>
-                  <span>- 배송비</span>
-                  <p><strong>1000</strong>원</p>
-                </div>
-                <div className={`${styles['sum-obj']} ${styles['last-obj']}`}>
-                  <span>- 결제금액</span>
-                  <p><strong>1000</strong>원</p>
-                </div>
-              </div>
-              <div className={styles['go-pay']}>
-                <label className={styles['agree-check']}>
-                  <input type='checkbox' className='hodu-check' />
-                  <span className='hodu-check-img'></span>
-                  <p className={styles['info-text']}>주문 내용을 확인하였으며, 정보 제공 등에 동의합니다.</p>
-                </label>
-                <BasicBtn>결제하기</BasicBtn>
-              </div>
-            </div>
-          </div>
+          <OrderSum />
         </div>
       </div>
-
-    </div>
+      {isOpen ?
+      <CartPopup title="결제기능은 아직 준비중 입니다." subtext="장바구니로 돌아가시겠습니까?" link="/cart" isOpen={setIsOpen} />
+      :
+      ''
+      }
+      </div>
   )
 }
 
