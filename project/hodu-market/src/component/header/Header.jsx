@@ -125,7 +125,7 @@ const Header = () => {
         //로그인 했을 경우
         //구매 회원일 경우
         loginType.login_type === 'BUYER' ?
-        <div className={styles['right-contnet']}>
+        <div className={styles['right-contnet']} onMouseDown={(event) => event.preventDefault()}>
           <Link to='/cart' className={styles['icon-btn']}>
             <i className='icon icon-cart'></i>
             <span className={styles['btn-title']}>장바구니</span>
