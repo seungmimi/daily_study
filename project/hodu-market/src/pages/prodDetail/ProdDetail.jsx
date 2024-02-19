@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import axios from 'axios';
 import { useRecoilValue } from 'recoil';
 import { isLoginState, userState } from '../../atom/LoginState';
@@ -10,8 +10,7 @@ import CartPopup from './CartPopup';
 
 
 const ProdDetail = () => {
-  const location = useLocation();
-  const prodID = location.state.product_id;
+  const prodID = useParams();
 
   const baseUrl = "https://openmarket.weniv.co.kr/";
   const token = localStorage.getItem("token");
@@ -22,7 +21,7 @@ const ProdDetail = () => {
   useEffect(()=>{
     const getProdInfo = async() => {
       setIsLoading(true);
-      await axios.get(baseUrl + `products/${prodID}`)
+      await axios.get(baseUrl + `products/${prodID.num}`)
       .then(function(res){
         setProdInfo(res.data);
         setIsLoading(false);
