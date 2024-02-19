@@ -44,8 +44,9 @@ const Login = () => {
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("username", username);
       localStorage.setItem("login_type", loginType);
+      localStorage.setItem("store_id", res.data.id);
       //로그인 상태관리 atom사용
-      setUserInfo({username: username, login_type: loginType});
+      setUserInfo({username: username, login_type: loginType, store_id: res.data.id});
       setIsLogin(true);
       navigation('/');
     })

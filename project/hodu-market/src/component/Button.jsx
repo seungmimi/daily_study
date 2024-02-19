@@ -9,8 +9,12 @@ border-radius: 5px;
 color: #fff;
 padding: 19px 0;
 text-align: center;
+transition: all 0.2s;
 &:disabled {
   background: #C4C4C4;
+}
+&:hover {
+  box-shadow: 1px 1px 8px rgba(0,0,0,0.2);
 }
 
 /*dark: 어두운 버튼*/
@@ -70,6 +74,14 @@ props.$textS &&
     padding: 10px 0;
     height: 40px;
     font-size: 16px;
+  `
+}
+
+/*textS: 텍스트 크기*/
+${(props) => 
+props.$paddingS &&
+  css`
+    padding: 10px 20px;
   `
 }
 

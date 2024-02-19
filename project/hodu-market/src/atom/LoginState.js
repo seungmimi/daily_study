@@ -6,7 +6,8 @@ import { atom } from "recoil";
 export const userState = atom({
   key: "userState",
   default: {username: localStorage.getItem("username") || '',
-            login_type: localStorage.getItem("login_type") || ''},
+            login_type: localStorage.getItem("login_type") || '',
+            store_id: localStorage.getItem("store_id") || ''},
 });
 
 //로그인 여부 관리

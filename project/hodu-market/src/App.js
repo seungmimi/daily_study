@@ -6,6 +6,8 @@ import ProdDetail from "./pages/prodDetail/ProdDetail";
 import Cart from "./pages/cart/Cart";
 import Header from "./component/header/Header";
 import Order from "./pages/order/Order";
+import SellerCenter from "./pages/seller/SellerCenter";
+import AddProd from "./pages/seller/AddProd";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route path="/prod/:num" element={<ProdDetail />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/order" element={<Order />} />
+        <Route path="/sellercenter" element={<SellerCenter />} />
+        <Route path="/sellercenter/addprod" element={<AddProd />} />
       </Routes>
     </>
 

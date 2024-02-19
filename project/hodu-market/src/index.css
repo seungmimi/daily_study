@@ -125,6 +125,11 @@ ul {
   height: 18px;
   background-image:url('../public/image/icon/icon-plus-line.svg');
 }
+.icon-plus{
+  width: 22px;
+  height: 22px;
+  background-image:url('../public/image/icon/icon-plus.svg');
+}
 .icon-rigth-arrow{
   width: 22px;
   height: 22px;
@@ -151,6 +156,7 @@ ul {
   max-width: 980px;
   margin: 0 auto; 
 }
+.pageWrap > .header-top,
 .pageWrap > .content-area.header-top {
   margin-top: 90px;
 }

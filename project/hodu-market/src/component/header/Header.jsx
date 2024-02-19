@@ -1,19 +1,26 @@
 import React, { useEffect, useState } from 'react'
-import styles from './header.module.css';
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import { userState, isLoginState } from '../../atom/LoginState';
 import { useRecoilState } from 'recoil';
 import axios from 'axios';
 
+import BasicBtn from '../Button'
+import styles from './header.module.css';
+
 const Header = () => {
   const baseUrl = "https://openmarket.weniv.co.kr/"
+  const [loginType, setLoginType] = useRecoilState(userState);
+  const [islogin, setIslogin] = useRecoilState(isLoginState);
+
+  //링크
   const navigate = useNavigate();
   const handleHomeLink = () => {
     navigate('/');
   }
-  const [loginType, setLoginType] = useRecoilState(userState);
-  const [islogin, setIslogin] = useRecoilState(isLoginState);
+  const handleSellerCenter = () => {
+    navigate('/sellercenter');
+  }
 
   //로그아웃 기능
   const logOutFn = async() => {
@@ -125,7 +132,7 @@ const Header = () => {
         //로그인 했을 경우
         //구매 회원일 경우
         loginType.login_type === 'BUYER' ?
-        <div className={styles['right-contnet']} onMouseDown={(event) => event.preventDefault()}>
+        <div className={styles['right-contnet']}>
           <Link to='/cart' className={styles['icon-btn']}>
             <i className='icon icon-cart'></i>
             <span className={styles['btn-title']}>장바구니</span>
@@ -135,7 +142,7 @@ const Header = () => {
             <span className={styles['btn-title']}>마이페이지</span>
           </button>
           {showMenu ? 
-          <div className={styles['my-more-menu']}>
+          <div className={styles['my-more-menu']} onMouseDown={(event) => event.preventDefault()}>
             <ul className={styles['more-menu-list']}>
               <li>마이페이지</li>
               <li onClick={logOutFn}>로그아웃</li>
@@ -146,13 +153,13 @@ const Header = () => {
         :
         //판매자 회원일 경우
         <div className={styles['right-contnet']}>
-          <button>판매자 센터</button>
-          <button className={styles['icon-btn']} onClick={moreMenuFn}>
+          <BasicBtn $textMs $paddingS onClick={handleSellerCenter}>판매자 센터</BasicBtn>
+          <button className={styles['icon-btn']} onClick={moreMenuFn} onBlur={() => {setShowMenu(false)}}>
             <i className='icon icon-user'></i>
             <span className={styles['btn-title']}>마이페이지</span>
           </button>
           {showMenu ? 
-          <div className={styles['my-more-menu']}>
+          <div className={styles['my-more-menu']} onMouseDown={(event) => event.preventDefault()}>
             <ul className={styles['more-menu-list']}>
               <li>마이페이지</li>
               <li onClick={logOutFn}>로그아웃</li>
