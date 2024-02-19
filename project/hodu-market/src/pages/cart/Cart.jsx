@@ -1,15 +1,25 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
+import { cartProdListInfo } from '../../atom/CartProd';
 
 import styles from './cart.module.css'
 import CartProdList from '../../component/prodList/CartProdList'
 import CartSum from './CartSum'
 import BasicBtn from '../../component/Button'
+import { useRecoilValue } from 'recoil';
 
 const Cart = () => {
   const navigate = useNavigate();
-  const goOrder = () => {;
-    navigate('/order');
+  const goOrderProd = useRecoilValue(cartProdListInfo);
+  console.log(goOrderProd);
+  const goOrder = () => {
+    if(goOrderProd.length === 0){
+      alert('구매할 상품을 선택해 주세요');
+    }else{
+      navigate('/order');
+    }
+    
+    
   }
   return (
     <div className='pageWrap'>
