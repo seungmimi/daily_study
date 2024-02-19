@@ -125,6 +125,11 @@ ul {
   height: 18px;
   background-image:url('../public/image/icon/icon-plus-line.svg');
 }
+.icon-rigth-arrow{
+  width: 22px;
+  height: 22px;
+  background-image:url('../public/image/icon/icon-rhigt-arrow.svg');
+}
 
 /*=================common css=================*/
 .a11y-hidden {

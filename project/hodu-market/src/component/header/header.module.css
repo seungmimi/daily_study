@@ -46,6 +46,85 @@
   top: 50%;
   transform: translate(-50%, -50%);
 }
+.left-contnet .search-result-box{
+  position: absolute;
+  margin-top: 5px;
+  width: 100%;
+  min-height: 80px;
+  border: 1px solid #c4c4c4;
+  border-radius: 10px;
+  background-color: #fff;
+}
+.left-contnet .search-result-box>.title {
+  display: block;
+  padding-bottom: 5px;
+  font-family: 'Spoqa Han Sans Neo-Bold';
+  color: #21BF48;
+  border-bottom: 1px solid #c4c4c4;
+  padding: 10px 15px;
+}
+.left-contnet .search-result-box .result-list {
+  font-size: 14px;
+}
+.left-contnet .search-result-box .result-obj {
+  display: flex;
+  flex-direction: column;
+  max-height: 350px;
+  overflow-Y: scroll;
+  padding: 10px 3px 10px 15px;
+}
+/*스크롤 영역 커스텀*/
+.left-contnet .search-result-box .result-obj::-webkit-scrollbar {
+  width: 20px;
+}
+.left-contnet .search-result-box .result-obj::-webkit-scrollbar-thumb {
+  height: 50%;
+  background: #F2F2F2;
+  border-radius: 50px;
+  border: 8px solid #fff;
+}
+.left-contnet .search-result-box .result-obj::-webkit-scrollbar-track {
+  background: none;
+}
+
+.left-contnet .search-result-box .result-obj>li {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 8px;
+  border-bottom: 1px solid #c4c4c4;
+  transition: all 0.2s;
+}
+.left-contnet .search-result-box .result-obj>li:last-child{
+  border-bottom: none;
+}
+.left-contnet .search-result-box .result-obj>li>div{
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 12px;
+  color: #767676;
+}
+.left-contnet .search-result-box .result-obj>li:hover {
+  background-color: #21bf492f;
+}
+.left-contnet .search-result-box .result-obj>li>div>strong {
+  font-size: 14px;
+  color: #000;
+}
+.left-contnet .search-result-box .result-none {
+  padding: 20px 15px;
+  text-align: center;
+}
+.left-contnet .search-result-box .result-none>strong {
+  font-family: 'Spoqa Han Sans Neo-Medium';
+}
+.left-contnet .search-result-box .result-none>p {
+  color: #787878;
+  font-size: 12px;
+}
 .right-contnet {
   position: relative;
 }

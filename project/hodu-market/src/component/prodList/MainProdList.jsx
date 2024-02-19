@@ -81,7 +81,7 @@ const MainProdList = () => {
   const getProdDetail = async(prodId) => {
     axios.get(baseUrl + `/products/${prodId}/`)
     .then(function(res){
-      navigate('/prod',{state: {
+      navigate(`/prod/${prodId}`,{state: {
         product_id: `${res.data.product_id}`,
       }});
     })
