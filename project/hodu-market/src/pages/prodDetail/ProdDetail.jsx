@@ -58,7 +58,7 @@ const ProdDetail = () => {
   //상품 담기
   const goCart = async() => {
     axios.post(baseUrl + '/cart/',{
-      "product_id": prodID,
+      "product_id": prodID.num,
       "quantity": counterValue,
       "check" : false ,
       },

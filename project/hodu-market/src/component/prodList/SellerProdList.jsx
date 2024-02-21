@@ -3,6 +3,7 @@ import styled, {css} from "styled-components"
 import BasicBtn from '../Button';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'
+import CartInfoPopup from '../../pages/cart/CartInfoPopup';
 
 const ProdObj = styled.li`
   display: flex;
@@ -13,6 +14,7 @@ const ProdObj = styled.li`
     display: flex;
     align-items: center;
     gap: 10px;
+    cursor: pointer;
     >img{
       width: 70px;
       height: 70px;
@@ -83,31 +85,57 @@ const SellerProdList = (props) => {
     })
   },[])
 
-  //상품 수정
+  //상품 상세페이지로 이동
   const navigate = useNavigate();
-  const editProd = (prodNum) => {
+  const detailProd = (prodNum) => {
+    navigate(`/prod/${prodNum}`);
+  }
+
+  //상품 수정
+  const editProd = (event, prodNum) => {
     navigate(`/sellercenter/editprod/${prodNum}`);
   }
 
   //상품 삭제
+  const [delPopOpen, setdelPopOpen] = useState(false);
+  const [delProdCode, setDelProdCode] = useState();
+  const delProdPop = (prodId) => {
+      setDelProdCode(prodId);
+      setdelPopOpen(true);
+  }
+  const delProdFn = (prodId) => {
+    axios.delete(baseUrl + `/products/${prodId}`,{
+      headers: {
+        Authorization : `JWT ${token}`,
+      }
+    })
+    .then(function(){
+      setdelPopOpen(false);
+      window.location.replace('/sellercenter');
+    })
+    .catch(function(error){
+      console.log(error);
+    })
+  }
 
   return (
     <>
     {isLoading ? '로딩중' : 
     <>
+      {delPopOpen ? <CartInfoPopup prodCode={delProdCode} isOpen={setdelPopOpen} actionFn={delProdFn}/> : ''}
       {sellerProd.map((e,i) => {
         return(
           <ProdObj key={i}>
-          <div>
+          <div onClick={() => {detailProd(e.product_id)}}>
             <img src={e.image} alt={e.product_name} />
             <ProdText>
               <strong>{e.product_name}</strong>
               <span>재고: {e.stock.toLocaleString()}개</span>
             </ProdText>
           </div>
-          <strong>{e.price.toLocaleString()}원</strong>
-          <BasicBtn $textS $paddingS onClick={() => editProd(e.product_id)}>수정</BasicBtn>
-          <BasicBtn $textS $white $paddingS>삭제</BasicBtn>
+          <strong onClick={() => {detailProd(e.product_id)}}>{e.price.toLocaleString()}원</strong>
+          <BasicBtn $textS $paddingS onClick={(event) => editProd(event, e.product_id)}>수정</BasicBtn>
+          <BasicBtn $textS $white $paddingS onClick={(event) => delProdPop(event, e.product_id)}>삭제</BasicBtn>
         </ProdObj>
         )
       })}

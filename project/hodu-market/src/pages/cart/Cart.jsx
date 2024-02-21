@@ -11,7 +11,6 @@ import { useRecoilValue } from 'recoil';
 const Cart = () => {
   const navigate = useNavigate();
   const goOrderProd = useRecoilValue(cartProdListInfo);
-  console.log(goOrderProd);
   const goOrder = () => {
     if(goOrderProd.length === 0){
       alert('구매할 상품을 선택해 주세요');

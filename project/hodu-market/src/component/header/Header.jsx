@@ -144,7 +144,6 @@ const Header = () => {
           {showMenu ? 
           <div className={styles['my-more-menu']} onMouseDown={(event) => event.preventDefault()}>
             <ul className={styles['more-menu-list']}>
-              <li>마이페이지</li>
               <li onClick={logOutFn}>로그아웃</li>
             </ul>
           </div> : ''}
@@ -161,7 +160,6 @@ const Header = () => {
           {showMenu ? 
           <div className={styles['my-more-menu']} onMouseDown={(event) => event.preventDefault()}>
             <ul className={styles['more-menu-list']}>
-              <li>마이페이지</li>
               <li onClick={logOutFn}>로그아웃</li>
             </ul>
           </div> : ''}
