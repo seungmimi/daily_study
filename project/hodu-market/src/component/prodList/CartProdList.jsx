@@ -6,6 +6,7 @@ import { cartProdListInfo } from '../../atom/CartProd';
 import styled from "styled-components";
 import styles from '../../pages/cart/cart.module.css'
 import CartInfoPopup from '../../pages/cart/CartInfoPopup';
+import CartEditPopup from '../../pages/cart/CartEditPopup';
 
 //스타일
 const CartItemList = styled.ul`
@@ -192,6 +193,19 @@ const CartProdList = () => {
     })
   }
 
+  //장바구니 상품 수량 수정 API
+  const [editPopOpen, setEditPopOpen] = useState(false);
+  const [editProdCode, setEditProdCode] = useState();
+  const [editQuantity, setEditProdQuantity] = useState();
+  const [editProdId, setEditProdId] = useState();
+
+  const editProdPop = (prodId, quantity, prodCode) => {
+    setEditProdCode(prodId);
+    setEditProdQuantity(quantity);
+    setEditProdId(prodCode)
+    setEditPopOpen(true);
+  }
+
   //주문상품(선택 상품)상태 관리
   const setCartOrder = useSetRecoilState(cartProdListInfo);
   useEffect(() => {
@@ -222,6 +236,7 @@ const CartProdList = () => {
         <span>상품 금액</span>
       </div>
       {delPopOpen ? <CartInfoPopup prodCode={delProdCode} isOpen={setdelPopOpen} actionFn={delProdFn}/> : ''}
+      {editPopOpen ? <CartEditPopup prodCode={editProdCode} prodId={editProdId} count={editQuantity} isOpen={setEditPopOpen} /> : ''}
       <CartItemList>
         {isLoading ? '로딩중' : isNull ? 
         <NullInfo>
@@ -250,14 +265,13 @@ const CartProdList = () => {
                 <span>{e.shipping_method === 'PARCEL' ? '소포배송' : '택배배송'} / 배송비: {e.shipping_fee.toLocaleString()}원</span>
               </div>
             </ProdInfo>
-            <div className='counter-box'>
+            <div className='counter-box' onClick={() => {editProdPop(e.cart_item_id, e.quantity, e.product_id)}}>
               <button className='counter-btn'>-</button>
               <input type='number' value={e.quantity} readOnly/>
               <button className='counter-btn'>+</button>
             </div>
             <ProdSumBuy>
               <strong>{(e.quantity * e.price).toLocaleString()}원</strong>
-              {/* <BasicBtn $fullwidth $textMs onClick={goOrder}>주문하기</BasicBtn> */}
             </ProdSumBuy>
           </CartItemListObj>
           )
