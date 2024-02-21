@@ -22,6 +22,7 @@ function App() {
         <Route path="/order" element={<Order />} />
         <Route path="/sellercenter" element={<SellerCenter />} />
         <Route path="/sellercenter/addprod" element={<AddProd />} />
+        <Route path="/sellercenter/editprod/:num" element={<AddProd />} />
       </Routes>
     </>
 

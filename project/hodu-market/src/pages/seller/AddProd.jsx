@@ -2,8 +2,10 @@ import React from 'react'
 
 import styles from './seller.module.css'
 import AddProdForm from './AddProdForm'
+import { useParams } from 'react-router-dom'
 
-const AddProd = (props) => {
+const AddProd = () => {
+  const prodId = useParams();
   return (
     <div className='pageWrap'>
       <div className='header-top'>
@@ -28,7 +30,7 @@ const AddProd = (props) => {
               </li>
             </ul>
           </div>
-          <AddProdForm />
+          <AddProdForm prodId = {prodId.num}/>
         </article>
       </div>
     </div>

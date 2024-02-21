@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styled, {css} from "styled-components"
 import BasicBtn from '../Button';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom'
 
 const ProdObj = styled.li`
   display: flex;
@@ -82,6 +83,14 @@ const SellerProdList = (props) => {
     })
   },[])
 
+  //상품 수정
+  const navigate = useNavigate();
+  const editProd = (prodNum) => {
+    navigate(`/sellercenter/editprod/${prodNum}`);
+  }
+
+  //상품 삭제
+
   return (
     <>
     {isLoading ? '로딩중' : 
@@ -97,7 +106,7 @@ const SellerProdList = (props) => {
             </ProdText>
           </div>
           <strong>{e.price.toLocaleString()}원</strong>
-          <BasicBtn $textS $paddingS>수정</BasicBtn>
+          <BasicBtn $textS $paddingS onClick={() => editProd(e.product_id)}>수정</BasicBtn>
           <BasicBtn $textS $white $paddingS>삭제</BasicBtn>
         </ProdObj>
         )
