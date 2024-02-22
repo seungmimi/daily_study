@@ -300,7 +300,7 @@ const Join = () => {
             <label className={styles['agree-check']}>
               <input type='checkbox' className='hodu-check'  onClick={(e) => {agree(e)}}/>
               <span className='hodu-check-img'></span>
-              <p className={styles['info-text']}>호두샵의 <strong>이용약관</strong> 및 <strong>개인정보처리방침</strong>에 대한 내용을 확인하였고 동의합니다.</p>
+              <p className={styles['info-text']}>오픈마켓의 <strong>이용약관</strong> 및 <strong>개인정보처리방침</strong>에 대한 내용을 확인하였고 동의합니다.</p>
             </label>
             <BasicBtn $fullwidth type='submit' disabled = {joinBtnActiveFn()} onClick={(e) => {joinFn(e,loginType)}}>
               회원 가입

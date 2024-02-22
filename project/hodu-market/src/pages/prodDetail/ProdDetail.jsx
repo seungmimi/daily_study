@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios';
-import { useRecoilState, useRecoilValue, useResetRecoilState } from 'recoil';
-import { cartProdListInfo } from '../../atom/CartProd';
+import { useRecoilValue } from 'recoil';
 import { isLoginState, userState } from '../../atom/LoginState';
 import styles from './prodDetail.module.css'
 import BasicBtn from '../../component/Button'
@@ -58,6 +57,9 @@ const ProdDetail = () => {
 
   //상품 담기
   const goCart = async() => {
+    if(!isLogin){
+      return setIsPopOpen(true);
+    }
     axios.post(baseUrl + '/cart/',{
       "product_id": prodID.num,
       "quantity": counterValue,

@@ -9,7 +9,7 @@ const Footer = () => {
           <div className={styles['footer-box']}>
             <div className={styles['top-area']}>
               <ul>
-                <li>호두샵 소개</li>
+                <li>오픈마켓 소개</li>
                 <li>이용약관</li>
                 <li className={styles['bold-menu']}>개인정보 처리방침</li>
                 <li>전자금융거래약관</li>
@@ -27,7 +27,7 @@ const Footer = () => {
               <p>
                 제주특별자치도 제주시 동광고 137 제주코딩베이스캠프<br />
                 사업자 번호 : 000-0000-0000 | 통신판매업<br />
-                대표 : 김호두
+                대표 : 김오픈
               </p>
             </div>
           </div>

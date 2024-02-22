@@ -76,7 +76,7 @@ function Order() {
                 <div className={styles['add-input']}>
                   <label>
                     <input type="text" />
-                    <BasicBtn $textS>우편번호 조회</BasicBtn>
+                    <BasicBtn $textS onClick={(e) => e.preventDefault()}>우편번호 조회</BasicBtn>
                   </label>
                   <input type="text" className={styles['wid-full']}/>
                   <input type="text" className={styles['wid-full']}/>
