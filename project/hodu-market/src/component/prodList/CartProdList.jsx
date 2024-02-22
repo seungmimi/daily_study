@@ -150,7 +150,7 @@ const CartProdList = () => {
       axios.get(baseUrl + `products/${e.product_id}`)
         .then(function(res){
           setCartPordList(prevCart => [...prevCart, Object.assign(e,res.data)]);
-          setCheckedLists(prevCart => [...prevCart, Object.assign(e,res.data)])
+          setCheckedLists(prevCart => [...prevCart, Object.assign(e,res.data)]);
           setIsLoading(false);
         })
         .catch(function(error){

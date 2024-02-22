@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios';
-import { useRecoilValue } from 'recoil';
+import { useRecoilState, useRecoilValue, useResetRecoilState } from 'recoil';
+import { cartProdListInfo } from '../../atom/CartProd';
 import { isLoginState, userState } from '../../atom/LoginState';
 import styles from './prodDetail.module.css'
 import BasicBtn from '../../component/Button'
@@ -24,6 +25,7 @@ const ProdDetail = () => {
       await axios.get(baseUrl + `products/${prodID.num}`)
       .then(function(res){
         setProdInfo(res.data);
+        console.log(res.data);
         setIsLoading(false);
       })
       .catch(function(error){
@@ -74,7 +76,6 @@ const ProdDetail = () => {
     })
   }
 
-
   return (
     <>
       <div className='pageWrap'>
@@ -108,13 +109,11 @@ const ProdDetail = () => {
                 <div className={styles['prod-btn']}>
                 {userType.login_type === 'SELLER' ? 
                 <>
-                  <BasicBtn $textMs disabled>바로 구매</BasicBtn>
                   <BasicBtn $textMs $dark disabled>장바구니</BasicBtn>
                 </>
                   : 
                 <>
-                  <BasicBtn $textMs>바로 구매</BasicBtn>
-                  <BasicBtn $textMs $dark onClick={goCart}>장바구니</BasicBtn>
+                  <BasicBtn $textMs onClick={goCart}>장바구니</BasicBtn>
                 </>
                 }
 

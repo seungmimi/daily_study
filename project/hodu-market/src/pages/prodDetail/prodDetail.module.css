@@ -87,15 +87,12 @@
 }
 .prod-buy .prod-btn {
   display: flex;
+  justify-content: flex-end;
   gap: 14px;
 }
-.prod-buy .prod-btn>button {
-  padding: 0 20px;
-  width: 100%;
-}
+
 .prod-buy .prod-btn>button:last-child {
-  width: 100px;
-  flex-shrink: 0;
+  width: 100%;
 }
 /*===================상품 상세 정보===================*/
 .detailInfo-area {
