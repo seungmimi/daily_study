@@ -169,7 +169,7 @@ const AddProdForm = (props) => {
       </div>
       <div className={styles['button-box']}>
         <BasicBtn $white type='button' onClick={() => {navigate('/sellercenter')}}>취소</BasicBtn>
-        <BasicBtn type='submit' disabled={handleSaveBtn()}>저장하기</BasicBtn>
+        <BasicBtn $green type='submit' disabled={handleSaveBtn()}>저장하기</BasicBtn>
       </div>
     </form>
   )

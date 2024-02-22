@@ -79,7 +79,7 @@
 }
 .prod-buy .prod-sum>.sum-info .sum-label>.sum-count {
   font-family: 'Spoqa Han Sans Neo-Bold';
-  color: #21BF48;
+  color: #6533C0;
 }
 .prod-buy .prod-sum>.sum-info .sum-price {
   font-family: 'Spoqa Han Sans Neo-Bold';
@@ -116,8 +116,8 @@
 }
 .tab-list .tab-btn.tab-active {
   font-family: 'Spoqa Han Sans Neo-Bold';
-  color: #21BF48;
-  border-bottom: 6px solid #21BF48;
+  color: #6533C0;
+  border-bottom: 6px solid #6533C0;
 }
 .detailInfo-area .tab-content-box {
   padding: 50px 10px 100px 10px;

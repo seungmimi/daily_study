@@ -38,7 +38,7 @@ const SellerCenter = () => {
       <div className='header-top'>
         <div className={styles['title-box']}>
           <h3>대시보드 <strong>{userName.username}</strong></h3>
-          <BasicBtn $textS $paddingS onClick={handleAddProd}>
+          <BasicBtn $green $textS $paddingS onClick={handleAddProd}>
             <i className='icon icon icon-plus'></i>
             상품 업로드
           </BasicBtn>

@@ -25,7 +25,6 @@ const ProdDetail = () => {
       await axios.get(baseUrl + `products/${prodID.num}`)
       .then(function(res){
         setProdInfo(res.data);
-        console.log(res.data);
         setIsLoading(false);
       })
       .catch(function(error){

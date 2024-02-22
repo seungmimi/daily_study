@@ -87,7 +87,7 @@ const Header = () => {
       <div className={styles['contnent-area']}>
         <div className={styles['left-contnet']}>
           <h1 className={styles['logo-area']} onClick={handleHomeLink}>
-            <img src={process.env.PUBLIC_URL + '/image/Logo-hodu.png'} alt='hodu martet'/>
+            <img src={process.env.PUBLIC_URL + '/image/main-logo.png'} alt='hodu martet'/>
           </h1> 
           <div className={styles['search-box']}>
             <input className={styles['search-bar']} type='text' placeholder='상품을 검색해보세요!' value={searchText} onChange={(e)=>{setSearchText(e.target.value)}}  onFocus={() => {searchText.length !== 0 ? setSearchResultOpen(true) : setSearchResultOpen(false)}} onBlur={() => {setSearchResultOpen(false)}}/>
@@ -152,7 +152,7 @@ const Header = () => {
         :
         //판매자 회원일 경우
         <div className={styles['right-contnet']}>
-          <BasicBtn $textMs $paddingS onClick={handleSellerCenter}>판매자 센터</BasicBtn>
+          <BasicBtn $green $textMs $paddingS onClick={handleSellerCenter}>판매자 센터</BasicBtn>
           <button className={styles['icon-btn']} onClick={moreMenuFn} onBlur={() => {setShowMenu(false)}}>
             <i className='icon icon-user'></i>
             <span className={styles['btn-title']}>마이페이지</span>

@@ -75,7 +75,7 @@ const Login = () => {
       <div className={styles['content-area']}>
         <Link to={'/'}>
           <h1 className={styles['page-title']}>
-            <img src={process.env.PUBLIC_URL + '/image/Logo-hodu.png'} alt='hodu market'/>
+            <img src={process.env.PUBLIC_URL + '/image/main-logo.png'} alt='hodu market'/>
           </h1>
         </Link>
         <section className={styles['form-area']}>
@@ -89,7 +89,7 @@ const Login = () => {
             </button>
           </div>
           <form className={styles['input-area']} onSubmit={handelLogin}>
-            <h3 className={styles['form-title']}>
+            <h3 className={loginType === 'SELLER' ? `${styles['form-title']} ${styles.seller}` : styles['form-title']}>
               {loginType === 'SELLER' ? '판매회원 로그인 화면입니다.' : '구매회원 로그인 화면입니다.'}
               {loginType === 'SELLER' ? 
               <p><strong>구매회원</strong>이실 경우 상단 탭이에서 <strong>'구매회원 로그인'</strong>선택 후 로그인을 진행해 주세요</p>

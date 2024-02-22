@@ -11,7 +11,7 @@ export const BasicInput = styled.input`
   }
   &:focus {
     outline: none;
-    border-bottom: 2px solid #21BF48;
+    border-bottom: 2px solid #6533C0;
   }
   /*fullwidth: width 100% 버튼일 경우*/
   ${(props) =>
@@ -32,7 +32,7 @@ export const LabelInput = styled.label`
     border: 1px solid #C4C4C4;
     height: 54px;
     &:focus {
-    outline: 2px solid #21BF48;
+    outline: 2px solid #6533C0;
     }
   }
 `

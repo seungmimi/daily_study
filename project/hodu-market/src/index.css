@@ -99,6 +99,7 @@ ul {
   width:28px;
   height:28px;
   background-image:url('../public/image/icon/icon-search.svg');
+  filter: invert(36%) sepia(84%) saturate(7110%) hue-rotate(256deg) brightness(65%) contrast(89%);
 }
 .icon-check-off{
   width:28px;
@@ -261,7 +262,7 @@ ul {
   border-radius: 5px;
   font-size: 16px;
   padding: 8px 10px;
-  background-color: #21BF48;
+  background-color: #6533C0;
   color: #fff;
 }
 .pop-btn-box>button:first-child {

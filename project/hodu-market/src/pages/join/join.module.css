@@ -57,8 +57,11 @@
 }
 .content-area .input-box>.form-title{
   font-family: 'Spoqa Han Sans Neo-Bold';
-  color: #21BF48;
+  color: #6533C0;
   text-align: center;
+}
+.content-area .input-box>.form-title.seller {
+  color: #443B32;
 }
 .content-area .input-box>.form-title>p {
   color: #767676;
@@ -66,8 +69,13 @@
   padding: 10px 0 15px 0;
 }
 .content-area .input-box>.form-title>p>strong {
-  border-bottom: 1px solid #767676;
+  border-bottom: 1px solid #6533C0;
   font-family: 'Spoqa Han Sans Neo-Medium';
+  color: #6533C0;
+}
+.content-area .input-box>.form-title.seller>p>strong {
+  border-bottom: 1px solid #443B32;
+  color: #443B32;
 }
 /*스크롤 영역 커스텀*/
 .content-area .input-box::-webkit-scrollbar {
@@ -106,7 +114,7 @@
 }
 
 .input-box .alert-mes-ok {
-  color: #21BF48;
+  color: #6533C0;
 }
 
 .input-box .margin-area {
@@ -141,7 +149,7 @@
   padding: 0 14px;
 }
 .content-area .ect-btn a:hover{
-  color: #21BF48;
+  color: #6533C0;
 }
 .content-area .ect-btn a:nth-child(2) {
   border-left: 1px solid #333;

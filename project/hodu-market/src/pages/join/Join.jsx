@@ -221,7 +221,7 @@ const Join = () => {
       <div className={styles['content-area']}>
         <Link to={'/'}>
           <h1 className={styles['page-title']}>
-            <img src={process.env.PUBLIC_URL + '/image/Logo-hodu.png'} alt='hodu market'/>
+            <img src={process.env.PUBLIC_URL + '/image/main-logo.png'} alt='hodu market'/>
           </h1>
         </Link>
         <section className={styles['form-area']}>
@@ -236,7 +236,7 @@ const Join = () => {
           </div>
           <form className={styles['input-area']}>
             <div className={styles['input-box']}>
-              <h3 className={styles['form-title']}>
+            <h3 className={loginType === 'SELLER' ? `${styles['form-title']} ${styles.seller}` : styles['form-title']}>
                 {loginType === 'SELLER' ? '판매회원 가입 화면입니다.' : '구매회원 가입 화면입니다.'}
                 {loginType === 'SELLER' ? 
                 <p><strong>구매회원</strong>가입을 원하실 경우 상단 탭에서<strong>'구매회원 가입'</strong>을 선택해 주세요</p>

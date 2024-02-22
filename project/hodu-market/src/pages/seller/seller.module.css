@@ -11,14 +11,14 @@
   font-size: 30px;
 }
 .title-box>h3>strong {
-  color: #21BF48;
+  color: #443B32;
   padding-left: 5px;
 }
 .title-box>button i {
   margin-right: 8px;
 }
 .content-box {
-  height: calc(100vh - 210px);
+  height: 100%;
   min-height: 400px;
   padding-bottom: 50px;
   display: flex;
@@ -38,15 +38,19 @@
   border-radius: 5px;
 }
 .tab-box .tab-obj.active {
-  background-color: #21BF48;
+  background-color: #443B32;
   color: #fff;
 }
 .tab-box .tab-obj.active:hover {
-  background-color: #21BF48;
+  background-color: #443B32;
   color: #fff;
 }
 .tab-box .tab-obj:hover {
-  background-color: #EFFFF3;
+  background-color: #cfcfcf;
+}
+.tab-box .tab-obj.active>span {
+  background-color: #fff;
+  color: #443B32;
 }
 .tab-box .tab-obj>span {
   position: absolute;
@@ -56,7 +60,7 @@
   right: 15px;
   top: 50%;
   transform: translateY(-50%);
-  background-color: #EB5757;
+  background-color: #443B32;
   text-align: center;
   color: #fff;
   font-size: 12px;
@@ -172,7 +176,7 @@
 }
 .edit-box .input-box .edit-obj button.active {
   border: none;
-  background-color: #21BF48;
+  background-color: #443B32;
   color: #fff;
 }
 .edit-box .input-box .edit-obj .obj-deco-input {

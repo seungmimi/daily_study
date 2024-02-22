@@ -4,7 +4,7 @@ const BasicBtn = styled.button`
 height: 60px;
 font-family: 'Spoqa Han Sans Neo-Bold';
 font-size: 18px;
-background: #21BF48;
+background: #6533C0;
 border-radius: 5px;
 color: #fff;
 padding: 19px 0;
@@ -36,6 +36,14 @@ ${(props) =>
       color: #000;
       border: 1px solid #767676;
     }
+  `
+}
+
+/*green: 초록 버튼*/
+${(props) =>
+  props.$green &&
+  css`
+    background: #443B32;
   `
 }
 
