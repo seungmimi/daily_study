@@ -1,0 +1,64 @@
+.footer {
+  margin-top: 150px;
+  background-color: #F2F2F2;
+  padding: 50px 20px 60px;
+}
+.footer-box {
+  width: 100%;
+}
+.top-area {
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #C4C4C4;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.top-area>ul {
+  display: flex;
+  gap: 10px;
+}
+.top-area>ul>li {
+  cursor: pointer;
+  font-size: 14px;
+  padding-right: 10px;
+  border-right: 1px solid #000;
+}
+.top-area>ul>li:last-child{
+  border-right: none;
+}
+.top-area>ul>li:hover {
+  font-family: 'Spoqa Han Sans Neo-Medium';
+}
+.top-area>ul>li.bold-menu {
+  font-family: 'Spoqa Han Sans Neo-bold';
+}
+.top-area .icon-box {
+  display: flex;
+  gap: 14px;
+}
+.bottom-area > *{
+  font-size: 14px;
+  color: #767676;
+  line-height: 24px;
+}
+.bottom-area>strong{
+  font-size: 16px;
+  font-family: 'Spoqa Han Sans Neo-bold';
+  display: block;
+  margin-bottom: 5px;
+}
+
+/*반응형 처리*/
+@media (max-width: 720px){
+  .top-area>ul{
+    flex-direction: column;
+  }
+  .top-area>ul>li {
+    border-right: none;
+    padding-bottom: 10px;
+    padding-right: none;
+  }
+}

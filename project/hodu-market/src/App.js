@@ -8,6 +8,7 @@ import Header from "./component/header/Header";
 import Order from "./pages/order/Order";
 import SellerCenter from "./pages/seller/SellerCenter";
 import AddProd from "./pages/seller/AddProd";
+import Footer from "./component/footer/Footer";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/sellercenter/addprod" element={<AddProd />} />
         <Route path="/sellercenter/editprod/:num" element={<AddProd />} />
       </Routes>
+      <Footer />
     </>
 
   );

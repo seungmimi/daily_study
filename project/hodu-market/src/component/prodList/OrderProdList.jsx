@@ -69,7 +69,6 @@ text-align: end;
 
 const OrderProdList = () => {
   const payProd = useRecoilValue(cartProdListInfo);
-  console.log(payProd);
   return (
     <div className={styles['order-item-box']}>
       <div className={styles['order-item-title']}>

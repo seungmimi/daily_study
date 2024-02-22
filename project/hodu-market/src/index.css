@@ -140,6 +140,21 @@ ul {
   height: 50px;
   background-image:url('../public/image/icon/icon-img.png');
 }
+.icon-insta{
+  width: 32px;
+  height: 32px;
+  background-image:url('../public/image/icon/icon-insta.svg');
+}
+.icon-fb{
+  width: 32px;
+  height: 32px;
+  background-image:url('../public/image/icon/icon-fb.svg');
+}
+.icon-yt{
+  width: 32px;
+  height: 32px;
+  background-image:url('../public/image/icon/icon-yt.svg');
+}
 
 /*=================common css=================*/
 .a11y-hidden {

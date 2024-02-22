@@ -142,7 +142,7 @@ const ProdDetail = () => {
             <CartPopup title="상품이 장바구니에 담겼습니다." subtext="장바구니로 이동하시겠습니까?" link="/cart" isOpen={setIsPopOpen} />
             :
             <CartPopup title="로그인이 필요한 서비스 입니다." subtext="로그인화면으로 이동하시겠습니까?" link="/login" isOpen={setIsPopOpen} />
-            : ''};
+            : ''}
           </>
           }
         </div>
