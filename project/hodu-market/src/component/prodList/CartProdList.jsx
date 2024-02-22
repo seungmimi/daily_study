@@ -89,19 +89,6 @@ const NullInfo = styled.p`
     color: #767676;
   }
 `
-const Notice = styled.div`
-  position: fixed;
-  left: 50%;
-  bottom: 50px;
-  transform: translateX(-50%);
-  padding: 16px 36px;
-  border-radius: 50px;
-  background-color: rgba(0,0,0,0.3);
-  box-shadow: 1px 1px 6px rgba(0,0,0,0.25);
-  p {
-    font-family: 'Spoqa Han Sans Neo-Bold';
-  }
-`
 
 const CartProdList = () => {
   const baseUrl = "https://openmarket.weniv.co.kr/";
@@ -118,7 +105,7 @@ const CartProdList = () => {
     (checked) => {
       if (checked) {
         const checkedListArray = [];
-        cartPordList.forEach((list) => checkedListArray.push(list));
+        cartPordList.forEach((e) => checkedListArray.push(e));
         setCheckedLists(checkedListArray);
       } else {
         setCheckedLists([]);
@@ -163,6 +150,7 @@ const CartProdList = () => {
       axios.get(baseUrl + `products/${e.product_id}`)
         .then(function(res){
           setCartPordList(prevCart => [...prevCart, Object.assign(e,res.data)]);
+          setCheckedLists(prevCart => [...prevCart, Object.assign(e,res.data)])
           setIsLoading(false);
         })
         .catch(function(error){
