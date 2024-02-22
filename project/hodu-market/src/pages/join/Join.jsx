@@ -219,9 +219,11 @@ const Join = () => {
   return (
     <div className={styles['page-wrap']}>
       <div className={styles['content-area']}>
-        <h1 className={styles['page-title']}>
-          <img src={process.env.PUBLIC_URL + '/image/Logo-hodu.png'} alt='hodu market'/>
-        </h1>
+        <Link to={'/'}>
+          <h1 className={styles['page-title']}>
+            <img src={process.env.PUBLIC_URL + '/image/Logo-hodu.png'} alt='hodu market'/>
+          </h1>
+        </Link>
         <section className={styles['form-area']}>
           <h2 className='a11y-hidden'>회원 가입 폼</h2>
           <div className={styles['tab-btn']}>
@@ -234,6 +236,14 @@ const Join = () => {
           </div>
           <form className={styles['input-area']}>
             <div className={styles['input-box']}>
+              <h3 className={styles['form-title']}>
+                {loginType === 'SELLER' ? '판매회원 가입 화면입니다.' : '구매회원 가입 화면입니다.'}
+                {loginType === 'SELLER' ? 
+                <p><strong>구매회원</strong>가입을 원하실 경우 상단 탭에서<strong>'구매회원 가입'</strong>을 선택해 주세요</p>
+                :
+                <p><strong>판매회원</strong>가입을 원하실 경우 상단 탭에서<strong>'판매회원 가입'</strong>을 선택해 주세요</p>
+                }
+              </h3>
               <LabelInput>
                 아이디
                 <div className={styles['input-btn-box']}>
@@ -296,7 +306,8 @@ const Join = () => {
               회원 가입
             </BasicBtn>
             <div className={styles['ect-btn']}>
-              <Link to={'/login'}>로그인 화면으로 돌아가기</Link>
+              <Link to={'/login'}>로그인</Link>
+              <Link to={'/'}>홈으로 돌아가기</Link>
             </div>
           </form>
         </section>

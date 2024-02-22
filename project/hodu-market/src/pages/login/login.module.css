@@ -45,6 +45,20 @@
   border: 1px solid #C4C4C4;
   border-radius: 10px;
 }
+  .content-area .input-area>.form-title{
+    font-family: 'Spoqa Han Sans Neo-Bold';
+    color: #21BF48;
+    text-align: center;
+  }
+  .content-area .input-area>.form-title>p {
+    color: #767676;
+    font-size: 14px;
+    padding: 10px 0 15px 0;
+  }
+  .content-area .input-area>.form-title>p>strong {
+    border-bottom: 1px solid #767676;
+    font-family: 'Spoqa Han Sans Neo-Medium';
+  }
   .input-area .input-box {
     display: flex;
     flex-direction: column;

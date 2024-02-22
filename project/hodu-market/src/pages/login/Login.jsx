@@ -54,13 +54,13 @@ const Login = () => {
       setUserInfo({username: '', login_type: ''});
       setIsLogin(false);
       if(error.response.request.status === 401) {
-        setAlert("아이디 또는 비밀번호가 일치하지 않습니다.");
+        setAlert("⛔️ 아이디 또는 비밀번호가 일치하지 않습니다.");
       }
       if(error.response.request.status === 400 && username === ""){
-        setAlert("아이디를 입력해 주세요");
+        setAlert("⛔️ 아이디를 입력해 주세요");
       }
       if(error.response.request.status === 400 && username !== "" && password === ""){
-        setAlert("비밀번호를 입력해 주세요");
+        setAlert("⛔️ 비밀번호를 입력해 주세요");
       }
     });
   } 
@@ -73,9 +73,11 @@ const Login = () => {
   return (
     <div className={styles['page-wrap']}>
       <div className={styles['content-area']}>
-        <h1 className={styles['page-title']}>
-          <img src={process.env.PUBLIC_URL + '/image/Logo-hodu.png'} alt='hodu market'/>
-        </h1>
+        <Link to={'/'}>
+          <h1 className={styles['page-title']}>
+            <img src={process.env.PUBLIC_URL + '/image/Logo-hodu.png'} alt='hodu market'/>
+          </h1>
+        </Link>
         <section className={styles['form-area']}>
           <h2 className='a11y-hidden'>로그인 폼</h2>
           <div className={styles['tab-btn']}>
@@ -87,6 +89,14 @@ const Login = () => {
             </button>
           </div>
           <form className={styles['input-area']} onSubmit={handelLogin}>
+            <h3 className={styles['form-title']}>
+              {loginType === 'SELLER' ? '판매회원 로그인 화면입니다.' : '구매회원 로그인 화면입니다.'}
+              {loginType === 'SELLER' ? 
+              <p><strong>구매회원</strong>이실 경우 상단 탭이에서 <strong>'구매회원 로그인'</strong>선택 후 로그인을 진행해 주세요</p>
+              :
+              <p><strong>판매회원</strong>이실 경우 상단 탭이에서 <strong>'판매회원 로그인'</strong>선택 후 로그인을 진행해 주세요</p>
+              }
+            </h3>
             <div className={styles['input-box']}>
               <BasicInput $fullwidth type='text' placeholder='아이디' autoComplete="current-username"  onChange={(e) => handelSetId(e)}  value={id}/>
               <BasicInput $fullwidth type='password' autoComplete="current-password" placeholder='비밀번호' onChange={(e) => handelSetPw(e)} value={pw}/>
@@ -99,6 +109,7 @@ const Login = () => {
         </section>
         <div className={styles['ect-btn']}>
           <Link to={'/join'}>회원 가입</Link>
+          <Link to={'/'}>홈으로 돌아가기</Link>
         </div>
       </div>
     </div>

@@ -53,6 +53,20 @@
   height: calc(100vh - 500px);
   overflow-y: scroll;
 }
+.content-area .input-box>.form-title{
+  font-family: 'Spoqa Han Sans Neo-Bold';
+  color: #21BF48;
+  text-align: center;
+}
+.content-area .input-box>.form-title>p {
+  color: #767676;
+  font-size: 14px;
+  padding: 10px 0 15px 0;
+}
+.content-area .input-box>.form-title>p>strong {
+  border-bottom: 1px solid #767676;
+  font-family: 'Spoqa Han Sans Neo-Medium';
+}
 /*스크롤 영역 커스텀*/
 .content-area .input-box::-webkit-scrollbar {
   width: 20px;
