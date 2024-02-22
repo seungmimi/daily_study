@@ -7,7 +7,7 @@ import axios from 'axios';
 const ProdList = styled.ul`
 width: 100%;
 display: grid;
-grid-template-columns: repeat(auto-fill, minmax(280px, auto));
+grid-template-columns: repeat(auto-fill, minmax(260px, auto));
 gap: 70px 78px;
 `;
 const ProdObj = styled.li`
@@ -101,7 +101,7 @@ const MainProdList = () => {
             <ProdText>
               <span>{e.store_name}</span>
               <p>{e.product_name}</p>
-              <strong>{e.price}<span>원</span></strong>
+              <strong>{e.price.toLocaleString()}<span>원</span></strong>
             </ProdText>
           </ProdObj>
         )
