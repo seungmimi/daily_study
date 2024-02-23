@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import { userState, isLoginState } from '../../atom/LoginState';
 import { useRecoilState } from 'recoil';
@@ -78,9 +78,9 @@ const Header = () => {
   const moreMenuFn = () => {
     setShowMenu(!showMenu);
   }
-
+  const location = useLocation();
   //header노출 페이지 구분
-  if (window.location.pathname === '/login' || window.location.pathname === '/join') return null;
+  if (location.pathname === '/login' || location.pathname === '/join') return null;
 
   return (
     <header className={styles.header}>
