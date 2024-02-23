@@ -7,6 +7,7 @@ import styled from "styled-components";
 import styles from '../../pages/cart/cart.module.css'
 import CartInfoPopup from '../../pages/cart/CartInfoPopup';
 import CartEditPopup from '../../pages/cart/CartEditPopup';
+import { useNavigate } from 'react-router-dom';
 
 //스타일
 const CartItemList = styled.ul`
@@ -92,7 +93,6 @@ const NullInfo = styled.p`
 
 const CartProdList = () => {
   const baseUrl = "https://openmarket.weniv.co.kr/";
-
   const token = localStorage.getItem("token");
   const [isLoading, setIsLoading] = useState(true);
   const [isNull, setIsNull] = useState(false);
@@ -174,7 +174,7 @@ const CartProdList = () => {
     })
     .then(function(res){
       setdelPopOpen(false);
-      window.location.replace('/cart');
+      window.location.reload();;
     })
     .catch(function(error){
       console.log(error);
