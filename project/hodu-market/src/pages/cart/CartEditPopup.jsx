@@ -36,7 +36,7 @@ const CartEditPopup = (props) => {
       }
     })
     .then(function(){
-      window.location.replace('/cart');
+      window.location.reload();
     })
     .catch(function(error){
       console.log(error);

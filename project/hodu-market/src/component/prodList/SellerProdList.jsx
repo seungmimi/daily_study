@@ -92,7 +92,7 @@ const SellerProdList = (props) => {
   }
 
   //상품 수정
-  const editProd = (event, prodNum) => {
+  const editProd = (prodNum) => {
     navigate(`/sellercenter/editprod/${prodNum}`);
   }
 
@@ -111,7 +111,7 @@ const SellerProdList = (props) => {
     })
     .then(function(){
       setdelPopOpen(false);
-      window.location.replace('/sellercenter');
+      window.location.reload();
     })
     .catch(function(error){
       console.log(error);
@@ -134,8 +134,8 @@ const SellerProdList = (props) => {
             </ProdText>
           </div>
           <strong onClick={() => {detailProd(e.product_id)}}>{e.price.toLocaleString()}원</strong>
-          <BasicBtn $textS $paddingS onClick={(event) => editProd(event, e.product_id)}>수정</BasicBtn>
-          <BasicBtn $textS $white $paddingS onClick={(event) => delProdPop(event, e.product_id)}>삭제</BasicBtn>
+          <BasicBtn $textS $paddingS onClick={(event) => editProd(e.product_id)}>수정</BasicBtn>
+          <BasicBtn $textS $white $paddingS onClick={(event) => delProdPop(e.product_id)}>삭제</BasicBtn>
         </ProdObj>
         )
       })}

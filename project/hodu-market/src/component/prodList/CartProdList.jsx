@@ -174,7 +174,7 @@ const CartProdList = () => {
     })
     .then(function(res){
       setdelPopOpen(false);
-      window.location.reload();;
+      window.location.reload();
     })
     .catch(function(error){
       console.log(error);
