@@ -763,6 +763,10 @@ body::-webkit-scrollbar {
   font-size: 0.875rem;
   color: var(--sub-color-2);
 }
+.projects .project-obj .url-box .test-acc .acc-box {
+  display: flex;
+  gap: 15px;
+}
 .projects .project-obj .url-box .url-btn>a{
   font-family: 'Pretendard-Bold';
   font-size: 1.125rem;

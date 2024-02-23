@@ -341,6 +341,10 @@ progress {
 .stack-bage.react {
   background-color: #61DAFB;
 }
+.stack-bage.recoil {
+  color: #fff;
+  background-color: #3578e5;
+}
 .stack-bage.js {
   background-color: #F7DF1E;
 }
