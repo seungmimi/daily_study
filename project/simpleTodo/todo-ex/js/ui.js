@@ -6,4 +6,4 @@ const addInput = document.querySelector('.add-input');
 
 addBtn.addEventListener('click',() => {
   listManager.listMaker({todo: addInput.value, state: false});
-})
+});
