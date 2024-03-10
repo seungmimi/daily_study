@@ -1,5 +1,7 @@
+<style src="./component.css"></style>
 <template>
   <div>
+    <h1 class="title">Vue 게시판</h1>
     <table>
       <tr>
         <th>글쓴이</th>
