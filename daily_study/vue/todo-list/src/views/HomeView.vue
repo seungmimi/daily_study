@@ -1,9 +1,10 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+  import TodoList from '../components/TodoList.vue'
+  // const todoItem = ref(JSON.parse(sessionStorage.getItem('todoData') || '[]'));
+  // const todoItem = ref([]);
+  // console.log(todoItem.value);
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <TodoList />
 </template>
