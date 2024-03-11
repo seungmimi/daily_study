@@ -1,10 +1,12 @@
-<script setup>
-  import TodoList from '../components/TodoList.vue'
-  // const todoItem = ref(JSON.parse(sessionStorage.getItem('todoData') || '[]'));
-  // const todoItem = ref([]);
-  // console.log(todoItem.value);
-</script>
-
 <template>
-  <TodoList />
+  <h1>
+    Todo-List
+    <TodoList />
+  </h1>
 </template>
+<script setup>
+import TodoList from '../components/TodoList.vue'
+</script>
+<style>
+  
+</style>
