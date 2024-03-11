@@ -2,31 +2,36 @@
   import { ref, reactive } from 'vue'
   export default {
     setup(){
-    const todoItem = reactive([{title: "테스트1", id: 1, state: false}, {title: "테스트2", id: 2, state: true}]);
-    const todoTitle = ref('');
-    const todoAdd = () => {
-      const addCotent = todoTitle.value;
-      if(addCotent === ''){
-        alert('내용을 입력 해주세요');
-      }else if(todoItem.findIndex(obj => obj.title == addCotent) === -1){
-        todoItem.push({title: addCotent, id: Date.now(), state: false});
-      }else{
-        console.log(todoItem.findIndex(obj => obj.title == addCotent));
-        alert('이미 등록된 내용입니다');
-      }
-      
-    }
-    const todoDel = (e) => {
-      const index = e.target.parentNode.children[0].innerText;
-      todoItem.splice(todoItem.findIndex(obj => obj.title == index), 1);
-    }
+      const todoItem = reactive(sessionStorage.getItem('todoList') === null ? [] : JSON.parse(sessionStorage.getItem('todoList')));
+      const todoTitle = ref('');
 
-    return{
-      todoItem,
-      todoTitle,
-      todoAdd,
-      todoDel
-    }
+      // todolist 추가
+      const todoAdd = () => {
+        const addCotent = todoTitle.value;
+        if(addCotent === ''){
+          alert('내용을 입력 해주세요');
+        }else if(todoItem.findIndex(obj => obj.title == addCotent) === -1){
+          todoItem.push({title: addCotent, id: Date.now(), state: false});
+          sessionStorage.setItem('todoList', JSON.stringify(todoItem));
+          todoTitle.value = ''
+        }else{
+          console.log(todoItem.findIndex(obj => obj.title == addCotent));
+          alert('이미 등록된 내용입니다');
+        }
+      }
+
+      // todolist 삭제
+      const todoDel = (e) => {
+        const index = e.target.parentNode.children[0].innerText;
+        todoItem.splice(todoItem.findIndex(obj => obj.title == index), 1);
+        sessionStorage.setItem('todoList', JSON.stringify(todoItem));
+      }
+      return{
+        todoItem,
+        todoTitle,
+        todoAdd,
+        todoDel
+      }
     }
   }  
 </script>
@@ -38,9 +43,12 @@
   </form>
   
   <ul class="todo-box">
+    <li v-if="todoItem.length === 0">
+      <p>할일 목록이 비어있습니다!</p>
+    </li>
     <li class="todo-list" v-for="item in todoItem">
       <div class="todo-obj" :key="item.id">
-        <label>
+        <label :class="{checkde : item.state}">
           <input type="checkbox" v-model="item.state">
           <p>{{ item.title }}</p>
         </label>
@@ -70,6 +78,9 @@
     gap: 10px;
     width: 100%;
     align-items: center;
+  }
+  .todo-obj>label.checkde>p {
+    text-decoration: line-through;
   }
   .todo-obj>button {
     width: 52px;

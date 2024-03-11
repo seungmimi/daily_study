@@ -15,6 +15,8 @@
   // }
 </script>
 <template>
-  <button>todo</button>
+  <button>todo-list</button>
+  <button>CRUD 게시판</button>
+  <button>계산기</button>
   <RouterView />
 </template>
