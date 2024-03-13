@@ -1,15 +1,16 @@
 <template>
   <header>
     <button>todo-list</button>
-    <button>CRUD 게시판</button>
     <button>계산기</button>
+    <button>CRUD 게시판</button>
   </header>
   <main class="compoent-view">
-    <TodoList />
+    <Calculator />
   </main>
 </template>
 <script setup>
 import TodoList from '../components/TodoList.vue'
+import Calculator from '../components/Calculator.vue'
 </script>
 <style scoped>
   header {
