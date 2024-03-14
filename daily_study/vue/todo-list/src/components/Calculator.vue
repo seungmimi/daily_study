@@ -8,6 +8,16 @@ export default {
     const isResult = ref(false); //결과 확인여부 체크
     const isMath = ref(false); //수식 연속 입력 여부 체크
     const aletrMes = ref('경고메시지');
+    const isAlert = ref(false);
+
+    //경고메시지 출력
+    const alertMesFn = (text) => {
+      isAlert.value = true;
+      aletrMes.value = text;
+      setTimeout(() => {
+        isAlert.value = false;
+      }, 2000);
+    }
 
     //초기화 함수
     const resetFn = () => {
@@ -29,8 +39,11 @@ export default {
       if(isResult.value){
         resetFn();
       }
-      if(isMath.value){
-        aletrMes.value = '연속된 수식은 입력할 수 없습니다 😣';
+      
+      if(isMath.value){ //예외처리1: 연속된 수식 입력
+        alertMesFn('연속된 수식은 입력할 수 없습니다 😣');
+      }else if(inputData.value === ''){ //예외처리2: 수식으로 시작하는 계산식
+        alertMesFn('계산식은 숫자부터 시작해주세요 😣');
       }else{
         const data = e.target.innerText;
         inputData.value = inputData.value + data;
@@ -47,18 +60,18 @@ export default {
     const resultFn = () => {
       const lastData = inputData.value.slice(-1);
       if(isNaN(parseInt(lastData))){
-        aletrMes.value = '계산식이 완성되지 않았습니다 😣';
+        alertMesFn('계산식이 완성되지 않았습니다 😣');
       }else{
         resultData.value = eval(inputData.value.replace(/\b0+(\d+)/g, '$1'))//0으로 시작하는 숫자처리(02 -> 2)
         isResult.value = true;
       }
-
     }
     return {
       mathList,
       inputData,
       resultData,
       aletrMes,
+      isAlert,
       resultFn,
       inputNumFn,
       inputMathmFn,
@@ -71,7 +84,7 @@ export default {
   <section class="content-box">
     <h1>🧮 계산기</h1>
     <article class="calculator-body">
-      <div :class="[resultData === '' ? 'calculator-view' : 'active', 'calculator-view']">
+      <div class="calculator-view" :class="[resultData === '' ? '' : 'active', {alertActive : isAlert}]">
         <input type="text" v-model="inputData" readonly>
         <input type="text" v-model="resultData" class="result-input" readonly>
       </div>
@@ -88,7 +101,7 @@ export default {
       </div>
     </article>
   </section>
-  <div :class="[resultData === '' ? 'alert-mes' : 'alert-mes', 'active']">
+  <div class="alert-mes" :class="{active : isAlert}">
     <p>{{ aletrMes }}</p>
   </div>
 </template>
@@ -111,6 +124,7 @@ export default {
     border-radius: 5px;
     width: 100%;
     height: 80px;
+    margin-top: 10px;
     transition: all 0.2s;
   }
   .calculator-view > input {
@@ -134,6 +148,19 @@ export default {
     height: 35px;
     font-size: 30px;
   }
+  .calculator-view.alertActive {
+    animation: alertActiveAni .1s 2;
+    border: 2px solid #b13737;
+  }
+  @keyframes alertActiveAni {
+  from {
+    border: 2px solid #b13737;
+    transform: rotate(1deg);
+  }
+  to {
+    transform: rotate(-1deg);
+  }
+}
 
   .calculator-key {
     display: flex;
@@ -173,19 +200,15 @@ export default {
     color: #fff;
     background-color: rgba(0,0,0,0.5);
     position: absolute;
-    top: 20%;
+    top: 10%;
+    opacity: 0%;
     left: 50%;
     transform: translateX(-50%);
-    transition: all 2s;
+    transition: all 0.5s;
   }
-  /* .alert-mes.active {
-    animation: alertMes 1s ease-in alternate;
+  .alert-mes.active {
+    top: 20%;
+    opacity: 100%;
   }
-  @keyframes alertMes {
-    100% {
-      top: 22%;
-      opacity: 100;
-    }
-  } */
   
 </style>
