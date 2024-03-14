@@ -1,29 +1,43 @@
 <template>
   <header>
-    <button>todo-list</button>
-    <button>계산기</button>
-    <button>CRUD 게시판</button>
+    <nav class="tool-list">
+      <button v-for = "tool in toolList" @click="changeToolFn(tool)">{{ tool }}</button>
+    </nav>
   </header>
   <main class="compoent-view">
-    <!-- <TodoList /> -->
-    <Calculator />
+    <TodoList v-if="activeTool === 'todo-list'"/>
+    <Calculator v-if="activeTool === '계산기'"/>
   </main>
 </template>
 <script setup>
+import { ref }  from 'vue'
 import TodoList from '../components/TodoList.vue'
 import Calculator from '../components/Calculator.vue'
+
+const toolList = ['todo-list', '계산기', 'CRUD 게시판'];
+
+const activeTool = ref('todo-list');
+const changeToolFn = (toolName) => {
+  activeTool.value = toolName;
+}
+
 </script>
 <style scoped>
   header {
-    widows: 100%;
+    width: 100%;
+    height: 60px;
+    padding: 20px 80px;
     position: absolute;
     top: 0;
     left: 0;
-    padding: 30px 50px;
+  }
+  .tool-list {
+    display: flex;
+    gap: 10px;
   }
   .compoent-view {
     max-width: 600px;
-    margin: 0 auto;
+    margin: 60px auto;
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
