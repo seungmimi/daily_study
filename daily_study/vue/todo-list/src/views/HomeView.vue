@@ -7,14 +7,16 @@
   <main class="compoent-view">
     <TodoList v-if="activeTool === 'todo-list'"/>
     <Calculator v-if="activeTool === '계산기'"/>
+    <Timer v-if="activeTool === '타이머'" />
   </main>
 </template>
 <script setup>
 import { ref }  from 'vue'
 import TodoList from '../components/TodoList.vue'
 import Calculator from '../components/Calculator.vue'
+import Timer from '../components/Timer.vue'
 
-const toolList = ['todo-list', '계산기', 'CRUD 게시판'];
+const toolList = ['todo-list', '계산기', '타이머'];
 
 const activeTool = ref('todo-list');
 const changeToolFn = (toolName) => {
