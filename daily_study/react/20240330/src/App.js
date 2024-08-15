@@ -1,9 +1,10 @@
+import CodeEx from "./pages/CodeEx";
 import UseRefEx from "./pages/UseRefEx";
 
 function App() {
   return (
     <div>
-      <UseRefEx />
+      <CodeEx />
     </div>
   );
 }
